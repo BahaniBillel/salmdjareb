@@ -94,7 +94,7 @@ const BranchList = () => {
           <Breadcrumbs aria-label="breadcrumb">
             <StyledBreadcrumb
               component="a"
-              href="#"
+              href="/"
               label="Home"
               icon={<HomeIcon fontSize="small" />}
             />

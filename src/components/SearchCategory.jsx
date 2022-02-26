@@ -19,6 +19,8 @@ const useStyles = makeStyles({
   },
 });
 
+
+
 const SearchCategory = () => {
   const classes = useStyles();
   return (

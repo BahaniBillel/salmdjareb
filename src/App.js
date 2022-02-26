@@ -4,7 +4,7 @@ import Catergories from "./pages/Catergories";
 import Community from "./pages/Community";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
-import WriteReview from "./pages/WriteReview";
+import WriteReviewPage from "./pages/WriteReviewPage";
 import Navigation from "./components/Navigation";
 import LogInAndSignUp from "./pages/LogInAndSignUp";
 import BranchList from "./pages/BranchList";
@@ -16,12 +16,12 @@ function App() {
       <Navigation />
       <Routes>
         <Route exact path="/" element={<Home />} />
-        <Route exact path="/writereview" element={<WriteReview />} />
         <Route exact path="/categories" element={<Catergories />} />
         <Route exact path="/categories/:id" element={<BranchList />} />
         <Route exact path="/profile/:id" element={<Profile />} />
         <Route exact path="/community" element={<Community />} />
         <Route exact path="/signin" element={<LogInAndSignUp />} />
+        <Route exact path="/write-review" element={<WriteReviewPage/>} />
       </Routes>
     </Box>
   );
