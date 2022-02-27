@@ -49,7 +49,7 @@ const { Data } = ActivitieZData();
 
 const CategoryTemplate = ({ catIcon, catName, subCat, url }) => {
   const classes = useStyles();
-  const {id}=useParams();
+
   
 
   return (

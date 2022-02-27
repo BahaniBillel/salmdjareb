@@ -7,7 +7,7 @@ import {
   CardMedia,
   ListItem,
   Button,
-  Link,
+ 
 } from "@material-ui/core";
 
 import LanguageIcon from "@mui/icons-material/Language";
@@ -15,7 +15,7 @@ import ArrowForwardIosOutlinedIcon from "@mui/icons-material/ArrowForwardIosOutl
 import Rating from "@mui/material/Rating";
 import Lays from "../images/Lays.png";
 import ActivitieZData from "../components/Data";
-import { useParams ,Redirect} from "react-router-dom";
+import { useParams } from "react-router-dom";
 import DisplayReviewResult from "../components/DisplayReviewResult";
 import WriteReviewPage from '../../src/pages/WriteReviewPage';
 import BusinessSideBarActivity from "../components/BusinessSideBarActivity";

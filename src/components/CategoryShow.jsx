@@ -10,7 +10,7 @@ import {
 
 import ActivitieZData from "../components/Data";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+
 
 
 const useStyles = makeStyles({

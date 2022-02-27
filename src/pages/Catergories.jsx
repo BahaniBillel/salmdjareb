@@ -1,5 +1,5 @@
 import React from 'react';
-import {Box,Container,makeStyles} from '@material-ui/core';
+import {Box,makeStyles} from '@material-ui/core';
 import CategoryTemplate from '../components/CategoryTemplate';
 import SearchCategory from '../components/SearchCategory';
 

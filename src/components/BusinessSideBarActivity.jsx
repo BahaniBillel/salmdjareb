@@ -1,16 +1,15 @@
 import React from "react";
 
 import {
-  Container,
+
   makeStyles,
   Box,
   Typography,
-  CardMedia,
+
   ListItem,
   ListItemText,
 } from "@material-ui/core";
-import { AlternateEmailOutlinedIcon } from '@mui/icons-material';
-// import AlternateEmailOutlinedIcon from '@mui/icons-material/AlternateEmailOutlined';
+
 
 const useStyles = makeStyles({
   about: {

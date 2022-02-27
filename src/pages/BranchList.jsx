@@ -74,7 +74,7 @@ const useStyles = makeStyles({
 const BranchList = () => {
   const classes = useStyles();
   const { id } = useParams();
-  const matches = useMediaQuery("(min-width:600px)");
+
 
   const {
     Data: [...rest],

@@ -1,11 +1,11 @@
 import React from "react";
 import Logo from "../images/SAL-MDJAREB-V2.png";
 import {
-  Container,
+  
   Box,
   makeStyles,
-  AppBar,
-  Typography
+ 
+ 
 
 } from "@material-ui/core";
 import {Link} from 'react-router-dom';

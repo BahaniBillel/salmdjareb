@@ -1,4 +1,4 @@
-import { Box, Container } from "@material-ui/core";
+import { Box } from "@material-ui/core";
 import { Routes, Route } from "react-router-dom";
 import Catergories from "./pages/Catergories";
 import Community from "./pages/Community";
