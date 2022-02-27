@@ -73,7 +73,7 @@ const ReviewForm = ({logo}) => {
         <Box className={classes.detail}>
           <Box className={classes.rate}>
             <Typography variant="h6" component="div">
-              Rate Your Recent Experience
+              Rate Your Recent Experience here
             </Typography>
             <Rating
               name="no-value"
