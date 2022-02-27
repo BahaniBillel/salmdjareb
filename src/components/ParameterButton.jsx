@@ -9,7 +9,7 @@ const ParameterButton = ({param}) => {
             padding: "1rem",
             marginBottom: ".5rem",
           }}
-          variant="contained"
+          variant="outlined"
           disableElevation
         >
         

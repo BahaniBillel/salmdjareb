@@ -70,9 +70,6 @@ const useStyles = makeStyles({
     margin: "1.5rem 0",
   },
 });
-const getProfile=(e)=>{
-  
-}
 
 const BranchList = () => {
   const classes = useStyles();
@@ -89,8 +86,8 @@ const BranchList = () => {
 
   return (
     <Box className={classes.upperWrapper}>
-      <Box className={classes.categoryHeaderTitle} >
-        <Container className={classes.categoryHeaderContent} >
+      <Box className={classes.categoryHeaderTitle}>
+        <Container className={classes.categoryHeaderContent}>
           <Breadcrumbs aria-label="breadcrumb">
             <StyledBreadcrumb
               component="a"
@@ -110,8 +107,16 @@ const BranchList = () => {
             variant="h4"
             className={classes.titleMargin}
           >
-            Best in Building Materials
+            {rest.map(main=>(
+              main.subCat.map(sub=>{
+                if (id === sub.id) {
+                  return `Best in ${sub.subactivity}`
+                }
+              }
+              )
+            ))}
           </Typography>
+
           <Typography component="p" variant="body2">
             Compare companies in building materials
           </Typography>
@@ -131,14 +136,12 @@ const BranchList = () => {
                 if (sub.id === id) {
                   return (
                     <div>
-                   <Link to={`/profile/${business.id}`}>
+                      <Link to={`/profile/${business.id}`}>
                         <SingleCardCategory
                           key={business.id}
                           companyName={business.businessname}
-                          clickHandler={getProfile}
                         />
-                   </Link>
-                     
+                      </Link>
                     </div>
                   );
                 }

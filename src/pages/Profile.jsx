@@ -18,6 +18,7 @@ import ActivitieZData from "../components/Data";
 import { useParams ,Redirect} from "react-router-dom";
 import DisplayReviewResult from "../components/DisplayReviewResult";
 import WriteReviewPage from '../../src/pages/WriteReviewPage';
+import BusinessSideBarActivity from "../components/BusinessSideBarActivity";
 
 const useStyles = makeStyles({
   upperWrapper: {
@@ -44,7 +45,7 @@ const useStyles = makeStyles({
     flexDirection: "row",
     justifyContent: "start",
     alignItems: "center",
-    width: "80%",
+    width: "90%",
     height: "100%",
   },
   companyScoreInfo: {
@@ -72,11 +73,13 @@ const useStyles = makeStyles({
     paddingTop: "2rem",
   },
   detailsBox: {
-    width: "60%",
+    width: "65%",
+    overflow:"hidden"
   },
   sideInfo: {
-    width: "30%",
-    backgroundColor: "blue",
+    width: "33%",
+    // backgroundColor: "blue",
+    
   },
   writeReview: {
     display: "flex",
@@ -139,10 +142,14 @@ const useStyles = makeStyles({
 
 const { Data } = ActivitieZData();
 
+
 const Profile = () => {
   const params = useParams();
   const pageId = params.id;
   console.log(pageId, Data);
+
+ 
+
 
   const classes = useStyles();
   const [value, setValue] = useState(0);
@@ -209,7 +216,7 @@ const Profile = () => {
 
                   <Container maxWidth="md" className={classes.detailsWrapper}>
                     <Box className={classes.detailsBox}>
-                      <Link href={"/write-review"} style={{textDecoration:"none",color:"#000"}}>
+                      {/* <Link href={"/write-review"} style={{textDecoration:"none",color:"#000"}}>
                         <Box className={classes.writeReview}>
                           
                           <Button variant='outlined'>Write a review</Button>                          
@@ -223,15 +230,16 @@ const Profile = () => {
                           }
                           />
                         </Box>
-                      </Link>
+                        
+                      </Link> */}
                       <DisplayReviewResult
                         reviewsNumber={company.reviewsNumber}
                         params={company.parameters}
                       />
+                      <WriteReviewPage name={company.businessname}/>
                     </Box>
                     <Box className={classes.sideInfo}>
-                      {" "}
-                      <Typography>{company.adresse}</Typography>
+                    <BusinessSideBarActivity businssname={company.businessname}/>
                     </Box>
                   </Container>
                 </Box>

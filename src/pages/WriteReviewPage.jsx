@@ -1,9 +1,11 @@
 import React from 'react'
-import ReviewForm from '../components/ReviewForm'
-const WriteReviewPage = () => {
+import ReviewForm from '../components/ReviewForm';
+import CocaCola from "../images/cocaLogo.png";
+
+const WriteReviewPage = ({name}) => {
   return (
-<ReviewForm/>
+  <ReviewForm logo={CocaCola} businessname={name}/>
   )
 }
 
-export default WriteReviewPage
+export default WriteReviewPage;

@@ -96,7 +96,7 @@ const CategoryShow = () => {
         <Container className={classes.showcase}>
           {/* Mapping the card activities  */}
           {Data.map((card) => (
-            <Link to={`/categories/${card.id}`}>
+            <Link to={`/categories/1${card.id}`}>
               <Card key={card.id} component="div" className={classes.card}>
                 <CardMedia className={classes.cardIcon}>{card.icon}</CardMedia>
                 <Typography

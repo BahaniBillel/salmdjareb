@@ -5,34 +5,34 @@ import {
   Box,
   makeStyles,
   TextField,
-  CardMedia
+  Button
+
 } from "@material-ui/core";
 import Rating from "@mui/material/Rating";
+
 
 
 const useStyles = makeStyles({
   wrapper: {
     marginTop: "1rem",
-    marginBottom:"3rem"
+    marginBottom:"3rem",
+  
 },
 formWrapper: {
-    width: "35vw",
-    height: "90vh",
+    width: "100%",
+    height: "auto",
     display: "flex",
     flexDirection: "column",
     justifyContent: "flex-start",
     alignItems: "center",
     backgroundColor: "#fff",
     borderRadius: "5px",
-    boxShadow: "-1px 1px 2px #ccc",
+    // boxShadow: "-1px 1px 2px #ccc",
     overflow:"hidden",
+  
+  
   },
-  companyHeader: {
-    height: "20%",
-    backgroundColor: "#ccc",
-    width: "95%",
-    padding:"1rem"
-  },
+
   detail: {
     padding: "1rem ",
     width: "93%",
@@ -57,19 +57,18 @@ formWrapper: {
   },
 });
 
-const ReviewForm = ({logo}) => {
+const submitHandler =(event)=>{
+event.PrevenyDefault();
+return
+}
+
+const ReviewForm = ({businessname}) => {
   const classes = useStyles();
 
   const [value, setValue] = useState(0);
   return (
-    <Container maxWidth="sm" className={classes.wrapper}>
-      <Box className={classes.formWrapper}>
-        <Box className={classes.companyHeader}>
-        <CardMedia component="img" image={logo} alt="/" />
-            <Typography variant="h4">
-           Coca Cola
-            </Typography>
-        </Box>
+    <Box className={classes.wrapper} >
+      <form className={classes.formWrapper} onSubmit={submitHandler}>
         <Box className={classes.detail}>
           <Box className={classes.rate}>
             <Typography variant="h6" component="div">
@@ -97,7 +96,7 @@ const ReviewForm = ({logo}) => {
               label="Your experience here"
               multiline
               rows={4}
-              defaultValue="Tell us about your recent expeience with {company name should be dynamically output}"
+              placeholder={`Tell us about your recent experience with ${businessname}...`}
               variant="outlined"
               fullWidth
             />
@@ -116,14 +115,16 @@ const ReviewForm = ({logo}) => {
               label="Title"
               multiline
               rows={1}
-              defaultValue="Write the title of your review here"
+              placeholder="Write the title of your review here..."
               variant="outlined"
               fullWidth
             />
           </Box>
         </Box>
-      </Box>
-    </Container>
+        <button variant="outlined" style={{backgroundColor:"green" ,color:"#fff",margin:"2rem 0"}}>Submit your Review</button>
+       
+      </form>
+    </Box>
   );
 };
 
