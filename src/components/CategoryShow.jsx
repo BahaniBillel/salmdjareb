@@ -11,8 +11,6 @@ import {
 import ActivitieZData from "../components/Data";
 import { Link } from "react-router-dom";
 
-
-
 const useStyles = makeStyles({
   Wrapper: {
     height: "50vh",
@@ -47,7 +45,7 @@ const useStyles = makeStyles({
     justifyContent: "space-between",
   },
   showcase: {
-    height: "93%",
+    // height: "93%",
     width: "100%",
     display: "flex",
     flexDirection: "row",
@@ -80,9 +78,7 @@ const useStyles = makeStyles({
   },
 });
 
-const {Data}=ActivitieZData();
-
-
+const { Data } = ActivitieZData();
 
 const CategoryShow = () => {
   const classes = useStyles();
@@ -95,20 +91,22 @@ const CategoryShow = () => {
         </Container>
         <Container className={classes.showcase}>
           {/* Mapping the card activities  */}
-          {Data.map((card) => (
-            <Link to={`/categories/1${card.id}`}>
-              <Card key={card.id} component="div" className={classes.card}>
-                <CardMedia className={classes.cardIcon}>{card.icon}</CardMedia>
-                <Typography
-                  variant="subtitle2"
-                  className={classes.cardText}
-                  component="div"
-                >
-                  {card.activity}
-                </Typography>
-              </Card>
-            </Link>
-          ))}
+          {Data.map((card) =>
+            card.subCat.map((sub) => (
+              <Link to={`/categories/${sub.id}`}>
+                <Card key={sub.id} component="div" className={classes.card}>
+                  <CardMedia className={classes.cardIcon}>{sub.icon}</CardMedia>
+                  <Typography
+                    variant="subtitle2"
+                    className={classes.cardText}
+                    component="div"
+                  >
+                    {sub.subactivity}
+                  </Typography>
+                </Card>
+              </Link>
+            ))
+          )}
         </Container>
       </Container>
     </Box>
