@@ -55,7 +55,7 @@ const Banner = () => {
         <Container className={classes.contentBox}>
           <Typography component="h1" variant="h1" className={classes.mainText}>
             {" "}
-            Behind every review is an <br /> experience that matters
+            Behind every review is an <br /> experience that matters YOU
           </Typography>
           <Typography
             component="p"
