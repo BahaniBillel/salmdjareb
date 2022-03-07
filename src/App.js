@@ -11,7 +11,7 @@ import BranchList from "./pages/BranchList";
 import "./App.scss";
 
 function App() {
-  return (
+  return ( 
     <Box className="App">
       <Navigation />
       <Routes>
