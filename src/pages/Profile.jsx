@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Container,
   makeStyles,
@@ -19,6 +19,8 @@ import { useParams } from "react-router-dom";
 import DisplayReviewResult from "../components/DisplayReviewResult";
 import WriteReviewPage from '../../src/pages/WriteReviewPage';
 import BusinessSideBarActivity from "../components/BusinessSideBarActivity";
+import {collection} from "firebase/firestore";
+import {db} from "../firebase-config";
 
 const useStyles = makeStyles({
   upperWrapper: {
@@ -148,6 +150,15 @@ const Profile = () => {
   const pageId = params.id;
   console.log(pageId, Data);
 
+  // bringing data from firebase
+  const [newReview,setNewReview]=useState([])
+
+  const getReviewsRef = collection(db,"reviews");
+
+  useEffect(()=>{
+    
+    
+  },[])
  
 
 

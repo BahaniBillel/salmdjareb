@@ -6,7 +6,7 @@ import {
   Typography,
   TextField,
 } from "@material-ui/core";
-import BannerImage from "../images/blonde-women-laughing.jpg";
+import BannerImage from "../images/pair-brown-shoes.jpg";
 
 const useStyles = makeStyles({
   bannerImage: {
@@ -55,7 +55,8 @@ const Banner = () => {
         <Container className={classes.contentBox}>
           <Typography component="h1" variant="h1" className={classes.mainText}>
             {" "}
-            Behind every review is an <br /> experience that matters YOU
+            Behind every review is an <br /> experience that matters YOU got the re&ason
+            there no shame to 
           </Typography>
           <Typography
             component="p"

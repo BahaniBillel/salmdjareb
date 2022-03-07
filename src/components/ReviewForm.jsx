@@ -1,24 +1,13 @@
 import React, { useState } from "react";
-import {
-
-  Typography,
-  Box,
-  makeStyles,
-  TextField,
-
-
-} from "@material-ui/core";
+import { Typography, Box, makeStyles, TextField } from "@material-ui/core";
 import Rating from "@mui/material/Rating";
-
-
 
 const useStyles = makeStyles({
   wrapper: {
     marginTop: "1rem",
-    marginBottom:"3rem",
-  
-},
-formWrapper: {
+    marginBottom: "3rem",
+  },
+  formWrapper: {
     width: "100%",
     height: "auto",
     display: "flex",
@@ -28,9 +17,7 @@ formWrapper: {
     backgroundColor: "#fff",
     borderRadius: "5px",
     // boxShadow: "-1px 1px 2px #ccc",
-    overflow:"hidden",
-  
-  
+    overflow: "hidden",
   },
 
   detail: {
@@ -57,17 +44,17 @@ formWrapper: {
   },
 });
 
-const submitHandler =(event)=>{
-event.PrevenyDefault();
-return
-}
+const submitHandler = (event) => {
+  event.PrevenyDefault();
+  return;
+};
 
-const ReviewForm = ({businessname}) => {
+const ReviewForm = ({ businessname , handleClick }) => {
   const classes = useStyles();
 
   const [value, setValue] = useState(0);
   return (
-    <Box className={classes.wrapper} >
+    <Box className={classes.wrapper}>
       <form className={classes.formWrapper} onSubmit={submitHandler}>
         <Box className={classes.detail}>
           <Box className={classes.rate}>
@@ -121,8 +108,13 @@ const ReviewForm = ({businessname}) => {
             />
           </Box>
         </Box>
-        <button variant="outlined" style={{backgroundColor:"green" ,color:"#fff",margin:"2rem 0"}}>Submit your Review</button>
-       
+        <button
+          variant="outlined"
+          style={{ backgroundColor: "green", color: "#fff", margin: "2rem 0" }}
+          OnClick={handleClick}
+        >
+          Submit your Review
+        </button>
       </form>
     </Box>
   );
