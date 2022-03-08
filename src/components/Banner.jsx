@@ -17,8 +17,9 @@ const useStyles = makeStyles((theme)=>({
     backgroundPosition: "center",
     // background:`url(${BannerImage})`
     [theme.breakpoints.down("sm")]:{
-      
+      height:"auto"
     }
+    
   },
   img: {
     width: "100vw",
@@ -70,8 +71,7 @@ const Banner = () => {
         <Container className={classes.contentBox}>
           <Typography component="h1" variant="h1" className={classes.mainText}>
             {" "}
-            Behind every review is an <br /> experience that matters YOU got the re&ason
-            there no shame to 
+            Behind every review is an <br /> experience that matters 
           </Typography>
           <Typography
             component="p"
