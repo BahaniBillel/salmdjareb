@@ -10,7 +10,7 @@ import {
 } from "@material-ui/core";
 import {Link} from 'react-router-dom';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme)=>({
   nav: {
     height: "70px",
     padding: ".5rem 5rem",
@@ -22,6 +22,7 @@ const useStyles = makeStyles({
     flexShrink: "1",
     alignItems: "center",
     justifyContent: "space-between",
+    
   },
   logoBox: {
     width: "100px",
@@ -38,12 +39,15 @@ const useStyles = makeStyles({
     flexShrink: "1",
     alignItems: "center",
     justifyContent: "space-between",
-    color:'#f9564f'
+    color:'#f9564f',
+    [theme.breakpoints.down("sm")]:{
+      display:"none",
+    }
   },
   navItem:{
      color:"#ccc",
   }
-});
+}));
 
 const Navigation = () => {
   const classes = useStyles();

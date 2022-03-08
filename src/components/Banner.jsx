@@ -8,7 +8,7 @@ import {
 } from "@material-ui/core";
 import BannerImage from "../images/pair-brown-shoes.jpg";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme)=>({
   bannerImage: {
     overflow: "hidden",
     // backgroundColor: "red",
@@ -16,6 +16,9 @@ const useStyles = makeStyles({
     padding: "0",
     backgroundPosition: "center",
     // background:`url(${BannerImage})`
+    [theme.breakpoints.down("sm")]:{
+      
+    }
   },
   img: {
     width: "100vw",
@@ -27,10 +30,17 @@ const useStyles = makeStyles({
     fontSize: "3rem",
     fontWeight: "600",
     wordSpacing: ".1rem",
+    [theme.breakpoints.down("sm")]:{
+      fontSize:"1.5rem"
+    }
   },
   subText: {
     color: "#cecece",
-    marginTop:'2rem'
+    marginTop:'2rem',
+    [theme.breakpoints.down("sm")]:{
+      marginTop:'.5rem',
+    }
+    
   },
   contentBox: {
     position: "absolute",
@@ -38,13 +48,18 @@ const useStyles = makeStyles({
     marginLeft: "3rem",
     padding: "1rem",
     width: "50vw",
+    [theme.breakpoints.down("sm")]:{
+      width:"100vw",
+      // backgroundColor:"yellow",
+      margin:"0"
+    }
   },
   searchInput:{
     backgroundColor:'rgba(255,255,255,.8)',
     marginTop:'.5rem'
     
   }
-});
+}));
 
 const Banner = () => {
   const classes = useStyles();

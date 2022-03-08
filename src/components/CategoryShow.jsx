@@ -11,7 +11,7 @@ import {
 import ActivitieZData from "../components/Data";
 import { Link } from "react-router-dom";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme)=>({
   Wrapper: {
     height: "50vh",
     width: "100wv",
@@ -19,6 +19,11 @@ const useStyles = makeStyles({
     background:
       "linear-gradient(286deg, rgba(235,235,235,1) 0%, rgba(251,251,251,1) 70%, rgba(230,230,230,1) 100%)",
     position: "relative",
+    [theme.breakpoints.down("sm")]:{
+      height:"100vh",
+      backgroundColor:"red",
+      overflow:"hidden"
+    }
   },
   innerWrapper: {
     position: "absolute",
@@ -53,6 +58,9 @@ const useStyles = makeStyles({
     alignItem: "center",
     // backgroundColor:"yellow",
     padding: "0",
+    [theme.breakpoints.down("sm")]:{
+      // display:"none",
+    }
   },
   card: {
     display: "flex",
@@ -64,6 +72,10 @@ const useStyles = makeStyles({
     height: "75px",
     margin: "0.3rem",
     padding: ".3rem",
+    [theme.breakpoints.down("sm")]:{
+     
+    }
+
   },
 
   cardText: {
@@ -76,7 +88,7 @@ const useStyles = makeStyles({
     width: "30%",
     textAlign: "center",
   },
-});
+}));
 
 const { Data } = ActivitieZData();
 
