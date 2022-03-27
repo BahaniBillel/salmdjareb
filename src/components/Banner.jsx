@@ -11,9 +11,10 @@ import BannerImage from '../images/pair-brown-shoes.jpg';
 const useStyles = makeStyles((theme) => ({
   bannerImage: {
     overflow: 'hidden',
-    // backgroundColor: "red",
+    marginBottom:"5rem",
     height: '90vh',
     padding: '0',
+    backgroundColor:"red",
     backgroundPosition: 'center',
     // background:`url(${BannerImage})`
     [theme.breakpoints.down('sm')]: {
@@ -23,11 +24,12 @@ const useStyles = makeStyles((theme) => ({
   img: {
     width: '100vw',
     height: 'auto',
+    // objectFit:'scale-down',
   },
   mainText: {
     color: '#fff',
-
-    fontSize: '4rem',
+    textTransform:"uppercase",
+    fontSize: '3rem',
     fontWeight: '600',
     wordSpacing: '.1rem',
     [theme.breakpoints.down('sm')]: {
@@ -48,14 +50,19 @@ const useStyles = makeStyles((theme) => ({
     padding: '1rem',
     width: '50vw',
     [theme.breakpoints.down('sm')]: {
-      width: '100vw',
+      width: 'auto',
       // backgroundColor:"yellow",
       margin: '0',
+      marginLeft:".5rem",
+      top:'20%',
+      transform:'translateY(-20%)',
     },
   },
   searchInput: {
     backgroundColor: 'rgba(255,255,255,.8)',
     marginTop: '.5rem',
+    borderRadius:"5px",
+    width:''
   },
 }));
 
@@ -72,8 +79,9 @@ const Banner = () => {
           </Typography>
           <Typography
             component="p"
-            variant="subtitle1"
+            variant="subtitle2"
             className={classes.subText}
+          
           >
             {' '}
             Read reviews.Write Reviews.Find Companies

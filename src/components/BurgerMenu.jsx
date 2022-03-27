@@ -12,28 +12,19 @@ const useStyles = makeStyles((theme) => ({
     left: '0',
     top: '0',
     zIndex: '9',
+    transition:" all 500ms ease-out",
     [theme.breakpoints.up('sm')]: {
       display: 'none',
     },
   },
-  closemenu: {
-    cursor: 'pointer',
-    '& span': {
-      height: '2px',
-      width: '50px',
-    },
-    backgroundColor: '#000',
-  },
+  
 }));
 
 const BurgerMenu = () => {
   const classes = useStyles();
   return (
     <div className={classes.burgerMenu}>
-      <div className={classes.closeMenu}>
-        <span>x</span>
-        <span></span>
-      </div>
+      
       burgerMenu
     </div>
   );

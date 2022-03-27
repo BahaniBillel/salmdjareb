@@ -6,16 +6,18 @@ import {
   Card,
   Typography,
   CardMedia,
+  createTheme,
 } from "@material-ui/core";
 
 import ActivitieZData from "../components/Data";
 import { Link } from "react-router-dom";
 
+
 const useStyles = makeStyles((theme)=>({
   Wrapper: {
     height: "50vh",
     width: "100wv",
-    background: " rgb(235,235,235)",
+    // background: " rgb(235,235,235)",
     background:
       "linear-gradient(286deg, rgba(235,235,235,1) 0%, rgba(251,251,251,1) 70%, rgba(230,230,230,1) 100%)",
     position: "relative",
@@ -26,12 +28,12 @@ const useStyles = makeStyles((theme)=>({
     }
   },
   innerWrapper: {
-    position: "absolute",
-    top: "-25%",
-    left: "50%",
+    // position: "absolute",
+    // top: "-25%",
+    // left: "50%",
     width: "100%",
     height: "100%",
-    transform: "translateX(-50%)",
+    // transform: "translateX(-50%)",
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
@@ -56,10 +58,16 @@ const useStyles = makeStyles((theme)=>({
     flexDirection: "row",
     flexWrap: "wrap",
     alignItem: "center",
+    justifyContent:"center",
     // backgroundColor:"yellow",
     padding: "0",
     [theme.breakpoints.down("sm")]:{
-      // display:"none",
+    justifyContent:"space-around",
+
+      "& a":{
+        maxWidth:"120px",
+        marginRight:"1rem",
+      }
     }
   },
   card: {
@@ -69,12 +77,17 @@ const useStyles = makeStyles((theme)=>({
     fontWeght: "300",
     minWidth: "220px",
     maxHeight: "90px",
+
+   
+    [theme.breakpoints.down('sm')]: {
+      maxWidth:"100px",
+      flexDirection:'column'
+     
+    },
     height: "75px",
     margin: "0.3rem",
     padding: ".3rem",
-    [theme.breakpoints.down("sm")]:{
-     
-    }
+   
 
   },
 
@@ -89,6 +102,8 @@ const useStyles = makeStyles((theme)=>({
     textAlign: "center",
   },
 }));
+
+
 
 const { Data } = ActivitieZData();
 
@@ -106,7 +121,7 @@ const CategoryShow = () => {
           {Data.map((card) =>
             card.subCat.map((sub) => (
               <Link to={`/categories/${sub.id}`}>
-                <Card key={sub.id} component="div" className={classes.card}>
+                <Card key={sub.id} component="div" className={classes.card} >
                   <CardMedia className={classes.cardIcon}>{sub.icon}</CardMedia>
                   <Typography
                     variant="subtitle2"

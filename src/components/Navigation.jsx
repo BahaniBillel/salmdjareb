@@ -9,6 +9,9 @@ const useStyles = makeStyles((theme) => ({
   nav: {
     height: '70px',
     padding: '.5rem 5rem',
+    [theme.breakpoints.down('sm')]: {
+      padding:".5rem 2rem",
+    },
     background: 'rgb(70,128,131)',
     background:
       'linear-gradient(286deg, rgba(70,128,131,1) 0%, rgba(60,110,113,1) 70%, rgba(42,78,80,1) 100%)',
