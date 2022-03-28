@@ -9,10 +9,25 @@ import Navigation from './components/Navigation';
 import LogInAndSignUp from './pages/LogInAndSignUp';
 import BranchList from './pages/BranchList';
 import './App.scss';
+import { makeStyles } from '@material-ui/core';
+
+const useStyles = makeStyles((theme) => ({
+  app: {
+    display: 'flex',
+    flexDirection: 'row',
+    [theme.breakpoints.down('sm')]: {
+      // padding: '.5rem 2rem',
+      flexDirection: 'column',
+
+      // width: '100%',
+    },
+  },
+}));
 
 function App() {
+  const classes = useStyles();
   return (
-    <Box className="App">
+    <Box className={classes.app}>
       <Navigation />
       <Routes>
         <Route exact path="/" element={<Home />} />

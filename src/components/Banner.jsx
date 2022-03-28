@@ -7,13 +7,19 @@ import {
   TextField,
 } from '@material-ui/core';
 import BannerImage from '../images/pair-brown-shoes.jpg';
+import CategoryShow from '../components/CategoryShow';
 
 const useStyles = makeStyles((theme) => ({
   banner: {
     marginBottom: '5rem',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   bannerImage: {
-    height: '100vh',
+    height: 'auto',
+    width: '70%',
     padding: '0',
     backgroundColor: 'red',
     backgroundPosition: 'center',
@@ -45,9 +51,14 @@ const useStyles = makeStyles((theme) => ({
       marginTop: '.5rem',
     },
   },
+
+  categoriesBanner: {
+    width: '30%',
+    height: '100%',
+  },
   contentBox: {
     position: 'absolute',
-    bottom: '-10%',
+    bottom: '-5%',
     marginLeft: '10rem',
     padding: '1.5rem',
     width: '32vw',
@@ -59,9 +70,8 @@ const useStyles = makeStyles((theme) => ({
       width: 'auto',
       // backgroundColor:"yellow",
       margin: '0',
-      marginLeft: '.5rem',
-      top: '20%',
-      transform: 'translateY(-20%)',
+      // marginLeft: '.5rem',
+      bottom: '20%',
     },
   },
   searchInput: {
@@ -76,66 +86,69 @@ const Banner = () => {
   const classes = useStyles();
   return (
     <Box className={classes.banner}>
-      <Container maxWidth="xl" className={classes.bannerImage}>
+      <Box maxWidth="xl" className={classes.bannerImage}>
         <img src={BannerImage} alt="banner" className={classes.img} />
-      </Container>
-      <Container className={classes.contentBox}>
-        <Typography
-          component="h1"
-          variant="h1"
-          className={classes.mainText}
-          gutterBottom
-          style={{ color: '#00695c', fontWeight: '500' }}
-        >
-          Share your experience.
-        </Typography>
-        <Typography
-          component="h1"
-          variant="h1"
-          className={classes.mainText}
-          gutterBottom
-          color="success"
-        >
-          Connect with your company.
-        </Typography>
-        <Typography
-          component="h1"
-          variant="h1"
-          className={classes.mainText}
-          gutterBottom
-        >
-          Help improve the quality.
-        </Typography>
-        <Typography
-          component="p"
-          variant="p"
-          className={classes.subText}
-          gutterBottom
-        >
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur
-          reiciendis modi ea mollitia officiis consectetur dolor facilis.
-          Perferendis consequuntur unde.
-        </Typography>
-        <Typography
-          component="p"
-          variant="subtitle2"
-          className={classes.subText}
-          gutterBottom
-        >
-          {' '}
-          Read reviews.Write Reviews.Find Companies
-        </Typography>
+        <Container className={classes.contentBox}>
+          <Typography
+            component="h1"
+            variant="h1"
+            className={classes.mainText}
+            gutterBottom
+            style={{ color: '#00695c', fontWeight: '500' }}
+          >
+            Share your experience.
+          </Typography>
+          <Typography
+            component="h1"
+            variant="h1"
+            className={classes.mainText}
+            gutterBottom
+            color="success"
+          >
+            Connect with your company.
+          </Typography>
+          <Typography
+            component="h1"
+            variant="h1"
+            className={classes.mainText}
+            gutterBottom
+          >
+            Help improve the quality.
+          </Typography>
+          <Typography
+            component="p"
+            variant="p"
+            className={classes.subText}
+            gutterBottom
+          >
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur
+            reiciendis modi ea mollitia officiis consectetur dolor facilis.
+            Perferendis consequuntur unde.
+          </Typography>
+          <Typography
+            component="p"
+            variant="subtitle2"
+            className={classes.subText}
+            gutterBottom
+          >
+            {' '}
+            Read reviews.Write Reviews.Find Companies
+          </Typography>
 
-        <TextField
-          id="standard-search"
-          label="Search for a company or category"
-          type="search"
-          variant="outlined"
-          color="primary"
-          fullWidth
-          className={classes.searchInput}
-        />
-      </Container>
+          <TextField
+            id="standard-search"
+            label="Search for a company or category"
+            type="search"
+            variant="outlined"
+            color="primary"
+            fullWidth
+            className={classes.searchInput}
+          />
+        </Container>
+      </Box>
+      <Box className={classes.categoriesBanner}>
+        <CategoryShow />
+      </Box>
     </Box>
   );
 };

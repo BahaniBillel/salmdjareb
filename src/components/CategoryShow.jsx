@@ -13,14 +13,12 @@ import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   categoryShow: {
-    width: '100wv',
+    width: '100%',
     // height: '80vh',
-    // background: ' rgb(235,235,235)',
-    // background:
-    //   'linear-gradient(286deg, rgba(235,235,235,1) 0%, rgba(251,251,251,1) 70%, rgba(230,230,230,1) 100%)',
-    // position: 'relative',
 
+    // backgroundColor: '#00bfa5',
     [theme.breakpoints.down('sm')]: {
+      marginTop: '10rem',
       height: '100vh',
       backgroundColor: 'red',
       overflow: 'hidden',
@@ -48,7 +46,11 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
+
+    '& a': {
+      color: '#000',
+    },
   },
   showcase: {
     // height: "93%",
@@ -58,7 +60,6 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: 'wrap',
     alignItem: 'center',
     justifyContent: 'center',
-    // backgroundColor:"yellow",
     padding: '0',
     [theme.breakpoints.down('sm')]: {
       justifyContent: 'space-around',
@@ -106,8 +107,9 @@ const CategoryShow = () => {
     <Box className={classes.categoryShow}>
       <Container maxWidth="md" className={classes.innerWrapper}>
         <Container className={classes.upper}>
-          <Typography>Explore Categories</Typography>
-          <Link to="/categories">View all</Link>
+          <Link to="/categories">
+            <Typography variant="h4">Explore All Categories</Typography>
+          </Link>
         </Container>
         <Container className={classes.showcase}>
           {/* Mapping the card activities  */}

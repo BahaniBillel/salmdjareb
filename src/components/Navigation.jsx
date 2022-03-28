@@ -1,45 +1,71 @@
 import React, { useState } from 'react';
-import Logo from '../images/SAL-MDJAREB-V2.png';
+import Logo from '../images/logo.png';
 import { Box, makeStyles } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
 import BurgerMenu from './BurgerMenu';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 const useStyles = makeStyles((theme) => ({
   nav: {
-    height: '70px',
-    padding: '.5rem 10rem',
+    width: '150px',
+
     [theme.breakpoints.down('sm')]: {
       padding: '.5rem 2rem',
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      width: 'auto',
     },
     background: 'rgb(70,128,131)',
     background:
       'linear-gradient(286deg, rgba(70,128,131,1) 0%, rgba(60,110,113,1) 70%, rgba(42,78,80,1) 100%)',
     display: 'flex',
-    flexDirection: 'row',
+    flexDirection: 'column',
     flexWrap: 'nowrap',
     flexShrink: '1',
     alignItems: 'center',
-    justifyContent: 'space-between',
+    // justifyContent: 'space-between',
   },
   logoBox: {
-    width: '100px',
+    width: 'auto',
+    // marginBottom: 's',
   },
   logo: {
-    height: '70px',
-    fontWeight: '700',
-    color: 'white',
+    objectFit: 'cover',
+    // height: '70px',
   },
   buttons: {
     display: 'flex',
-    flexDirection: 'row',
+    flexDirection: 'column',
     flexWrap: 'nowrap',
     flexShrink: '1',
     alignItems: 'center',
-    justifyContent: 'space-between',
+    justifyContent: 'flex-start',
     color: '#f9564f',
     [theme.breakpoints.down('sm')]: {
+      // display: 'none',
+      // flexDirection: 'column',
+    },
+  },
+
+  socials: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    height: '25vh',
+    maxHeight: '20vh',
+    '& svg': {
+      fontSize: '2.5rem',
+      color: '#e0e0e0',
+    },
+    [theme.breakpoints.down('sm')]: {
       display: 'none',
+      // flexDirection: 'row',
+      // width: '40vw',
     },
   },
   navItem: {
@@ -47,13 +73,12 @@ const useStyles = makeStyles((theme) => ({
   },
   burgerMenu: {
     zIndex: 10,
+    cursor: 'pointer',
     '& svg': {
       fontSize: '2.5rem',
       color: '#e0e0e0',
     },
-    [theme.breakpoints.up('sm')]: {
-      display: 'none',
-    },
+    [theme.breakpoints.up('sm')]: {},
   },
 }));
 
@@ -66,52 +91,22 @@ const Navigation = () => {
       <Link to="/">
         <Box className={classes.logoBox}>
           <img src={Logo} alt="sal mdjareb logo" className={classes.logo} />
-          {/* <Typography className={classes.logo}>SAL MDJAREB</Typography> */}
         </Box>
       </Link>
       <Box
         className={classes.buttons}
-        sx={{ flexGrow: 0.2, display: { xs: 'flex', md: 'none' } }}
+        // sx={{ flexGrow: 0.2, display: { xs: 'flex', md: 'none' } }}
       >
-        <Link to="/" sx={{ minWidth: 100 }} className={classes.navItem}>
-          Home
-        </Link>
-        <Link
-          to="/writeReview"
-          sx={{ minWidth: 100 }}
-          className={classes.navItem}
-        >
-          Write a Review
-        </Link>
-        <Link
-          to="/categories"
-          sx={{ minWidth: 100 }}
-          className={classes.navItem}
-        >
-          Categories
-        </Link>
-        <Link
-          to="/community"
-          sx={{ minWidth: 100 }}
-          className={classes.navItem}
-        >
-          Community
-        </Link>
-        <Link
-          to="/businesses"
-          sx={{ minWidth: 100 }}
-          className={classes.navItem}
-        >
-          For Businesses
-        </Link>
-        <Link to="/signin" sx={{ minWidth: 100 }} className={classes.navItem}>
-          LogIn
-        </Link>
+        <Box className={classes.burgerMenu}>
+          <MenuIcon onClick={() => setMenu(!menu)} />
+        </Box>
+        <Box className={classes.socials}>
+          <FacebookIcon />
+          <InstagramIcon />
+          <LinkedInIcon />
+        </Box>
+        {menu ? <BurgerMenu /> : null}
       </Box>
-      <Box className={classes.burgerMenu}>
-        <MenuIcon onClick={() => setMenu(!menu)} />
-      </Box>
-      {menu ? <BurgerMenu /> : null}
     </Box>
   );
 };
