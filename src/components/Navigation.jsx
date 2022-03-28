@@ -8,9 +8,9 @@ import BurgerMenu from './BurgerMenu';
 const useStyles = makeStyles((theme) => ({
   nav: {
     height: '70px',
-    padding: '.5rem 5rem',
+    padding: '.5rem 10rem',
     [theme.breakpoints.down('sm')]: {
-      padding:".5rem 2rem",
+      padding: '.5rem 2rem',
     },
     background: 'rgb(70,128,131)',
     background:
