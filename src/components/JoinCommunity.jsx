@@ -23,12 +23,13 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     height: '100%',
     display: 'flex',
-    flexDpirection: 'row',
+    flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
   },
   firstQuarter: {
     width: '30%',
+    
   },
 
   thirdBox: {
@@ -49,7 +50,7 @@ const JoinCommunity = () => {
       <Container className={classes.innerWrapper}>
         <Box className={classes.firstQuarter}>
           <Typography component="div" variant="h4" gutterBottom>
-            Join the community of active reviewrs across Algeria
+            Join the community of active reviewers across Algeria
           </Typography>
           <Typography component="div" variant="body1" gutterBottom>
             We aim to create a larfge community of algerian consumers to help

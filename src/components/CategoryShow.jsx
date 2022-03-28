@@ -75,8 +75,8 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'row',
     alignItems: 'center',
     fontWeght: '300',
-    minWidth: '220px',
-    maxHeight: '90px',
+    minWidth: '150px',
+    maxHeight: '50px',
 
     [theme.breakpoints.down('sm')]: {
       maxWidth: '100px',
@@ -108,7 +108,7 @@ const CategoryShow = () => {
       <Container maxWidth="md" className={classes.innerWrapper}>
         <Container className={classes.upper}>
           <Link to="/categories">
-            <Typography variant="h4">Explore All Categories</Typography>
+            <Typography variant="h5">Explore All Categories</Typography>
           </Link>
         </Container>
         <Container className={classes.showcase}>

@@ -11,7 +11,7 @@ import CardWhy from './CardWhy';
 const useStyles = makeStyles((theme) => ({
   whyReviews: {
     width: '100%',
-    height: '80vh',
+    height: 'auto',
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',

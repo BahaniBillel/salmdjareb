@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
   mainText: {
     // color: '#00695c',
     // textTransform: 'uppercase',
-    fontSize: '2.5rem',
+    fontSize: '2rem',
     // fontWeight: '600',
     wordSpacing: '.1rem',
     [theme.breakpoints.down('sm')]: {
@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
   },
   subText: {
     color: '#424242',
-    marginTop: '2rem',
+    marginTop: '1.5rem',
     [theme.breakpoints.down('sm')]: {
       marginTop: '.5rem',
     },
@@ -61,7 +61,8 @@ const useStyles = makeStyles((theme) => ({
     bottom: '-5%',
     marginLeft: '10rem',
     padding: '1.5rem',
-    width: '32vw',
+    width: 'auto',
+    maxWidth:"40vw",
     // maxWidth: '50vw',
     maxHeight: '50vh',
     backgroundColor: '#fff',
@@ -115,16 +116,7 @@ const Banner = () => {
           >
             Help improve the quality.
           </Typography>
-          <Typography
-            component="p"
-            variant="p"
-            className={classes.subText}
-            gutterBottom
-          >
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur
-            reiciendis modi ea mollitia officiis consectetur dolor facilis.
-            Perferendis consequuntur unde.
-          </Typography>
+         
           <Typography
             component="p"
             variant="subtitle2"
