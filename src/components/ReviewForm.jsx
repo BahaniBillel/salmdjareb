@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import { Typography, Box, makeStyles, TextField } from "@material-ui/core";
 import Rating from "@mui/material/Rating";
-import { db ,colRef} from "../firebase-config";
+import { db, colRef } from "../firebase-config";
 
-import { doc, setDoc,addDoc } from "firebase/firestore"; 
+import { doc, setDoc, addDoc,onSnapshot } from "firebase/firestore";
 
-
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme)=>({
   wrapper: {
     marginTop: "1rem",
     marginBottom: "3rem",
@@ -27,6 +26,9 @@ const useStyles = makeStyles({
   detail: {
     padding: "1rem ",
     width: "93%",
+    [theme.breakpoints.down('sm')]: {
+     padding:"0",
+    },
   },
   rate: {
     display: "flex",
@@ -45,31 +47,41 @@ const useStyles = makeStyles({
     justifyContent: "space-between",
     alignItems: "flex-start",
     marginTop: "1.5rem",
+    
   },
-});
+}));
 
-
-
-const ReviewForm = ({ businessname, handleClick }) => {
+const ReviewForm = ({ businessname, companyId,refresh}) => {
   const classes = useStyles();
 
-  const [rating, setRating] = useState(0);
+  const [rating, setRating] = useState(null);
   const [review, setReview] = useState("");
   const [title, setTitle] = useState("");
 
-  const submitHandler =(e) => {
-    
-    e.PrevenyDefault();
-     addDoc(doc(colRef),{
+
+
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    setDoc(doc(colRef), {
       rating,
       review,
       title,
+      companyId,
     })
-    .then((e)=>{
-      alert("Your review has been submitted, thank your for sharing")
-      e.reset();
-    })
-    .catch(error =>{alert(error.message)})
+      .then((e) => {
+        // alert("Your review has been submitted, thank your for sharing");
+        setRating(0)
+        setReview("")
+        setTitle("")
+        
+      })
+      .catch((error) => {
+        alert(error.message);
+        setRating(0)
+        setReview("")
+        setTitle("")
+      });
   };
 
   return (
@@ -80,8 +92,12 @@ const ReviewForm = ({ businessname, handleClick }) => {
             <Typography variant="h6" component="div">
               Rate Your Recent Experience here
             </Typography>
+          <Typography ></Typography>
             <Rating
-              name="no-value"
+         
+              name="simple-controlled"
+              defaultValue={2.5} 
+              precision={0.5}
               value={rating}
               onChange={(event) => {
                 setRating(event.target.value);
@@ -115,15 +131,13 @@ const ReviewForm = ({ businessname, handleClick }) => {
             <Typography
               variant="h6"
               component="div"
-              value={title}
+             
               style={{ marginBottom: "1rem" }}
-              onChange={(event) => {
-                setTitle(event.target.value);
-              }}
+              
             >
               Give your review a title
             </Typography>
-              
+
             <TextField
               id="outlined"
               label="Title"
@@ -132,17 +146,25 @@ const ReviewForm = ({ businessname, handleClick }) => {
               placeholder="Write the title of your review here..."
               variant="outlined"
               fullWidth
+              value={title}
+              onChange={(event) => {
+                setTitle(event.target.value);
+              }}
             />
           </Box>
+          <button
+            variant="outlined"
+            style={{
+              backgroundColor: "green",
+              color: "#fff",
+              margin: "2rem 0",
+            }}
+            type="submit"
+            onClick={refresh}
+          >
+            Submit your Review
+          </button>
         </Box>
-        <button
-          variant="outlined"
-          style={{ backgroundColor: "green", color: "#fff", margin: "2rem 0" }}
-          OnClick={handleClick}
-          type="submit"
-        >
-          Submit your Review
-        </button>
       </form>
     </Box>
   );

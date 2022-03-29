@@ -2,9 +2,9 @@ import React from 'react'
 import ReviewForm from '../components/ReviewForm';
 import CocaCola from "../images/cocaLogo.png";
 
-const WriteReviewPage = ({name,review}) => {
+const WriteReviewPage = ({name,review,pageId}) => {
   return (
-  <ReviewForm logo={CocaCola} businessname={name} handleClick={review}/>
+  <ReviewForm  businessname={name}   companyId={pageId}/>
   )
 }
 

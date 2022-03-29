@@ -7,7 +7,6 @@ import {
   CardMedia,
   ListItem,
   Button,
- 
 } from "@material-ui/core";
 import LanguageIcon from "@mui/icons-material/Language";
 import ArrowForwardIosOutlinedIcon from "@mui/icons-material/ArrowForwardIosOutlined";
@@ -16,12 +15,13 @@ import Lays from "../images/Lays.png";
 import ActivitieZData from "../components/Data";
 import { useParams } from "react-router-dom";
 import DisplayReviewResult from "../components/DisplayReviewResult";
-import WriteReviewPage from '../../src/pages/WriteReviewPage';
+import ShowReview from "../components/ShowReview";
 import BusinessSideBarActivity from "../components/BusinessSideBarActivity";
-import {collection} from "firebase/firestore";
-import {db} from "../firebase-config";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../firebase-config";
+import ReviewForm from "../components/ReviewForm";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme)=>({
   upperWrapper: {
     overflow: "hidden",
   },
@@ -31,12 +31,21 @@ const useStyles = makeStyles({
     backgroundColor: "#fff",
     display: "flex",
     flexDirection: "row",
+    [theme.breakpoints.down('sm')]: {
+      width:"auto",
+    },
+
+
+    
   },
   profile_header_wrapper: {
     display: "flex",
     flexDirection: "column",
     alignItems: "start",
     justifyContent: "center",
+    [theme.breakpoints.down('sm')]: {
+     padding:"0",
+    },
   },
   imgBox: {
     width: "20%",
@@ -48,6 +57,7 @@ const useStyles = makeStyles({
     alignItems: "center",
     width: "90%",
     height: "100%",
+    
   },
   companyScoreInfo: {
     marginTop: "2rem",
@@ -63,6 +73,11 @@ const useStyles = makeStyles({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
+    [theme.breakpoints.down('sm')]: {
+      flexDirection:"column",
+      
+     
+    },
   },
 
   detailsWrapper: {
@@ -72,15 +87,26 @@ const useStyles = makeStyles({
     alignItems: "flex-start",
     width: "100%",
     paddingTop: "2rem",
+    paddingLeft:"2rem ",
+    paddingRight:"2rem ",
+    [theme.breakpoints.down('sm')]: {
+      flexDirection:"column",
+      padding:'0 1.5rem',
+    },
   },
   detailsBox: {
     width: "65%",
-    overflow:"hidden"
+    // overflow: "hidden",
+    [theme.breakpoints.down('sm')]: {
+      width:"auto",
+    },
   },
   sideInfo: {
     width: "33%",
     // backgroundColor: "blue",
-    
+    [theme.breakpoints.down('sm')]: {
+      width:"100%",
+    },
   },
   writeReview: {
     display: "flex",
@@ -139,30 +165,55 @@ const useStyles = makeStyles({
     flexWrap: "wrap",
     overflow: "hidden",
   },
-});
+
+  showReviews: {
+    display: "flex",
+    flexDirection: "column-reverse",
+    alignItems: "flex-start",
+    justifyContent: "center",
+    width: "100%",
+  },
+}));
 
 const { Data } = ActivitieZData();
-
 
 const Profile = () => {
   const params = useParams();
   const pageId = params.id;
-  console.log(pageId, Data);
+  // console.log(pageId, Data);
 
   // bringing data from firebase
-  const [newReview,setNewReview]=useState([])
+  const [reviews, setReviews] = useState([]);
+  const [count, setCount] = useState(0);
 
-  const getReviewsRef = collection(db,"reviews");
+  // Retrieving data from firebase
+  const getReviewsRef = collection(db, "reviews");
 
-  useEffect(()=>{
-    
-    
-  },[])
- 
+  useEffect(() => {
+    getReviews();
+  }, []);
 
+  useEffect(() => {
+    console.log(reviews);
+  }, [reviews]);
+
+  
+  function getReviews() {
+    getDocs(getReviewsRef)
+      .then((response) => {
+        console.log(response.docs.length);
+      
+        const firebaseReviews = response.docs.map((doc) => ({
+          data: doc.data(),
+          id: doc.id,
+        }));
+        setReviews(firebaseReviews);
+      })
+      .catch((error) => console.log(error.message));
+  }
 
   const classes = useStyles();
-  const [value, setValue] = useState(0);
+
   return (
     <div>
       {Data.map((main) =>
@@ -226,30 +277,37 @@ const Profile = () => {
 
                   <Container maxWidth="md" className={classes.detailsWrapper}>
                     <Box className={classes.detailsBox}>
-                      {/* <Link href={"/write-review"} style={{textDecoration:"none",color:"#000"}}>
-                        <Box className={classes.writeReview}>
-                          
-                          <Button variant='outlined'>Write a review</Button>                          
-                          <Rating
-                            name="no-value"
-                            value={value}
-                            onChange={( newValue) => {
-                              setValue(newValue);
-                              
-                            }
-                          }
-                          />
-                        </Box>
-                        
-                      </Link> */}
+                    
                       <DisplayReviewResult
-                        reviewsNumber={company.reviewsNumber}
+                        reviewsNumber={count}
                         params={company.parameters}
                       />
-                      <WriteReviewPage name={company.businessname}/>
+                      <ReviewForm
+                        businessname={company.businessname}
+                        companyId={company.id}
+                        refresh={() => getReviews()}
+                      />
+
+                      {/* mapping reviews from firebase */}
+                      <Box className={classes.showReviews}>
+                        {reviews.map((review) => (
+                          pageId=== review.data.companyId?
+                          <ShowReview
+                            key={review.companyId}
+                            rating={review.data.rating}
+                            title={review.data.title}
+                            review={review.data.review}
+                          />  :
+                          null
+                          
+                        ))}
+                      </Box>
                     </Box>
                     <Box className={classes.sideInfo}>
-                    <BusinessSideBarActivity businssname={company.businessname}/>
+                      <BusinessSideBarActivity
+                        businssname={company.businessname}
+                        pageId={params.id}
+                      />
                     </Box>
                   </Container>
                 </Box>
