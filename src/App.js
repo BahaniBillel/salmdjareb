@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Profile from './pages/Profile';
 import WriteReviewPage from './pages/WriteReviewPage';
 import Navigation from './components/Navigation';
+import Footer from './components/Footer';
 import LogInAndSignUp from './pages/LogInAndSignUp';
 import BranchList from './pages/BranchList';
 import './App.scss';
@@ -27,18 +28,21 @@ const useStyles = makeStyles((theme) => ({
 function App() {
   const classes = useStyles();
   return (
-    <Box className={classes.app}>
-      <Navigation />
-      <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route exact path="/categories" element={<Catergories />} />
-        <Route exact path="/categories/:id" element={<BranchList />} />
-        <Route exact path="/profile/:id" element={<Profile />} />
-        <Route exact path="/community" element={<Community />} />
-        <Route exact path="/signin" element={<LogInAndSignUp />} />
-        <Route exact path="/write-review" element={<WriteReviewPage />} />
-      </Routes>
-    </Box>
+    <>
+      <Box className={classes.app}>
+        <Navigation />
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/categories" element={<Catergories />} />
+          <Route exact path="/categories/:id" element={<BranchList />} />
+          <Route exact path="/profile/:id" element={<Profile />} />
+          <Route exact path="/community" element={<Community />} />
+          <Route exact path="/signin" element={<LogInAndSignUp />} />
+          <Route exact path="/write-review" element={<WriteReviewPage />} />
+        </Routes>
+      </Box>
+      <Footer />
+    </>
   );
 }
 

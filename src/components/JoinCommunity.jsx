@@ -11,13 +11,16 @@ import {
 } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
-import BurgerMenu from './BurgerMenu';
+
 import CardWhy from './CardWhy';
 
 const useStyles = makeStyles((theme) => ({
   joinCommunity: {
     width: '100%',
     height: '80vh',
+    [theme.breakpoints.down('sm')]: {
+      height: 'auto',
+    },
   },
   innerWrapper: {
     width: '100%',
@@ -26,10 +29,22 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'column',
+      padding: '1.5rem',
+      height: 'auto',
+    },
   },
   firstQuarter: {
     width: '30%',
-    
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-around',
+    [theme.breakpoints.down('sm')]: {
+      width: 'auto',
+      height: '40vh',
+      maxHeight: '50vh',
+    },
   },
 
   thirdBox: {
@@ -39,6 +54,12 @@ const useStyles = makeStyles((theme) => ({
       objectFit: 'cover',
       width: '100%',
       height: '100%',
+    },
+    [theme.breakpoints.down('sm')]: {
+      width: 'auto',
+      marginBottom: '1rem',
+      height: 'auto',
+      maxHeight: '60vh',
     },
   },
 }));
@@ -58,17 +79,32 @@ const JoinCommunity = () => {
             businesses.
           </Typography>
           <Button color="secondary" variant="contained">
-            Join
+            Join now
           </Button>
         </Box>
         <Box className={classes.thirdBox}>
           <img src={Join01} />
+          <Typography variant="body1" component="div">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis
+            doloremque repellat aperiam vel quae eos consectetur recusandae
+            ipsum, inventore repudiandae?
+          </Typography>
         </Box>
         <Box className={classes.thirdBox}>
           <img src={Join02} />
+          <Typography variant="body1" component="div">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis
+            doloremque repellat aperiam vel quae eos consectetur recusandae
+            ipsum, inventore repudiandae?
+          </Typography>
         </Box>
         <Box className={classes.thirdBox}>
           <img src={Join03} />
+          <Typography variant="body1" component="div">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis
+            doloremque repellat aperiam vel quae eos consectetur recusandae
+            ipsum, inventore repudiandae?
+          </Typography>
         </Box>
       </Container>
     </Box>

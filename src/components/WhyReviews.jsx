@@ -5,7 +5,7 @@ import Photo04 from '../images/why-photo-04.jpg';
 import { Box, makeStyles, Container } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
-import BurgerMenu from './BurgerMenu';
+
 import CardWhy from './CardWhy';
 
 const useStyles = makeStyles((theme) => ({

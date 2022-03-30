@@ -3,15 +3,17 @@ import Logo from '../images/logo.png';
 import { Box, makeStyles } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
-import BurgerMenu from './BurgerMenu';
+import MobileMenu from './MobileMenu';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import { motion } from 'framer-motion';
 
 const useStyles = makeStyles((theme) => ({
   nav: {
     width: '150px',
-
+    height: '100%',
+    position: 'relative',
     [theme.breakpoints.down('sm')]: {
       padding: '.5rem 2rem',
       flexDirection: 'row',
@@ -21,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     },
     background: 'rgb(70,128,131)',
     background:
-      'linear-gradient(286deg, rgba(70,128,131,1) 0%, rgba(60,110,113,1) 70%, rgba(42,78,80,1) 100%)',
+      'linear-gradient(206deg, rgba(70,128,131,1) 0%, rgba(60,110,113,1) 70%, rgba(42,78,80,1) 100%)',
     display: 'flex',
     flexDirection: 'column',
     flexWrap: 'nowrap',
@@ -80,34 +82,61 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.up('sm')]: {},
   },
+
+  mobileMenu: {
+    position: 'absolute',
+    zIndex: 100,
+    left: '150px',
+  },
 }));
 
 const Navigation = () => {
   const classes = useStyles();
   const [menu, setMenu] = useState(false);
 
+  const HandleClick = () => {
+    setMenu(!menu);
+    setAnimate({ animateTo });
+  };
+  const animateFrom = { opacity: 0, y: -80 };
+  const animateTo = { opaciy: 1, y: 0 };
+  const [animate, setAnimate] = useState({ animateFrom });
+
   return (
-    <Box sx={{ flexGrow: 0 }} position="static" className={classes.nav}>
-      <Link to="/">
-        <Box className={classes.logoBox}>
-          <img src={Logo} alt="sal mdjareb logo" className={classes.logo} />
+    <>
+      <Box sx={{ flexGrow: 0 }} position="static" className={classes.nav}>
+        <Link to="/">
+          <Box className={classes.logoBox}>
+            <img src={Logo} alt="sal mdjareb logo" className={classes.logo} />
+          </Box>
+        </Link>
+        <Box
+          className={classes.buttons}
+          // sx={{ flexGrow: 0.2, display: { xs: 'flex', md: 'none' } }}
+        >
+          <Box className={classes.burgerMenu}>
+            <MenuIcon value={menu} onClick={HandleClick} />
+          </Box>
+          <motion.Box
+            className={classes.socials}
+            initial={animateFrom}
+            animate={animateTo}
+            transition={{ delay: 0.2 }}
+          >
+            <FacebookIcon />
+            <InstagramIcon />
+            <LinkedInIcon />
+          </motion.Box>
         </Box>
-      </Link>
-      <Box
-        className={classes.buttons}
-        // sx={{ flexGrow: 0.2, display: { xs: 'flex', md: 'none' } }}
-      >
-        <Box className={classes.burgerMenu}>
-          <MenuIcon onClick={() => setMenu(!menu)} />
+        <Box
+          className={classes.mobileMenu}
+          value={animate}
+          onClick={HandleClick}
+        >
+          {menu ? <MobileMenu /> : null}
         </Box>
-        <Box className={classes.socials}>
-          <FacebookIcon />
-          <InstagramIcon />
-          <LinkedInIcon />
-        </Box>
-        {menu ? <BurgerMenu /> : null}
       </Box>
-    </Box>
+    </>
   );
 };
 

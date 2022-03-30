@@ -18,9 +18,9 @@ const useStyles = makeStyles((theme) => ({
 
     // backgroundColor: '#00bfa5',
     [theme.breakpoints.down('sm')]: {
-      marginTop: '10rem',
-      height: '100vh',
-      backgroundColor: 'red',
+      marginTop: '15rem',
+      height: 'auto',
+      // backgroundColor: 'red',
       overflow: 'hidden',
     },
   },
@@ -38,6 +38,9 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: 'nowrap',
     padding: '0',
     // backgroundColor:"purple",
+    [theme.breakpoints.down('sm')]: {
+      padding: '0 2rem',
+    },
   },
   upper: {
     height: '8%',

@@ -16,17 +16,23 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'column',
+      width: '100%',
+    },
   },
   bannerImage: {
     height: 'auto',
     width: '70%',
     padding: '0',
-    backgroundColor: 'red',
+    // backgroundColor: 'red',
     backgroundPosition: 'center',
-    overflow: 'hidden',
+    // overflow: 'hidden',
+    position: 'relative',
     // background:`url(${BannerImage})`
     [theme.breakpoints.down('sm')]: {
       height: 'auto',
+      width: '100%',
     },
   },
   img: {
@@ -55,6 +61,9 @@ const useStyles = makeStyles((theme) => ({
   categoriesBanner: {
     width: '30%',
     height: '100%',
+    [theme.breakpoints.down('sm')]: {
+      width: 'auto',
+    },
   },
   contentBox: {
     position: 'absolute',
@@ -62,17 +71,21 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: '10rem',
     padding: '1.5rem',
     width: 'auto',
-    maxWidth:"40vw",
-    // maxWidth: '50vw',
+    maxWidth: '40vw',
     maxHeight: '50vh',
     backgroundColor: '#fff',
     zIndex: '20',
     [theme.breakpoints.down('sm')]: {
-      width: 'auto',
-      // backgroundColor:"yellow",
+      width: '300px',
+      height: '220px',
+      opacity: '.9',
+      maxWidth: '70vw',
+      left: '50%',
+      top: '70%',
+      transform: 'translateX(-50%)',
+
+      // backgroundColor: 'yellow',
       margin: '0',
-      // marginLeft: '.5rem',
-      bottom: '20%',
     },
   },
   searchInput: {
@@ -89,7 +102,7 @@ const Banner = () => {
     <Box className={classes.banner}>
       <Box maxWidth="xl" className={classes.bannerImage}>
         <img src={BannerImage} alt="banner" className={classes.img} />
-        <Container className={classes.contentBox}>
+        <Box className={classes.contentBox}>
           <Typography
             component="h1"
             variant="h1"
@@ -116,7 +129,7 @@ const Banner = () => {
           >
             Help improve the quality.
           </Typography>
-         
+
           <Typography
             component="p"
             variant="subtitle2"
@@ -136,7 +149,7 @@ const Banner = () => {
             fullWidth
             className={classes.searchInput}
           />
-        </Container>
+        </Box>
       </Box>
       <Box className={classes.categoriesBanner}>
         <CategoryShow />

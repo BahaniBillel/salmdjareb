@@ -1,20 +1,19 @@
 import React from 'react';
 import { Box, makeStyles } from '@material-ui/core';
 import { Link } from 'react-router-dom';
-import MenuIcon from '@mui/icons-material/Menu';
 
 const useStyles = makeStyles((theme) => ({
   burgerMenu: {
-    width: '100vw',
-    height: '100vh',
+    width: '80vw',
+    height: '60vh',
     backgroundColor: 'yellow',
     position: 'absolute',
-    left: '0',
+    left: '-60px',
     top: '0',
     zIndex: '9',
     transition: ' all 500ms ease-out',
     [theme.breakpoints.up('sm')]: {
-      display: 'none',
+      // display: 'none',
     },
   },
 }));
@@ -22,11 +21,8 @@ const useStyles = makeStyles((theme) => ({
 const BurgerMenu = () => {
   const classes = useStyles();
   return (
-    <Box
-      className={classes.buttons}
-      sx={{ flexGrow: 0.2, display: { xs: 'flex', md: 'none' } }}
-    >
-      <Link to="/" sx={{ minWidth: 100 }} className={classes.navItem}>
+    <Box className={classes.burgerMenu}>
+      <Link to="/" sx={{ minWidth: 100 }}>
         Home
       </Link>
       <Link
@@ -36,16 +32,16 @@ const BurgerMenu = () => {
       >
         Write a Review
       </Link>
-      <Link to="/categories" sx={{ minWidth: 100 }} className={classes.navItem}>
+      <Link to="/categories" sx={{ minWidth: 100 }}>
         Categories
       </Link>
-      <Link to="/community" sx={{ minWidth: 100 }} className={classes.navItem}>
+      <Link to="/community" sx={{ minWidth: 100 }}>
         Community
       </Link>
-      <Link to="/businesses" sx={{ minWidth: 100 }} className={classes.navItem}>
+      <Link to="/businesses" sx={{ minWidth: 100 }}>
         For Businesses
       </Link>
-      <Link to="/signin" sx={{ minWidth: 100 }} className={classes.navItem}>
+      <Link to="/signin" sx={{ minWidth: 100 }}>
         LogIn
       </Link>
     </Box>
