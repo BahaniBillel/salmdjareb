@@ -11,6 +11,10 @@ import LogInAndSignUp from './pages/LogInAndSignUp';
 import BranchList from './pages/BranchList';
 import './App.scss';
 import { makeStyles } from '@material-ui/core';
+import Dashboard from './pages/Dashboard';
+import { useLocation } from 'react-router-dom';
+import LogIn from './components/Login';
+import SignUp from './components/SignUp';
 
 const useStyles = makeStyles((theme) => ({
   app: {
@@ -27,21 +31,40 @@ const useStyles = makeStyles((theme) => ({
 
 function App() {
   const classes = useStyles();
+  const location = useLocation();
+  console.log(location.pathname);
+
+  const ReturnNavigation = () => {
+    if (location.pathname !== '/login') {
+      return <Navigation />;
+    }
+  };
+
   return (
     <>
       <Box className={classes.app}>
-        <Navigation />
+        {/* {location.pathname !== '/logpage' ? <Navigation /> : null} */}
+        {ReturnNavigation()}
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/categories" element={<Catergories />} />
           <Route exact path="/categories/:id" element={<BranchList />} />
           <Route exact path="/profile/:id" element={<Profile />} />
           <Route exact path="/community" element={<Community />} />
-          <Route exact path="/signin" element={<LogInAndSignUp />} />
+          <Route exact path="/logInAndSignUp" element={<LogInAndSignUp />} />
+          <Route exact path="/login" element={<LogIn />} />
+          <Route exact path="/signup" element={<SignUp />} />
           <Route exact path="/write-review" element={<WriteReviewPage />} />
+          <Route exact path="/dashboard/:id" element={<Dashboard />} />
         </Routes>
       </Box>
-      <Footer />
+
+      {/* {ReturnFooter()} */}
+      {/* {location.pathname !== '/login' ? (
+        <Footer />
+      ) : location.pathname !== '/signup' ? (
+        <Footer />
+      ) : null} */}
     </>
   );
 }

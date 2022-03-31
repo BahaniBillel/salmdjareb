@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   Grid,
   TextField,
@@ -20,17 +20,13 @@ const useStyles = makeStyles({
   },
 });
 
-function LogIn({ username }) {
+function SignUp() {
   const classes = useStyles();
-
-  const HandleSubmit = (e) => {
-    e.preventDefault();
-  };
 
   return (
     <div className={classes.logIn}>
       <Typography gutterBottom variant="h3" align="center">
-        Welcom back
+        SingUp page
       </Typography>
       <Grid>
         <Card style={{ maxWidth: 450, padding: '20px 5px', margin: '0 auto' }}>
@@ -47,7 +43,7 @@ function LogIn({ username }) {
               Fill up the form and our team will get back to you within 24
               hours.
             </Typography>
-            <form onClick={HandleSubmit}>
+            <form>
               <Grid container spacing={1}>
                 <Grid xs={12} sm={6} item>
                   <TextField
@@ -56,10 +52,6 @@ function LogIn({ username }) {
                     variant="outlined"
                     fullWidth
                     required
-                    value={username}
-                    // onChange={(e) => {
-                    //   setName(e.target.value);
-                    // }}
                   />
                 </Grid>
                 <Grid xs={12} sm={6} item>
@@ -106,7 +98,7 @@ function LogIn({ username }) {
                   <Button
                     type="submit"
                     variant="contained"
-                    color="primary"
+                    color="secondary"
                     fullWidth
                   >
                     Submit
@@ -114,10 +106,6 @@ function LogIn({ username }) {
                 </Grid>
               </Grid>
             </form>
-            <Typography variant="body1" style={{ marginTop: '1rem' }}>
-              You don't have an account?, please
-              <Link to="/SignUp"> SignUp</Link>
-            </Typography>
           </CardContent>
         </Card>
       </Grid>
@@ -125,4 +113,4 @@ function LogIn({ username }) {
   );
 }
 
-export default LogIn;
+export default SignUp;

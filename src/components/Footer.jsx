@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Logo from '../images/logo.png';
+import { Link } from 'react-router-dom';
 import {
   Box,
   makeStyles,
@@ -11,7 +12,6 @@ import {
   ListItemText,
   ListItemIcon,
 } from '@material-ui/core';
-import { Link } from 'react-router-dom';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
@@ -19,7 +19,8 @@ import CopyrightIcon from '@mui/icons-material/Copyright';
 
 const useStyles = makeStyles((theme) => ({
   footer: {
-    width: '100%',
+    // width: '100%',
+    padding: '2rem',
     height: 'auto',
     background: 'rgb(70,128,131)',
     background:
@@ -85,10 +86,14 @@ const Footer = () => {
               <ListItemText>Leader opinion</ListItemText>
             </ListItem>
             <ListItem>
-              <ListItemText>LogIn</ListItemText>
+              <Link to="/login">
+                <ListItemText>LogIn</ListItemText>
+              </Link>
             </ListItem>
             <ListItem>
-              <ListItemText>LogOut</ListItemText>
+              <Link to="/SignUp">
+                <ListItemText>SignUp</ListItemText>
+              </Link>
             </ListItem>
           </List>
         </Box>
