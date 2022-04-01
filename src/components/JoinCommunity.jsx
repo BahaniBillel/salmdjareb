@@ -17,7 +17,7 @@ import CardWhy from './CardWhy';
 const useStyles = makeStyles((theme) => ({
   joinCommunity: {
     width: '100%',
-    height: '80vh',
+    height: 'auto',
     [theme.breakpoints.down('sm')]: {
       height: 'auto',
     },

@@ -8,10 +8,12 @@ import SearchCategory from '../components/SearchCategory';
 
 
 
-const useStyles=makeStyles({
+const useStyles=makeStyles((theme)=>({
 
-
-})
+catergories:{
+  
+}
+}))
 
 
 
@@ -19,7 +21,7 @@ const Catergories = () => {
   const classes =useStyles();
 
   return (
-    <Box className={classes.layout}>
+    <Box className={classes.catergories}>
       <SearchCategory/>
       <CategoryTemplate/>
     </Box>

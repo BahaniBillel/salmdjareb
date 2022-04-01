@@ -12,7 +12,7 @@ import ActivitieZData from "../components/Data";
 import { Link } from "react-router-dom";
 import {useParams} from 'react-router-dom';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme)=>({
   wrapper: {
     display: "flex",
     flexDirection: "column",
@@ -20,7 +20,7 @@ const useStyles = makeStyles({
   },
 
   listwrapper: {
-    width: "100vw",
+    width: "100%",
     minHeight: "100vh",
     background: " rgb(235,235,235)",
     background:
@@ -43,7 +43,7 @@ const useStyles = makeStyles({
     borderRadius: "10px",
     overflow: "hidden",
   },
-});
+}));
 
 const { Data } = ActivitieZData();
 

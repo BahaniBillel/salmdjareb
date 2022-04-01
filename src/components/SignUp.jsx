@@ -8,15 +8,15 @@ import {
   Typography,
   makeStyles,
 } from '@material-ui/core';
-import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles({
-  logIn: {
+  signUp: {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
     flexWrap: 'nowrap',
+    width:"100vw",
   },
 });
 
@@ -24,8 +24,8 @@ function SignUp() {
   const classes = useStyles();
 
   return (
-    <div className={classes.logIn}>
-      <Typography gutterBottom variant="h3" align="center">
+    <div className={classes.signUp}>
+      <Typography gutterBottom variant="h4" align="center">
         SingUp page
       </Typography>
       <Grid>

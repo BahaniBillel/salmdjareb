@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Logo from '../images/logo.png';
+import Logo from '../images/logoH.png';
 import { Link } from 'react-router-dom';
 import {
   Box,
@@ -91,7 +91,7 @@ const Footer = () => {
               </Link>
             </ListItem>
             <ListItem>
-              <Link to="/SignUp">
+              <Link to="/signup">
                 <ListItemText>SignUp</ListItemText>
               </Link>
             </ListItem>

@@ -17,6 +17,8 @@ const useStyles = makeStyles({
     alignItems: 'center',
     justifyContent: 'center',
     flexWrap: 'nowrap',
+    width:"100vw",
+    height:"auto",
   },
 });
 
@@ -29,7 +31,7 @@ function LogIn({ username }) {
 
   return (
     <div className={classes.logIn}>
-      <Typography gutterBottom variant="h3" align="center">
+      <Typography gutterBottom variant="h4" align="center">
         Welcom back
       </Typography>
       <Grid>
@@ -116,7 +118,7 @@ function LogIn({ username }) {
             </form>
             <Typography variant="body1" style={{ marginTop: '1rem' }}>
               You don't have an account?, please
-              <Link to="/SignUp"> SignUp</Link>
+              <Link to="/signup"> SignUp</Link>
             </Typography>
           </CardContent>
         </Card>
