@@ -19,7 +19,6 @@ import CopyrightIcon from '@mui/icons-material/Copyright';
 
 const useStyles = makeStyles((theme) => ({
   footer: {
-    // width: '100%',
     padding: '2rem',
     height: 'auto',
     background: 'rgb(70,128,131)',
@@ -37,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'row',
     justifyContent: 'space-evenly',
     alignItems: 'flex-start',
-    color: '#fff',
+    color: '#ffffff',
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column',
     },

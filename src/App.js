@@ -1,5 +1,5 @@
 import { Box } from "@material-ui/core";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route ,useParams} from "react-router-dom";
 import Catergories from "./pages/Catergories";
 import Community from "./pages/Community";
 import Home from "./pages/Home";
@@ -17,7 +17,7 @@ import LogIn from "./components/Login";
 import SignUp from "./components/SignUp";
 
 const useStyles = makeStyles((theme) => ({
- 
+
   footerSection:{
     marginTop:"20rem"
   }
@@ -28,15 +28,16 @@ function App() {
   const classes = useStyles();
   const location = useLocation();
   console.log(location.pathname);
+  
 
   const ReturnNavigation = () => {
-    if (location.pathname !== "/login" && location.pathname !== "/signup") {
+    if (location.pathname !== "/login" && location.pathname !== "/register" ) {
       return <Navigation />;
     }
   };
 
   const ReturnFooter = () => {
-    if (location.pathname !== "/login" && location.pathname !== "/signup") {
+    if (location.pathname !== "/login" && location.pathname !== "/register") {
       return <Footer />;
     }
   };
@@ -44,7 +45,11 @@ function App() {
   return (
     <>
       <Box className={classes.app}>
-        {ReturnNavigation()}
+        
+        {location.pathname === "/dashboard/1" ? (
+          null
+        ) :ReturnNavigation() }
+        
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/categories" element={<Catergories />} />
@@ -53,13 +58,13 @@ function App() {
           <Route exact path="/community" element={<Community />} />
           <Route exact path="/logInAndSignUp" element={<LogInAndSignUp />} />
           <Route exact path="/login" element={<LogIn />} />
-          <Route exact path="/signup" element={<SignUp />} />
+          <Route exact path="/register" element={<SignUp />} />
           <Route exact path="/write-review" element={<WriteReviewPage />} />
           <Route exact path="/dashboard/:id" element={<Dashboard />} />
         </Routes>
       </Box>
       <div className={classes.footerSection}>
-        {location.pathname !== "/login" && location.pathname !== "/signup" ? (
+        {location.pathname !== "/login" && location.pathname !== "/register" ? (
           <Footer />
         ) : null}
       </div>

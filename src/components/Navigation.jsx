@@ -5,12 +5,14 @@ import { Link } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import MobileMenu from "./MobileMenu";
 import CloseIcon from "@mui/icons-material/Close";
+import { motion } from "framer-motion";
 
 const useStyles = makeStyles((theme) => ({
   nav: {
-    position: "fixed",
+    position: "static",
     top: "0",
     width: "100%",
+    // maxHeight:"3vh",
     transition: "1s",
     zIndex: "100",
     background: "rgb(70,128,131)",
@@ -87,15 +89,14 @@ const useStyles = makeStyles((theme) => ({
 const Navigation = () => {
   const classes = useStyles();
   const [menu, setMenu] = useState(false);
-  const animateFrom = { opacity: 0, y: -80 };
-  const animateTo = { opaciy: 1, y: 0 };
-  const [animate, setAnimate] = useState({ animateFrom });
   const [nav, setNav] = useState(false);
- 
+  
+  
 
   const HandleClick = () => {
     setMenu(!menu);
-    setAnimate({ animateTo });
+    
+
   };
 
   const ShrinkNav = () => {
@@ -106,9 +107,12 @@ const Navigation = () => {
     }
   };
 
-  
-
   window.addEventListener("scroll", ShrinkNav);
+
+
+  // Animating mobile menu
+
+ 
 
   return (
     <>
@@ -119,13 +123,13 @@ const Navigation = () => {
         onScroll={ShrinkNav}
       >
         <Link to="/">
-          <Box className={classes.logoBox}>
+          <div className={classes.logoBox} >
             <img
               src={Logo}
               alt="sal mdjareb logo"
               className={nav ? classes.logoOnScroll : classes.logo}
             />
-          </Box>
+          </div>
         </Link>
         <Box
           className={classes.buttons}
@@ -139,8 +143,10 @@ const Navigation = () => {
             )}
           </Box>
         </Box>
+             
 
-        {menu ? <MobileMenu CloseMobileMenu={()=>setMenu(false)} /> : null}
+        {menu ? <MobileMenu CloseMobileMenu={()=>setMenu(false)}  /> : null}
+       
       </Box>
     </>
   );
