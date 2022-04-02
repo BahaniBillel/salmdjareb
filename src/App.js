@@ -1,5 +1,5 @@
 import { Box } from "@material-ui/core";
-import { Routes, Route ,useParams} from "react-router-dom";
+import { Routes, Route, useParams } from "react-router-dom";
 import Catergories from "./pages/Catergories";
 import Community from "./pages/Community";
 import Home from "./pages/Home";
@@ -17,21 +17,21 @@ import LogIn from "./components/Login";
 import SignUp from "./components/SignUp";
 
 const useStyles = makeStyles((theme) => ({
-
-  footerSection:{
-    marginTop:"20rem"
-  }
-  
+  app: {
+    width: "100vw",
+  },
+  footerSection: {
+    marginTop: "20rem",
+  },
 }));
 
 function App() {
   const classes = useStyles();
   const location = useLocation();
   console.log(location.pathname);
-  
 
   const ReturnNavigation = () => {
-    if (location.pathname !== "/login" && location.pathname !== "/register" ) {
+    if (location.pathname !== "/login" && location.pathname !== "/register") {
       return <Navigation />;
     }
   };
@@ -43,13 +43,10 @@ function App() {
   };
 
   return (
-    <>
-      <Box className={classes.app}>
-        
-        {location.pathname === "/dashboard/1" ? (
-          null
-        ) :ReturnNavigation() }
-        
+    <div className={classes.app}>
+      <Box>
+        {location.pathname === "/dashboard/1" ? null : ReturnNavigation()}
+
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/categories" element={<Catergories />} />
@@ -63,13 +60,9 @@ function App() {
           <Route exact path="/dashboard/:id" element={<Dashboard />} />
         </Routes>
       </Box>
-      <div className={classes.footerSection}>
-        {location.pathname !== "/login" && location.pathname !== "/register" ? (
-          <Footer />
-        ) : null}
-      </div>
-    
-    </>
+
+      {location.pathname === "/dashboard/1" ? null : ReturnFooter()}
+    </div>
   );
 }
 

@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
   nav: {
     position: "static",
     top: "0",
-    width: "100%",
+    // width: "100%",
     // maxHeight:"3vh",
     transition: "1s",
     zIndex: "100",
@@ -80,7 +80,7 @@ const useStyles = makeStyles((theme) => ({
     cursor: "pointer",
     "& svg": {
       fontSize: "2.5rem",
-      color: "#e0e0e0",
+      color: "#e05a00",
     },
     [theme.breakpoints.up("sm")]: {},
   },

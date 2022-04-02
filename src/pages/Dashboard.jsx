@@ -8,9 +8,11 @@ import {
   ListItem,
   Button,
 } from "@material-ui/core";
-import LanguageIcon from "@mui/icons-material/Language";
-import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
+import Drawer from '../components/Drawer';
+import CssBaseline from '@mui/material/CssBaseline';
 import { useParams} from "react-router-dom";
+import DashBoardDetailHeader from "../components/DashBoardDetailHeader";
+import ServicesReviews from "../components/ServicesReviews";
 
 const useStyles = makeStyles((theme) => ({
   dashboard: {
@@ -18,28 +20,25 @@ const useStyles = makeStyles((theme) => ({
     flexFlow: "row nowrap",
     justifyContent: "space-between",
     alignItems: "flex-start",
-    width:"100vw",
+    width:"100%",
+    height:"100vh",
+    // overflow:"hidden",
     
     [theme.breakpoints.down("sm")]: {
       width: "auto",
     },
   },
 
-  sidemenu: {
-    width: "20%",
-    padding: "1rem",
-    backgroundColor: "#eee",
-    background: "rgb(70,128,131)",
-    background:
-      "linear-gradient(206deg, rgba(70,128,131,1) 0%, rgba(60,110,113,1) 70%, rgba(42,78,80,1) 100%)",
-  },
 
-  InnerSideMenu: {
-    // backgroundColor: "#fff",
-    borderRadius: "5px",
-    padding: "1rem 0",
+
+  detail: {
+    width:"80%",
+    // height:"100vh",
+    
+    backgroundColor:"#f5f5f5",
+    padding:"1rem",
+    
   },
-  detail: {},
 }));
 
 const Dashboard = () => {
@@ -47,38 +46,31 @@ const Dashboard = () => {
   const params = useParams();
   const pageId = params.id;
 
+  const [reviewService,setReviewService]=useState(false);
+  const [title,setTitle]=useState(false);
+
+  const Reviews=['Service reviews','Product  reviews','Review Insights'];
+
+  const ShowFigures=()=>{
+    setReviewService(!reviewService)
+    setTitle('title')
+  }
  
   return (
     <Box className={classes.dashboard}>
-      <Box className={classes.sidemenu}>
-        <Container className={classes.InnerSideMenu}>
-          <Button
-            variant="outlined"
-            startIcon={<HomeOutlinedIcon />}
-            style={{ paddingRight: "5rem", border: "none", color: "#e05a00" }}
-            gutterBottom
-          >
-            Home
-          </Button>
-          <Button
-            variant="outlined"
-            startIcon={<HomeOutlinedIcon />}
-            style={{ paddingRight: "5rem", border: "none", color: "#e05a00"  }}
-            gutterBottom
-          >
-            Home
-          </Button>
-          <Button
-            variant="outlined"
-            startIcon={<HomeOutlinedIcon />}
-            style={{ paddingRight: "5rem", border: "none", color: "#e05a00"  }}
-            gutterBottom
-          >
-            Home
-          </Button>
-        </Container>
+    
+      <Drawer Click={ShowFigures} />
+    
+
+      <Box className={classes.detail}>
+        <DashBoardDetailHeader title={title} />
+        {
+        reviewService?
+      <ServicesReviews/>
+      :
+      null
+      }
       </Box>
-      <Box className={classes.detail}>Content</Box>
     </Box>
   );
 };
