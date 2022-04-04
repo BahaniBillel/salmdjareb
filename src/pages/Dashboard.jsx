@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'flex-start',
     width: '100%',
     height: '100vh',
-    // overflow:"hidden",
+    overflow: 'hidden',
 
     [theme.breakpoints.down('sm')]: {
       width: 'auto',
@@ -34,10 +34,9 @@ const useStyles = makeStyles((theme) => ({
     height: '100vh',
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'space-between',
 
     backgroundColor: '#f5f5f5',
-    padding: '1rem',
+    // padding: '1rem',
   },
 }));
 
@@ -61,8 +60,9 @@ const Dashboard = () => {
       <Drawer Click={ShowFigures} />
 
       <Box className={classes.detail}>
-        <DashBoardDetailHeader title={title} />
-        {reviewService ? <ServicesReviews /> : null}
+        <DashBoardDetailHeader title={Reviews[0]} />
+        {/* {reviewService ? <ServicesReviews /> : null} */}
+        <ServicesReviews />
       </Box>
     </Box>
   );

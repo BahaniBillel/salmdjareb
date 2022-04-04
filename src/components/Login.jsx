@@ -17,8 +17,8 @@ const useStyles = makeStyles({
     alignItems: 'center',
     justifyContent: 'center',
     flexWrap: 'nowrap',
-    width:"100vw",
-    height:"auto",
+    width: '100vw',
+    height: 'auto',
   },
 });
 
