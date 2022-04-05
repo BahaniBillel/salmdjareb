@@ -28,9 +28,9 @@ import Logo from '../images/logoH.png';
 
 const useStyles = makeStyles((theme) => ({
   sidemenu: {
-    width: '20%',
+    width: '15%',
     height: '100vh',
-    padding: '1rem',
+    padding: '1rem ',
     overflow: 'hidden',
     //   backgroundColor: "#eee",
     background: 'rgb(70,128,131)',
@@ -241,7 +241,7 @@ const Drawer = ({ Click }) => {
           Expiry date: 31/12/2042
         </Typography>
         <Box>
-          <img src={Logo} alt="" />
+          <img src={Logo} style={{width:"160px"}} />
         </Box>
       </Box>
     </Box>

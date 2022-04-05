@@ -17,6 +17,7 @@ import {
 import ReadRating from './ReadRating';
 import ReadTextRating from './ReadTextRating';
 import Tooltip from '@mui/material/Tooltip';
+import Product01  from '../images/join01.jpg';
 
 const useStyles = makeStyles((theme) => ({
   widget: {
@@ -65,8 +66,13 @@ const EmbededProduct = () => {
         height: '250px',
         padding: '1rem',
         marginBottom: '1rem',
+        display:"flex",
+        flexDirection:"row",
+        justifyContent:"flex-start",
+        alignItems:"center"
       }}
     >
+      <CardMedia component='img' image={Product01} style={{width:"180px", padding:".5rem", border:"#ccc solid 1px"}}/>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet velit
       maiores omnis, fugit necessitatibus itaque odit a modi deleniti laborum
       enim debitis repellat rerum. Repudiandae itaque ex ad ea tempora!

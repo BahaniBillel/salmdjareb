@@ -23,6 +23,7 @@ import {
 import ReadRating from './ReadRating';
 import ReadTextRating from './ReadTextRating';
 import Tooltip from '@mui/material/Tooltip';
+import { Divider } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   widget: {
@@ -57,7 +58,7 @@ const useStyles = makeStyles((theme) => ({
     // height: '650px',
     borderradius: '4px',
     backgroundColor: '#fff',
-    padding: '2rem',
+    padding: '1rem',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'flex-start',
@@ -110,7 +111,7 @@ const ServicesReviews = () => {
             sx={{
               border: '1px solid #ccc',
               borderRadius: '4px',
-              padding: '2rem 4rem',
+              padding: '2rem 2rem',
               marginTop: '4rem',
             }}
           >
@@ -120,9 +121,9 @@ const ServicesReviews = () => {
               color="gray"
               gutterBottom
             >
-              SAL MDJAREB SCORE
+              AVERAGE SCORE
             </Typography>
-            <Typography variant="h4" component="div" color="gray">
+            <Typography variant="h5" component="div" color="gray">
               4.5 out 5
             </Typography>
           </Box>
@@ -134,6 +135,7 @@ const ServicesReviews = () => {
           style={{
             display: 'flex',
             flexDirection: 'column',
+            
           }}
         >
           <Box className={classes.performance} gutterBottom>
@@ -158,11 +160,13 @@ const ServicesReviews = () => {
           <Typography variant="h6" component="div" color="gray" gutterBottom>
             Your 3 latest reviews
           </Typography>
+          <Divider/>
           <EmbedReview
             comment="It was awsome experience.Thank you for the service."
             value={4.5}
             reviewer="By Bahani Billel.5 days ago."
           />
+          <Divider/>
           <EmbedReview
             comment="It was ok, but not super, i hope they get more serious next time"
             value={3}
@@ -241,10 +245,10 @@ export default ServicesReviews;
 
 const EmbedReview = ({ comment, value, reviewer }) => {
   return (
-    <Box gutterBottom margin={'1.5rem 0'}>
+    <Box gutterBottom  marginBottom={1.4}>
       <Box
         style={{
-          width: '290px',
+          maxWidth: '200px',
           display: 'flex',
           flexDirection: 'row',
           justifyContent: 'flex-start',
@@ -259,7 +263,7 @@ const EmbedReview = ({ comment, value, reviewer }) => {
           component="div"
           color="gray"
           gutterBottom
-          style={{ fontSize: '1rem', fontWeight: '400' }}
+          style={{ fontSize: '.7rem', fontWeight: '400' }}
         >
           {comment}
         </Typography>
@@ -268,9 +272,9 @@ const EmbedReview = ({ comment, value, reviewer }) => {
       <Box
         style={{
           display: 'flex',
-          flexDirection: 'row',
+          flexDirection: 'column',
           justifyContent: 'space-between',
-          alignItems: 'center',
+          alignItems: 'flex-start',
         }}
       >
         <ReadRating value={value} size="3rem" />
@@ -278,7 +282,7 @@ const EmbedReview = ({ comment, value, reviewer }) => {
           variant="caption"
           component="div"
           color="lght gray"
-          style={{ paddingLeft: '10px' }}
+          
         >
           {reviewer}
         </Typography>
@@ -291,7 +295,7 @@ const IndicatorBoxDown = ({ title, indicator, percentage }) => {
   return (
     <Box
       style={{
-        padding: '1rem',
+        padding: '.5rem',
         border: '#616161 solid 1px',
         borderRadius: '4px',
         margin: '0 1rem ',
@@ -337,7 +341,7 @@ const IndicatorBoxUp = ({ title, indicator, percentage }) => {
   return (
     <Box
       style={{
-        padding: '1rem',
+        padding: '.5rem',
         border: '#616161 solid 1px',
         borderRadius: '4px',
         margin: '0 1rem ',
