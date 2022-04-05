@@ -69,7 +69,7 @@ const useStyles = makeStyles((theme) => ({
     position: 'absolute',
     bottom: '-5%',
     marginLeft: '10rem',
-    padding: '1.5rem',
+    padding: '2.5rem',
     width: 'auto',
     maxWidth: '40vw',
     maxHeight: '50vh',

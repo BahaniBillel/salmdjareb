@@ -4,7 +4,8 @@ import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 import Masonry from '@mui/lab/Masonry';
 import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
-
+import ArrowDropDownTwoToneIcon from '@mui/icons-material/ArrowDropDownTwoTone';
+import ArrowDropUpTwoToneIcon from '@mui/icons-material/ArrowDropUpTwoTone';
 import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
 
 import {
@@ -21,6 +22,7 @@ import {
 
 import ReadRating from './ReadRating';
 import ReadTextRating from './ReadTextRating';
+import Tooltip from '@mui/material/Tooltip';
 
 const useStyles = makeStyles((theme) => ({
   widget: {
@@ -58,7 +60,7 @@ const useStyles = makeStyles((theme) => ({
     padding: '2rem',
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
     alignItems: 'flex-start',
   },
   performance: {
@@ -90,7 +92,12 @@ const ServicesReviews = () => {
             <Typography variant="h6" component="div" color="gray">
               Overall performance
             </Typography>
-            <HelpOutlineOutlinedIcon />
+            <Tooltip
+              title="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum dolorum, quae vitae omnis assumenda quam."
+              disableInteractive
+            >
+              <HelpOutlineOutlinedIcon />
+            </Tooltip>
           </Box>
 
           <Box>
@@ -133,7 +140,12 @@ const ServicesReviews = () => {
             <Typography variant="h6" component="div" color="gray">
               Engage
             </Typography>
-            <HelpOutlineOutlinedIcon />
+            <Tooltip
+              title="Lorem ipsum dolor sit amet consectetur adipisicing elit."
+              disableInteractive
+            >
+              <HelpOutlineOutlinedIcon />
+            </Tooltip>
           </Box>
           <Typography
             variant="caption"
@@ -166,10 +178,18 @@ const ServicesReviews = () => {
         {/* third box */}
         <Box className={classes.rectangle}>
           <Box className={classes.performance} gutterBottom>
-            <Typography variant="h6" component="div" color="gray">
-              invitation Status
+            <Typography variant="h6" component="div" color="gray" gutterBottom>
+              Invitation Status
             </Typography>
-            <HelpOutlineOutlinedIcon />
+            <Tooltip
+              title="Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Blanditiis ratione ea perspiciatis in adipisci animi praesentium
+              aperiam numquam, molestias autem vero molestiae ipsum, at
+              inventore quas perferendis facere corporis ducimus."
+              disableInteractive
+            >
+              <HelpOutlineOutlinedIcon />
+            </Tooltip>
           </Box>
           <Box
             style={{
@@ -185,10 +205,30 @@ const ServicesReviews = () => {
                 flexDirection: 'row',
                 alignItems: 'center',
                 justifyContent: 'space-between',
+                marginBottom: '1rem',
               }}
             >
-              <IndicatorBox />
-              <IndicatorBox />
+              <IndicatorBoxDown
+                title="DILIVERED"
+                indicator="4563"
+                percentage="-78%"
+              />
+              <IndicatorBoxUp title="REPLIED" indicator="3" percentage="27%" />
+            </Box>
+            <Box
+              style={{
+                display: 'flex',
+                flexDirection: 'row',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+              }}
+            >
+              <IndicatorBoxUp title="IN QUEUE" indicator="0" percentage="0%" />
+              <IndicatorBoxDown
+                title="REJECTED"
+                indicator="12"
+                percentage="5%"
+              />
             </Box>
           </Box>
         </Box>
@@ -247,6 +287,94 @@ const EmbedReview = ({ comment, value, reviewer }) => {
   );
 };
 
-const IndicatorBox = () => {
-  return <Box style={{ padding: '.5rem' }}>somme</Box>;
+const IndicatorBoxDown = ({ title, indicator, percentage }) => {
+  return (
+    <Box
+      style={{
+        padding: '1rem',
+        border: '#616161 solid 1px',
+        borderRadius: '4px',
+        margin: '0 1rem ',
+        width: '120px',
+      }}
+    >
+      <Typography
+        variant="h6"
+        component="div"
+        color="gray"
+        style={{
+          fontSize: '1rem',
+          color: 'grey',
+        }}
+      >
+        {title}
+      </Typography>
+      <Typography variant="h4" component="div" color="gray" style={{}}>
+        {indicator}
+      </Typography>
+      <Box
+        style={{
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+        }}
+      >
+        <ArrowDropDownTwoToneIcon style={{ color: 'red' }} />
+        <Typography
+          variant="h4"
+          component="div"
+          style={{ color: 'red', fontSize: '1rem' }}
+        >
+          {percentage}
+        </Typography>
+      </Box>
+    </Box>
+  );
+};
+
+const IndicatorBoxUp = ({ title, indicator, percentage }) => {
+  return (
+    <Box
+      style={{
+        padding: '1rem',
+        border: '#616161 solid 1px',
+        borderRadius: '4px',
+        margin: '0 1rem ',
+        width: '120px',
+      }}
+    >
+      <Typography
+        variant="h6"
+        component="div"
+        color="gray"
+        style={{
+          fontSize: '1rem',
+          color: 'grey',
+        }}
+      >
+        {title}
+      </Typography>
+      <Typography variant="h4" component="div" color="gray" style={{}}>
+        {indicator}
+      </Typography>
+      <Box
+        style={{
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+        }}
+      >
+        <ArrowDropUpTwoToneIcon style={{ color: 'green' }} />
+        <Typography
+          variant="h4"
+          component="div"
+          style={{ color: 'green', fontSize: '1rem' }}
+        >
+          {percentage}
+        </Typography>
+      </Box>
+    </Box>
+  );
 };

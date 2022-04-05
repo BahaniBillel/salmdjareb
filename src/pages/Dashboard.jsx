@@ -13,6 +13,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { useParams } from 'react-router-dom';
 import DashBoardDetailHeader from '../components/DashBoardDetailHeader';
 import ServicesReviews from '../components/ServicesReviews';
+import ProductReviews from '../components/ProductReviews';
 
 const useStyles = makeStyles((theme) => ({
   dashboard: {
@@ -22,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'flex-start',
     width: '100%',
     height: '100vh',
-    overflow: 'hidden',
+    // overflow: 'hidden',
 
     [theme.breakpoints.down('sm')]: {
       width: 'auto',
@@ -62,7 +63,8 @@ const Dashboard = () => {
       <Box className={classes.detail}>
         <DashBoardDetailHeader title={Reviews[0]} />
         {/* {reviewService ? <ServicesReviews /> : null} */}
-        <ServicesReviews />
+        {/* <ServicesReviews /> */}
+        <ProductReviews />
       </Box>
     </Box>
   );
