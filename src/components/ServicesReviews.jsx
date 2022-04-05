@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 import Masonry from '@mui/lab/Masonry';
+import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
 
 import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
 
@@ -17,7 +18,9 @@ import {
   Button,
   ButtonGroup,
 } from '@material-ui/core';
-import Rating from '../components/Rating';
+
+import ReadRating from './ReadRating';
+import ReadTextRating from './ReadTextRating';
 
 const useStyles = makeStyles((theme) => ({
   widget: {
@@ -48,11 +51,11 @@ const useStyles = makeStyles((theme) => ({
     boxShadow:
       '0px 2px 1px -1px rgba(0,0,0,.2) ,0px 1px 1px 0px rgba(0,0,0,.14),0px 1px 3px 0px rgba(0,0,0,.12)',
 
-    width: '380px',
-    height: '650px',
+    // width: '380px',
+    // height: '650px',
     borderradius: '4px',
     backgroundColor: '#fff',
-    padding: '2.5rem',
+    padding: '2rem',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
@@ -62,6 +65,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     '& svg': {
       color: 'gray',
+      fontSize: '1rem',
     },
   },
 }));
@@ -80,8 +84,9 @@ const ServicesReviews = () => {
       </Box>
 
       <Box className={classes.bottom}>
+        {/* first box */}
         <Box className={classes.rectangle}>
-          <Box className={classes.performance}>
+          <Box className={classes.performance} gutterBottom>
             <Typography variant="h6" component="div" color="gray">
               Overall performance
             </Typography>
@@ -89,7 +94,7 @@ const ServicesReviews = () => {
           </Box>
 
           <Box>
-            <Rating />
+            <ReadTextRating value="4.5" />
           </Box>
           <Typography variant="caption" component="div">
             Based on 5260 reviews
@@ -116,17 +121,76 @@ const ServicesReviews = () => {
           </Box>
         </Box>
 
-        <Box className={classes.rectangle}>
-          <Typography variant="h6" component="div" gutterBottom>
-            Overall performance
+        {/* Second box */}
+        <Box
+          className={classes.rectangle}
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+          }}
+        >
+          <Box className={classes.performance} gutterBottom>
+            <Typography variant="h6" component="div" color="gray">
+              Engage
+            </Typography>
+            <HelpOutlineOutlinedIcon />
+          </Box>
+          <Typography
+            variant="caption"
+            component="div"
+            color="gray"
+            gutterBottom
+          >
+            Service reviews
           </Typography>
-          <HelpOutlineOutlinedIcon />
+          <Typography variant="h6" component="div" color="gray" gutterBottom>
+            Your 3 latest reviews
+          </Typography>
+          <EmbedReview
+            comment="It was awsome experience.Thank you for the service."
+            value={4.5}
+            reviewer="By Bahani Billel.5 days ago."
+          />
+          <EmbedReview
+            comment="It was ok, but not super, i hope they get more serious next time"
+            value={3}
+            reviewer="By Salwa B.10 days ago."
+          />
+          <EmbedReview
+            comment="my freind told me about this product ,and i think they try their best to improve the quality of their product."
+            value={4}
+            reviewer="By Salwa B.10 days ago."
+          />
         </Box>
+
+        {/* third box */}
         <Box className={classes.rectangle}>
-          <Typography variant="h6" component="div">
-            Overall performance
-          </Typography>
-          <HelpOutlineOutlinedIcon />
+          <Box className={classes.performance} gutterBottom>
+            <Typography variant="h6" component="div" color="gray">
+              invitation Status
+            </Typography>
+            <HelpOutlineOutlinedIcon />
+          </Box>
+          <Box
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <Box
+              style={{
+                display: 'flex',
+                flexDirection: 'row',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+              }}
+            >
+              <IndicatorBox />
+              <IndicatorBox />
+            </Box>
+          </Box>
         </Box>
       </Box>
     </div>
@@ -134,3 +198,55 @@ const ServicesReviews = () => {
 };
 
 export default ServicesReviews;
+
+const EmbedReview = ({ comment, value, reviewer }) => {
+  return (
+    <Box gutterBottom margin={'1.5rem 0'}>
+      <Box
+        style={{
+          width: '290px',
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'flex-start',
+        }}
+        gutterBottom
+      >
+        <FormatQuoteIcon
+          style={{ transform: 'rotate(180deg) translateY(20%)' }}
+        />
+        <Typography
+          variant="h6"
+          component="div"
+          color="gray"
+          gutterBottom
+          style={{ fontSize: '1rem', fontWeight: '400' }}
+        >
+          {comment}
+        </Typography>
+      </Box>
+
+      <Box
+        style={{
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+        }}
+      >
+        <ReadRating value={value} size="3rem" />
+        <Typography
+          variant="caption"
+          component="div"
+          color="lght gray"
+          style={{ paddingLeft: '10px' }}
+        >
+          {reviewer}
+        </Typography>
+      </Box>
+    </Box>
+  );
+};
+
+const IndicatorBox = () => {
+  return <Box style={{ padding: '.5rem' }}>somme</Box>;
+};

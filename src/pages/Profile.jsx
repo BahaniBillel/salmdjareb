@@ -20,7 +20,7 @@ import BusinessSideBarActivity from '../components/BusinessSideBarActivity';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../firebase-config';
 import ReviewForm from '../components/ReviewForm';
-import TextRating from '../components/Rating';
+import TextRating from '../components/TextRating';
 
 const useStyles = makeStyles((theme) => ({
   upperWrapper: {
