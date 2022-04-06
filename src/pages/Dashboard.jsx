@@ -14,6 +14,7 @@ import { useParams } from 'react-router-dom';
 import DashBoardDetailHeader from '../components/DashBoardDetailHeader';
 import ServicesReviews from '../components/ServicesReviews';
 import ProductReviews from '../components/ProductReviews';
+import ReviewsInsights from '../components/ReviewsInsights';
 
 const useStyles = makeStyles((theme) => ({
   dashboard: {
@@ -24,6 +25,7 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     height: '100vh',
     // overflow: 'hidden',
+  
 
     [theme.breakpoints.down('sm')]: {
       width: 'auto',
@@ -31,13 +33,13 @@ const useStyles = makeStyles((theme) => ({
   },
 
   detail: {
-    width: '80%',
+    width: '83%',
     height: '100vh',
     display: 'flex',
     flexDirection: 'column',
-
     backgroundColor: '#f5f5f5',
     // padding: '1rem',
+    marginLeft:'auto'
   },
 }));
 
@@ -64,7 +66,8 @@ const Dashboard = () => {
         <DashBoardDetailHeader title={Reviews[0]} />
         {/* {reviewService ? <ServicesReviews /> : null} */}
         {/* <ServicesReviews /> */}
-        <ProductReviews />
+        {/* <ProductReviews /> */}
+        <ReviewsInsights/>
       </Box>
     </Box>
   );

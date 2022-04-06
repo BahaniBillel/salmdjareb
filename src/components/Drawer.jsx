@@ -28,7 +28,7 @@ import Logo from '../images/logoH.png';
 
 const useStyles = makeStyles((theme) => ({
   sidemenu: {
-    width: '15%',
+    width: '18%',
     height: '100vh',
     padding: '1rem ',
     overflow: 'hidden',
@@ -40,6 +40,9 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     justifyContent: 'space-between',
     alignItems: 'flex-start',
+    position:"fixed",
+    top:"0",
+    left:"0"
   },
   InnerSideMenu: {
     // backgroundColor: "#fff",
@@ -119,6 +122,7 @@ const Drawer = ({ Click }) => {
                 paddingTop: '0',
                 color: '#eee',
                 fontWeight: '300',
+                
               }}
             >
               <ListItem style={{ cursor: 'pointer' }} onClick={Click}>
@@ -226,8 +230,9 @@ const Drawer = ({ Click }) => {
         <Typography
           variant="body1"
           component="div"
-          style={{ color: '#fafafa' }}
+          style={{ color: '#fafafa',fontSize:".9rem" }}
           gutterBottom
+
         >
           Your plan is : Premium+
         </Typography>
@@ -235,7 +240,7 @@ const Drawer = ({ Click }) => {
         <Typography
           variant="body1"
           component="div"
-          style={{ color: '#fafafa' }}
+          style={{ color: '#fafafa',fontSize:".9rem" }}
           gutterBottom
         >
           Expiry date: 31/12/2042

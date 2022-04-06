@@ -13,7 +13,7 @@ export default function SelectButtonBar() {
   };
 
   return (
-    <div style={{ width: '100%', backgroundColor: '#fff', padding: '.5rem' }}>
+    <div style={{ width: '100%', backgroundColor: '#fff', padding: '.5rem .5rem .5rem 7rem' }}>
       <FormControl sx={{ m: 1, minWidth: 120 }}>
         <InputLabel
           id="demo-simple-select-disabled-label"

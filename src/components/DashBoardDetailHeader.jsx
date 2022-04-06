@@ -7,12 +7,15 @@ import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
 import { grey, teal } from '@material-ui/core/colors';
 
 const useStyles = makeStyles((theme) => ({
+ 
   upperheader: {
     display: 'flex',
     flexDirection: 'row',
     backgroundColor: 'white',
     borderBottom: '1px solid #cecece',
     padding: '1rem 2rem',
+    
+    
   },
   icons: {
     display: 'flex',
