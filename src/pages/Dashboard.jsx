@@ -25,7 +25,6 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     height: '100vh',
     // overflow: 'hidden',
-  
 
     [theme.breakpoints.down('sm')]: {
       width: 'auto',
@@ -39,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     backgroundColor: '#f5f5f5',
     // padding: '1rem',
-    marginLeft:'auto'
+    marginLeft: 'auto',
   },
 }));
 
@@ -67,7 +66,7 @@ const Dashboard = () => {
         {/* {reviewService ? <ServicesReviews /> : null} */}
         {/* <ServicesReviews /> */}
         {/* <ProductReviews /> */}
-        <ReviewsInsights/>
+        <ReviewsInsights />
       </Box>
     </Box>
   );

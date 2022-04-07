@@ -3,22 +3,19 @@ import {
   Chart as ChartJS,
   CategoryScale,
   LinearScale,
-  PointElement,
-  LineElement,
+  BarElement,
   Title,
   Tooltip,
   Legend,
 } from 'chart.js';
-import { Line } from 'react-chartjs-2';
+import { Bar } from 'react-chartjs-2';
 import { Typography, Box } from '@material-ui/core';
-
 import faker from '@faker-js/faker';
 
 ChartJS.register(
   CategoryScale,
   LinearScale,
-  PointElement,
-  LineElement,
+  BarElement,
   Title,
   Tooltip,
   Legend
@@ -32,32 +29,30 @@ export const options = {
     },
     title: {
       display: false,
-      text: 'Chart.js Line Chart',
+      text: 'Chart.js Bar Chart',
     },
   },
 };
 
 const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
 
-const data = {
+export const data = {
   labels,
   datasets: [
     {
-      label: 'Verified',
-      data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
-      borderColor: 'rgb(255, 99, 132)',
+      label: 'Day',
+      data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
       backgroundColor: 'rgba(255, 99, 132, 1)',
     },
     {
-      label: 'Unverified',
-      data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
-      borderColor: 'rgb(53, 162, 235)',
+      label: 'Night',
+      data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
       backgroundColor: 'rgba(53, 162, 235, 1)',
     },
   ],
 };
 
-export function LineChart() {
+export function VerticalBarChart() {
   return (
     <>
       <Box
@@ -70,14 +65,14 @@ export function LineChart() {
         }}
       >
         <Typography variant="h6" compnent="div">
-          FEEDBACK DISTRIBUTION
+          DAILY AVERAGE FEEDBACK
         </Typography>
         <Typography variant="caption" compnent="div" color="gray">
           Q1 2019
         </Typography>
       </Box>
       <Box>
-        <Line options={options} data={data} />
+        <Bar options={options} data={data} />;
       </Box>
     </>
   );
