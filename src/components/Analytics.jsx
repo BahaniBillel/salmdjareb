@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from "react";
 import {
   Container,
   makeStyles,
@@ -12,30 +12,33 @@ import {
   Box,
   TextField,
   Grid,
-} from '@material-ui/core';
+} from "@material-ui/core";
 
-import { styled } from '@mui/material/styles';
-import Picture from '../images/join02.jpg';
-import Paper from '@mui/material/Paper';
+import { styled } from "@mui/material/styles";
+import Picture from "../images/join02.jpg";
+import Paper from "@mui/material/Paper";
 
-import { Link } from 'react-router-dom';
-import SplitButton from './SplitButton';
-import { boxShadow } from '../siteConfiguration';
-import PieChart from './PieChart';
-import { LineChart } from './LineChart';
-import { VerticalBarChart } from './VerticalBarChart';
+import { Link } from "react-router-dom";
+import SplitButton from "./SplitButton";
+import { boxShadow } from "../siteConfiguration";
+import PieChart from "./PieChart";
+import { LineChart } from "./LineChart";
+import { VerticalBarChart } from "./VerticalBarChart";
+import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
+
+import Tooltip from "@mui/material/Tooltip";
 
 const useStyles = makeStyles((theme) => ({}));
 
 const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
   ...theme.typography.body2,
   padding: theme.spacing(1),
-  textAlign: 'center',
+  textAlign: "center",
   color: theme.palette.text.secondary,
 }));
 
-const ReviewsInsights = () => {
+const Analytics = () => {
   const classes = useStyles();
   return (
     <Box className={classes.reviewInsights}>
@@ -45,7 +48,7 @@ const ReviewsInsights = () => {
       <Grid
         container
         spacing={2}
-        style={{ padding: '2rem' }}
+        style={{ padding: "2rem" }}
         columnSpacing={{ xs: 1, sm: 2, md: 3 }}
         rowSpacing={3}
       >
@@ -54,9 +57,13 @@ const ReviewsInsights = () => {
             <IndicatorCard
               title="NPS"
               quarterYear="Q1 2019"
-              indicator="56"
+              indicator="156"
               scoreTitle="  NPS SCORE"
               fontColor="#000"
+              toolip="Net Promoter Score (NPS) is a customer 
+              loyalty and satisfaction measurement taken 
+              from asking customers how likely they are to
+               recommend your product or service to others on a scale of 0-10"
             />
           </Item>
         </Grid>
@@ -161,12 +168,12 @@ const ReviewsInsights = () => {
   );
 };
 
-export default ReviewsInsights;
+export default Analytics;
 
 const SelectButtons = () => {
-  const [currency, setCurrency] = React.useState('EUR');
+  const [currency, setCurrency] = React.useState("EUR");
   const years = [2019, 2020, 2021, 2022];
-  const quarters = ['Q1', 'Q2', 'Q3', 'Q4'];
+  const quarters = ["Q1", "Q2", "Q3", "Q4"];
 
   const handleChange = (event) => {
     setCurrency(event.target.value);
@@ -174,16 +181,16 @@ const SelectButtons = () => {
   return (
     <Box
       style={{
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'flex-start',
-        alignItems: 'center',
-        padding: '.5rem 3rem',
-        width: '100%',
-        backgroundColor: '#fff',
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "flex-start",
+        alignItems: "center",
+        padding: ".5rem 3rem",
+        width: "100%",
+        backgroundColor: "#fff",
       }}
     >
-      <Typography variant="h6" color="gray" style={{ marginRight: '1rem' }}>
+      <Typography variant="h6" color="gray" style={{ marginRight: "1rem" }}>
         Period:
       </Typography>
       <ButtonGroup>
@@ -236,25 +243,33 @@ const IndicatorCard = ({
   marginTop,
   borderRadius,
   boxShadow,
+  toolip,
 }) => {
   return (
     <Box
       style={{
-        padding: '1.5rem ',
-        width: '100%',
-        height: '160px',
+        padding: "1.5rem ",
+        width: "100%",
+        height: "160px",
         backgroundColor: `${color}`,
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'space-evenly',
-        alignItems: 'flex-start',
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-evenly",
+        alignItems: "flex-start",
         marginTop: `${marginTop}`,
         borderRadius: `${borderRadius}`,
         boxShadow: `${boxShadow}`,
       }}
     >
-      <Typography variant="h6" compnent="div">
+      <Typography
+        variant="h6"
+        compnent="div"
+        style={{ fontSize: "1rem", display: "flex", flexDirection: "row" }}
+      >
         {title}
+        <Tooltip title={toolip}>
+          <HelpOutlineOutlinedIcon style={{ fontSize: ".8rem" }} />
+        </Tooltip>
       </Typography>
       <Typography variant="caption" compnent="div" color="gray">
         {quarterYear}
@@ -262,7 +277,7 @@ const IndicatorCard = ({
       <Typography
         variant="h2"
         compnent="div"
-        style={{ fontWeight: '500', color: `${fontColor}` }}
+        style={{ fontWeight: "500", color: `${fontColor}` }}
       >
         {indicator}
       </Typography>
@@ -273,43 +288,3 @@ const IndicatorCard = ({
   );
 };
 
-const IndicatorCardLong = ({
-  title,
-  quarterYear,
-  indicator,
-  scoreTitle,
-  color,
-  fontColor,
-}) => {
-  return (
-    <Box
-      style={{
-        padding: '1.5rem ',
-        width: '100%',
-        height: '320px',
-        backgroundColor: `${color}`,
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'space-evenly',
-        alignItems: 'flex-start',
-      }}
-    >
-      <Typography variant="h6" compnent="div">
-        {title}
-      </Typography>
-      <Typography variant="caption" compnent="div" color="gray">
-        {quarterYear}
-      </Typography>
-      <Typography
-        variant="h2"
-        compnent="div"
-        style={{ fontWeight: '500', color: `${fontColor}` }}
-      >
-        {indicator}
-      </Typography>
-      <Typography variant="caption" compnent="div" color="gray">
-        {scoreTitle}
-      </Typography>
-    </Box>
-  );
-};

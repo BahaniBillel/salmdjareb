@@ -14,7 +14,8 @@ import { useParams } from 'react-router-dom';
 import DashBoardDetailHeader from '../components/DashBoardDetailHeader';
 import ServicesReviews from '../components/ServicesReviews';
 import ProductReviews from '../components/ProductReviews';
-import ReviewsInsights from '../components/ReviewsInsights';
+import Analytics from '../components/Analytics';
+import ReviewInsights from '../components/ReviewInsights';
 
 const useStyles = makeStyles((theme) => ({
   dashboard: {
@@ -66,7 +67,8 @@ const Dashboard = () => {
         {/* {reviewService ? <ServicesReviews /> : null} */}
         {/* <ServicesReviews /> */}
         {/* <ProductReviews /> */}
-        <ReviewsInsights />
+        {/* <Analytics /> */}
+        <ReviewInsights/>
       </Box>
     </Box>
   );
