@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react';
 import {
   Container,
   makeStyles,
@@ -11,25 +11,23 @@ import {
   ButtonGroup,
   Box,
   AppBar,
-} from "@material-ui/core";
-import { Link } from "react-router-dom";
-import InsightsTable from "./InsightsTable";
+} from '@material-ui/core';
+import { Link } from 'react-router-dom';
+import InsightsTable from './InsightsTable';
+import TimeSelectBar from './TimeSelectBar';
+import BasicDateRangePicker from './DateRangePicker';
+import SelectButtonBar from './SelectButtonBar';
 
 const useStyles = makeStyles((theme) => ({}));
-
-
-
 
 const ReviewInsights = () => {
   const classes = useStyles();
   return (
     <Box className={classes.reviewInsights}>
-        <AppBar>
-            
-        </AppBar>
-        <InsightsTable/>
+      <SelectButtonBar />
+      <InsightsTable />
     </Box>
-  )
-}
+  );
+};
 
-export default ReviewInsights
+export default ReviewInsights;

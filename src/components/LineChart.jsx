@@ -57,9 +57,17 @@ const data = {
   ],
 };
 
-export function LineChart() {
+export function LineChart({ title, subtitle }) {
   return (
-    <>
+    <Box
+      style={{
+        borderRadius: '4px',
+        boxShadow:
+          '0px 2px 1px -1px rgba(0,0,0,.2) ,0px 1px 1px 0px rgba(0,0,0,.14),0px 1px 3px 0px rgba(0,0,0,.12)',
+        backgroundColor: '#fff',
+        padding: '1rem',
+      }}
+    >
       <Box
         style={{
           display: 'flex',
@@ -70,15 +78,15 @@ export function LineChart() {
         }}
       >
         <Typography variant="h6" compnent="div">
-          FEEDBACK DISTRIBUTION
+          {title}
         </Typography>
         <Typography variant="caption" compnent="div" color="gray">
-          Q1 2019
+          {subtitle}
         </Typography>
       </Box>
       <Box>
         <Line options={options} data={data} />
       </Box>
-    </>
+    </Box>
   );
 }

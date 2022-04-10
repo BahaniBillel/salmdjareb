@@ -16,6 +16,7 @@ import ServicesReviews from '../components/ServicesReviews';
 import ProductReviews from '../components/ProductReviews';
 import Analytics from '../components/Analytics';
 import ReviewInsights from '../components/ReviewInsights';
+import Insights from '../components/Insights';
 
 const useStyles = makeStyles((theme) => ({
   dashboard: {
@@ -68,7 +69,8 @@ const Dashboard = () => {
         {/* <ServicesReviews /> */}
         {/* <ProductReviews /> */}
         {/* <Analytics /> */}
-        <ReviewInsights/>
+        {/* <ReviewInsights /> */}
+        <Insights />
       </Box>
     </Box>
   );
