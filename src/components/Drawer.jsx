@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 import {
   Container,
   makeStyles,
@@ -9,52 +9,53 @@ import {
   ListItemText,
   ListItem,
   Button,
-} from "@material-ui/core";
-import LanguageIcon from "@mui/icons-material/Language";
-import CssBaseline from "@mui/material/CssBaseline";
-import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
-import ReviewsIcon from "@mui/icons-material/Reviews";
-import { useParams } from "react-router-dom";
-import Accordion from "@mui/material/Accordion";
-import AccordionDetails from "@mui/material/AccordionDetails";
-import AccordionSummary from "@mui/material/AccordionSummary";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import IntegrationInstructionsOutlinedIcon from "@mui/icons-material/IntegrationInstructionsOutlined";
-import EqualizerOutlinedIcon from "@mui/icons-material/EqualizerOutlined";
-import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
-import ApartmentOutlinedIcon from "@mui/icons-material/ApartmentOutlined";
-import Divider from "@mui/material/Divider";
-import Logo from "../images/logoH.png";
+} from '@material-ui/core';
+import LanguageIcon from '@mui/icons-material/Language';
+import CssBaseline from '@mui/material/CssBaseline';
+import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
+import ReviewsIcon from '@mui/icons-material/Reviews';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { useParams } from 'react-router-dom';
+import Accordion from '@mui/material/Accordion';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import IntegrationInstructionsOutlinedIcon from '@mui/icons-material/IntegrationInstructionsOutlined';
+import EqualizerOutlinedIcon from '@mui/icons-material/EqualizerOutlined';
+import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
+import ApartmentOutlinedIcon from '@mui/icons-material/ApartmentOutlined';
+import Divider from '@mui/material/Divider';
+import Logo from '../images/logoH.png';
 
 const useStyles = makeStyles((theme) => ({
   sidemenu: {
-    width: "18%",
-    height: "100vh",
-    padding: "1rem ",
-    overflow: "hidden",
+    width: '18%',
+    height: '100vh',
+    padding: '1rem ',
+    overflow: 'hidden',
     //   backgroundColor: "#eee",
-    background: "rgb(70,128,131)",
+    background: 'rgb(70,128,131)',
     background:
-      "linear-gradient(206deg, rgba(70,128,131,1) 0%, rgba(60,110,113,1) 70%, rgba(42,78,80,1) 100%)",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "space-between",
-    alignItems: "flex-start",
-    position: "fixed",
-    top: "0",
-    left: "0",
+      'linear-gradient(206deg, rgba(70,128,131,1) 0%, rgba(60,110,113,1) 70%, rgba(42,78,80,1) 100%)',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    alignItems: 'flex-start',
+    position: 'fixed',
+    top: '0',
+    left: '0',
   },
   InnerSideMenu: {
     // backgroundColor: "#fff",
-    borderRadius: "5px",
-    padding: "1rem 0",
-    overflow: "hidden",
-    [theme.breakpoints.down("sm")]: {},
+    borderRadius: '5px',
+    padding: '1rem 0',
+    overflow: 'hidden',
+    [theme.breakpoints.down('sm')]: {},
   },
   accordion: {},
 }));
 
-const Drawer = ({ Click }) => {
+const Drawer = ({ serviceReview, productReview, insightReview }) => {
   const classes = useStyles();
 
   return (
@@ -65,7 +66,7 @@ const Drawer = ({ Click }) => {
         <Button
           variant="outlined"
           startIcon={<ApartmentOutlinedIcon />}
-          style={{ border: "none", color: "#f9564f", padding: ".5rem 1rem" }}
+          style={{ border: 'none', color: '#f9564f', padding: '.5rem 1rem' }}
           gutterBottom
         >
           Business
@@ -73,21 +74,21 @@ const Drawer = ({ Click }) => {
         <Typography
           variant="body1"
           component="div"
-          style={{ color: "#fafafa", padding: " 1rem" }}
+          style={{ color: '#fafafa', padding: ' 1rem' }}
         >
           www.Company.com
         </Typography>
 
         <Accordion
           className={classes.accordion}
-          sx={{ backgroundColor: "transparent", border: "none" }}
+          sx={{ backgroundColor: 'transparent', border: 'none' }}
           elevation={0}
         >
           <AccordionSummary>
             <Button
               variant="outlined"
               startIcon={<HomeOutlinedIcon />}
-              style={{ border: "none", color: "#f9564f", padding: "0" }}
+              style={{ border: 'none', color: '#f9564f', padding: '0' }}
               gutterBottom
               href="/"
             >
@@ -98,16 +99,34 @@ const Drawer = ({ Click }) => {
 
         <Accordion
           className={classes.accordion}
-          sx={{ backgroundColor: "transparent", border: "none" }}
+          sx={{ backgroundColor: 'transparent', border: 'none' }}
+          elevation={0}
+        >
+          <AccordionSummary>
+            <Button
+              variant="outlined"
+              startIcon={<ShoppingCartIcon />}
+              style={{ border: 'none', color: '#f9564f', padding: '0' }}
+              gutterBottom
+              href="#"
+            >
+              Upgrade
+            </Button>
+          </AccordionSummary>
+        </Accordion>
+
+        <Accordion
+          className={classes.accordion}
+          sx={{ backgroundColor: 'transparent', border: 'none' }}
           elevation={0}
         >
           <AccordionSummary
-            expandIcon={<ExpandMoreIcon style={{ color: "#f9564f" }} />}
+            expandIcon={<ExpandMoreIcon style={{ color: '#f9564f' }} />}
           >
             <Button
               variant="outlined"
               startIcon={<ReviewsIcon />}
-              style={{ border: "none", color: "#f9564f", padding: "0" }}
+              style={{ border: 'none', color: '#f9564f', padding: '0' }}
               gutterBottom
             >
               Reviews
@@ -116,35 +135,39 @@ const Drawer = ({ Click }) => {
           <AccordionDetails>
             <List
               style={{
-                textDecoration: "none,",
-                listStyleType: "none",
-                paddingLeft: "1.5rem",
-                paddingTop: "0",
-                color: "#eee",
-                fontWeight: "300",
+                textDecoration: 'none,',
+                listStyleType: 'none',
+                paddingLeft: '1.5rem',
+                paddingTop: '0',
+                color: '#eee',
+                fontWeight: '300',
               }}
             >
-              <ListItem style={{ cursor: "pointer" }} onClick={Click}>
+              <ListItem style={{ cursor: 'pointer' }} onClick={serviceReview}>
                 Service reviews
               </ListItem>
-              <ListItem style={{ cursor: "pointer" }}>Product reviews</ListItem>
-              <ListItem style={{ cursor: "pointer" }}>Review Insights</ListItem>
+              <ListItem style={{ cursor: 'pointer' }} onClick={productReview}>
+                Product reviews
+              </ListItem>
+              <ListItem style={{ cursor: 'pointer' }} onClick={insightReview}>
+                Review Insights
+              </ListItem>
             </List>
           </AccordionDetails>
         </Accordion>
 
         <Accordion
           className={classes.accordion}
-          sx={{ backgroundColor: "transparent", border: "none" }}
+          sx={{ backgroundColor: 'transparent', border: 'none' }}
           elevation={0}
         >
           <AccordionSummary
-            expandIcon={<ExpandMoreIcon style={{ color: "#f9564f" }} />}
+            expandIcon={<ExpandMoreIcon style={{ color: '#f9564f' }} />}
           >
             <Button
               variant="outlined"
               startIcon={<EqualizerOutlinedIcon />}
-              style={{ border: "none", color: "#f9564f", padding: "0" }}
+              style={{ border: 'none', color: '#f9564f', padding: '0' }}
               gutterBottom
             >
               Analytics
@@ -153,35 +176,35 @@ const Drawer = ({ Click }) => {
           <AccordionDetails>
             <List
               style={{
-                textDecoration: "none,",
-                listStyleType: "none",
-                paddingLeft: "1.5rem",
-                paddingTop: "0",
-                color: "#eee",
-                fontWeight: "300",
+                textDecoration: 'none,',
+                listStyleType: 'none',
+                paddingLeft: '1.5rem',
+                paddingTop: '0',
+                color: '#eee',
+                fontWeight: '300',
               }}
             >
-              <ListItem style={{ cursor: "pointer" }}>Overview</ListItem>
-              <ListItem style={{ cursor: "pointer" }}>Reviews ratings</ListItem>
-              <ListItem style={{ cursor: "pointer" }}>Organic reach</ListItem>
-              <ListItem style={{ cursor: "pointer" }}>Replies</ListItem>
-              <ListItem style={{ cursor: "pointer" }}>Benchmark</ListItem>
+              <ListItem style={{ cursor: 'pointer' }}>Overview</ListItem>
+              <ListItem style={{ cursor: 'pointer' }}>Reviews ratings</ListItem>
+              <ListItem style={{ cursor: 'pointer' }}>Organic reach</ListItem>
+              <ListItem style={{ cursor: 'pointer' }}>Replies</ListItem>
+              <ListItem style={{ cursor: 'pointer' }}>Benchmark</ListItem>
             </List>
           </AccordionDetails>
         </Accordion>
 
         <Accordion
           className={classes.accordion}
-          sx={{ backgroundColor: "transparent", border: "none" }}
+          sx={{ backgroundColor: 'transparent', border: 'none' }}
           elevation={0}
         >
           <AccordionSummary
-            expandIcon={<ExpandMoreIcon style={{ color: "#f9564f" }} />}
+            expandIcon={<ExpandMoreIcon style={{ color: '#f9564f' }} />}
           >
             <Button
               variant="outlined"
               startIcon={<IntegrationInstructionsOutlinedIcon />}
-              style={{ border: "none", color: "#f9564f", padding: "0" }}
+              style={{ border: 'none', color: '#f9564f', padding: '0' }}
               gutterBottom
             >
               Integrations
@@ -190,33 +213,33 @@ const Drawer = ({ Click }) => {
           <AccordionDetails>
             <List
               style={{
-                textDecoration: "none,",
-                listStyleType: "none",
-                paddingLeft: "1.5rem",
-                paddingTop: "0",
-                color: "#eee",
-                fontWeight: "300",
+                textDecoration: 'none,',
+                listStyleType: 'none',
+                paddingLeft: '1.5rem',
+                paddingTop: '0',
+                color: '#eee',
+                fontWeight: '300',
               }}
             >
-              <ListItem style={{ cursor: "pointer" }}>Overview</ListItem>
-              <ListItem style={{ cursor: "pointer" }}>Website</ListItem>
-              <ListItem style={{ cursor: "pointer" }}>YouTube</ListItem>
-              <ListItem style={{ cursor: "pointer" }}>Facebook</ListItem>
-              <ListItem style={{ cursor: "pointer" }}>Instagram</ListItem>
+              <ListItem style={{ cursor: 'pointer' }}>Overview</ListItem>
+              <ListItem style={{ cursor: 'pointer' }}>Website</ListItem>
+              <ListItem style={{ cursor: 'pointer' }}>YouTube</ListItem>
+              <ListItem style={{ cursor: 'pointer' }}>Facebook</ListItem>
+              <ListItem style={{ cursor: 'pointer' }}>Instagram</ListItem>
             </List>
           </AccordionDetails>
         </Accordion>
 
         <Accordion
           className={classes.accordion}
-          sx={{ backgroundColor: "transparent", border: "none" }}
+          sx={{ backgroundColor: 'transparent', border: 'none' }}
           elevation={0}
         >
           <AccordionSummary>
             <Button
               variant="outlined"
               startIcon={<SettingsOutlinedIcon />}
-              style={{ border: "none", color: "#f9564f", padding: "0" }}
+              style={{ border: 'none', color: '#f9564f', padding: '0' }}
               gutterBottom
             >
               Settings
@@ -229,7 +252,7 @@ const Drawer = ({ Click }) => {
         <Typography
           variant="body1"
           component="div"
-          style={{ color: "#fafafa", fontSize: ".9rem" }}
+          style={{ color: '#fafafa', fontSize: '.9rem' }}
           gutterBottom
         >
           Your plan is : Standard+
@@ -238,24 +261,24 @@ const Drawer = ({ Click }) => {
         <Typography
           variant="body1"
           component="div"
-          style={{ color: "#fafafa", fontSize: ".9rem" }}
+          style={{ color: '#fafafa', fontSize: '.9rem' }}
           gutterBottom
         >
           Expiry date: 31/12/2024
         </Typography>
         <Button
           style={{
-            padding: ".5rem 2rem ",
-            borderRadius: "4px",
-            backgroundColor: "#f9564f",
-            color: "#fff",
-            margin: ".5rem auto",
+            padding: '.5rem 2rem ',
+            borderRadius: '4px',
+            backgroundColor: '#f9564f',
+            color: '#fff',
+            margin: '.5rem auto',
           }}
         >
           Upgrade now
         </Button>
         <Box>
-          <img src={Logo} style={{ width: "160px" }} />
+          <img src={Logo} style={{ width: '160px' }} />
         </Box>
       </Box>
     </Box>

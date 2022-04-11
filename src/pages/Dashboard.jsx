@@ -17,6 +17,7 @@ import ProductReviews from '../components/ProductReviews';
 import Analytics from '../components/Analytics';
 import ReviewInsights from '../components/ReviewInsights';
 import Insights from '../components/Insights';
+import PricingPlan from '../components/PricingPlan';
 
 const useStyles = makeStyles((theme) => ({
   dashboard: {
@@ -50,27 +51,53 @@ const Dashboard = () => {
   const pageId = params.id;
 
   const [reviewService, setReviewService] = useState(false);
+  const [reviewProduct, setReviewProduct] = useState(false);
+  const [reviewInsights, setReviewInsights] = useState(false);
   const [title, setTitle] = useState(false);
 
   const Reviews = ['Service reviews', 'Product  reviews', 'Review Insights'];
 
-  const ShowFigures = () => {
-    setReviewService(!reviewService);
+  const ShowServiceReview = () => {
+    setReviewService(true);
+    setReviewProduct(false);
+    setReviewInsights(false);
+    setTitle('title');
+  };
+
+  const ShowProductReview = () => {
+    setReviewProduct(true);
+    setReviewService(false);
+    setReviewInsights(false);
+    setTitle('title');
+  };
+
+  const ShowInsights = () => {
+    setReviewInsights(true);
+    setReviewProduct(false);
+    setReviewService(false);
     setTitle('title');
   };
 
   return (
     <Box className={classes.dashboard}>
-      <Drawer Click={ShowFigures} />
+      <Drawer
+        serviceReview={ShowServiceReview}
+        productReview={ShowProductReview}
+        insightReview={ShowInsights}
+      />
 
       <Box className={classes.detail}>
         <DashBoardDetailHeader title={Reviews[0]} />
-        {/* {reviewService ? <ServicesReviews /> : null} */}
+
+        {reviewService ? <ServicesReviews /> : null}
+        {reviewProduct ? <ProductReviews /> : null}
+        {reviewInsights ? <ReviewInsights /> : null}
         {/* <ServicesReviews /> */}
         {/* <ProductReviews /> */}
         {/* <Analytics /> */}
         {/* <ReviewInsights /> */}
-        <Insights />
+        {/* <Insights /> */}
+        {/* <PricingPlan /> */}
       </Box>
     </Box>
   );
