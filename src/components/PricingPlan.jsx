@@ -132,8 +132,8 @@ const SinglePlan = ({
   return (
     <Box
       style={{
-        width: '23%',
-        height: '80vh',
+        width: '30%',
+        // height: '100vh',
         borderRadius: '4px',
         backgroundColor: `${backColor}`,
         boxShadow:
@@ -144,7 +144,7 @@ const SinglePlan = ({
       }}
     >
       <Typography
-        variant="h4"
+        variant="h5"
         component="div"
         gutterBottom
         style={{ color: '#616161' }}
@@ -161,7 +161,7 @@ const SinglePlan = ({
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis,
         consectetur!
       </Typography>
-      <Typography variant="h3" component="div" gutterBottom>
+      <Typography variant="h4" component="div" gutterBottom style={{fontWeight:"600"}}>
         {price} DZD
       </Typography>
       <Typography
@@ -179,6 +179,7 @@ const SinglePlan = ({
           color: '#fff',
           marginBottom: '2rem',
           width: '80%',
+          fontSize:".8rem"
         }}
         gutterBottom
       >

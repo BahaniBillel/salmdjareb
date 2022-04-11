@@ -53,6 +53,7 @@ const Dashboard = () => {
   const [reviewService, setReviewService] = useState(false);
   const [reviewProduct, setReviewProduct] = useState(false);
   const [reviewInsights, setReviewInsights] = useState(false);
+  const [priceplan, setPriceplan] = useState(false);
   const [title, setTitle] = useState(false);
 
   const Reviews = ['Service reviews', 'Product  reviews', 'Review Insights'];
@@ -61,6 +62,7 @@ const Dashboard = () => {
     setReviewService(true);
     setReviewProduct(false);
     setReviewInsights(false);
+    setPriceplan(false)
     setTitle('title');
   };
 
@@ -68,11 +70,22 @@ const Dashboard = () => {
     setReviewProduct(true);
     setReviewService(false);
     setReviewInsights(false);
+    setPriceplan(false)
     setTitle('title');
   };
 
   const ShowInsights = () => {
     setReviewInsights(true);
+    setReviewProduct(false);
+    setReviewService(false);
+    setPriceplan(false)
+    setTitle('title');
+  };
+
+
+  const ShowPricePlan= () => {
+    setPriceplan(true)
+    setReviewInsights(false);
     setReviewProduct(false);
     setReviewService(false);
     setTitle('title');
@@ -84,6 +97,7 @@ const Dashboard = () => {
         serviceReview={ShowServiceReview}
         productReview={ShowProductReview}
         insightReview={ShowInsights}
+        upgrade={ShowPricePlan}
       />
 
       <Box className={classes.detail}>
@@ -92,6 +106,7 @@ const Dashboard = () => {
         {reviewService ? <ServicesReviews /> : null}
         {reviewProduct ? <ProductReviews /> : null}
         {reviewInsights ? <ReviewInsights /> : null}
+        {priceplan ? <PricingPlan /> : null}
         {/* <ServicesReviews /> */}
         {/* <ProductReviews /> */}
         {/* <Analytics /> */}
