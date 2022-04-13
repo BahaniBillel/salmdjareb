@@ -56,6 +56,7 @@ const useStyles = makeStyles((theme) => ({
 
     // width: '380px',
     // height: '650px',
+    minWidth: '320px',
     borderradius: '4px',
     backgroundColor: '#fff',
     padding: '1rem',
@@ -135,7 +136,6 @@ const ServicesReviews = () => {
           style={{
             display: 'flex',
             flexDirection: 'column',
-            
           }}
         >
           <Box className={classes.performance} gutterBottom>
@@ -160,13 +160,13 @@ const ServicesReviews = () => {
           <Typography variant="h6" component="div" color="gray" gutterBottom>
             Your 3 latest reviews
           </Typography>
-          <Divider/>
+          <Divider />
           <EmbedReview
             comment="It was awsome experience.Thank you for the service."
             value={4.5}
             reviewer="By Bahani Billel.5 days ago."
           />
-          <Divider/>
+          <Divider />
           <EmbedReview
             comment="It was ok, but not super, i hope they get more serious next time"
             value={3}
@@ -245,7 +245,7 @@ export default ServicesReviews;
 
 const EmbedReview = ({ comment, value, reviewer }) => {
   return (
-    <Box gutterBottom  marginBottom={1.4}>
+    <Box gutterBottom marginBottom={1.4}>
       <Box
         style={{
           maxWidth: '200px',
@@ -278,12 +278,7 @@ const EmbedReview = ({ comment, value, reviewer }) => {
         }}
       >
         <ReadRating value={value} size="3rem" />
-        <Typography
-          variant="caption"
-          component="div"
-          color="lght gray"
-          
-        >
+        <Typography variant="caption" component="div" color="lght gray">
           {reviewer}
         </Typography>
       </Box>

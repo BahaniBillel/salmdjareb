@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
 import MobileMenu from './MobileMenu';
 import CloseIcon from '@mui/icons-material/Close';
-import { motion } from 'framer-motion';
 
 const useStyles = makeStyles((theme) => ({
   nav: {
