@@ -18,6 +18,7 @@ import Analytics from '../components/Analytics';
 import ReviewInsights from '../components/ReviewInsights';
 import Insights from '../components/Insights';
 import PricingPlan from '../components/PricingPlan';
+import Tabs from '../components/Tabs';
 
 const useStyles = makeStyles((theme) => ({
   dashboard: {
@@ -62,7 +63,7 @@ const Dashboard = () => {
     setReviewService(true);
     setReviewProduct(false);
     setReviewInsights(false);
-    setPriceplan(false)
+    setPriceplan(false);
     setTitle('title');
   };
 
@@ -70,7 +71,7 @@ const Dashboard = () => {
     setReviewProduct(true);
     setReviewService(false);
     setReviewInsights(false);
-    setPriceplan(false)
+    setPriceplan(false);
     setTitle('title');
   };
 
@@ -78,13 +79,12 @@ const Dashboard = () => {
     setReviewInsights(true);
     setReviewProduct(false);
     setReviewService(false);
-    setPriceplan(false)
+    setPriceplan(false);
     setTitle('title');
   };
 
-
-  const ShowPricePlan= () => {
-    setPriceplan(true)
+  const ShowPricePlan = () => {
+    setPriceplan(true);
     setReviewInsights(false);
     setReviewProduct(false);
     setReviewService(false);
@@ -103,7 +103,7 @@ const Dashboard = () => {
       <Box className={classes.detail}>
         <DashBoardDetailHeader title={Reviews[0]} />
 
-        {reviewService ? <ServicesReviews /> : null}
+        {reviewService ? <Tabs /> : null}
         {reviewProduct ? <ProductReviews /> : null}
         {reviewInsights ? <ReviewInsights /> : null}
         {priceplan ? <PricingPlan /> : null}

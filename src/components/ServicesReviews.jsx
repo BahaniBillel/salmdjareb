@@ -7,7 +7,6 @@ import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
 import ArrowDropDownTwoToneIcon from '@mui/icons-material/ArrowDropDownTwoTone';
 import ArrowDropUpTwoToneIcon from '@mui/icons-material/ArrowDropUpTwoTone';
 import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
-
 import {
   Container,
   makeStyles,
@@ -79,14 +78,6 @@ const ServicesReviews = () => {
 
   return (
     <div className={classes.widget}>
-      <Box className={classes.top}>
-        <ButtonGroup className={classes.selectButtons}>
-          <Button variant="contained">Weekly</Button>
-          <Button variant="contained">Monthly</Button>
-          <Button variant="contained">Annually</Button>
-        </ButtonGroup>
-      </Box>
-
       <Box className={classes.bottom}>
         {/* first box */}
         <Box className={classes.rectangle}>

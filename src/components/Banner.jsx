@@ -12,18 +12,17 @@ import CategoryShow from '../components/CategoryShow';
 const useStyles = makeStyles((theme) => ({
   banner: {
     marginBottom: '5rem',
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
+    position: 'relative',
+    height: '70%',
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column',
       width: '100%',
     },
   },
   bannerImage: {
-    height: 'auto',
-    width: '70%',
+    height: '40%',
+    width: '100%',
+
     padding: '0',
     // backgroundColor: 'red',
     backgroundPosition: 'center',
@@ -67,11 +66,13 @@ const useStyles = makeStyles((theme) => ({
   },
   contentBox: {
     position: 'absolute',
-    bottom: '-5%',
-    marginLeft: '10rem',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%,-50%)',
+
     padding: '2.5rem',
     width: 'auto',
-    maxWidth: '40vw',
+    maxWidth: '80vw',
     maxHeight: '50vh',
     backgroundColor: '#fff',
     zIndex: '20',
@@ -150,9 +151,6 @@ const Banner = () => {
             className={classes.searchInput}
           />
         </Box>
-      </Box>
-      <Box className={classes.categoriesBanner}>
-        <CategoryShow />
       </Box>
     </Box>
   );
