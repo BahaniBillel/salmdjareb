@@ -5,11 +5,15 @@ import backpack from '../images/backpack.svg';
 import WhyReviews from '../components/WhyReviews';
 import JoinCommunity from '../components/JoinCommunity';
 import CallToAction from '../components/CallToAction';
+import CategoryShow from '../components/CategoryShow';
+import ConnectVendorsWithBuyers from '../components/ConnectVendorsWithBuyers';
 
 const Home = () => {
   return (
-    <Box>
+    <Box >
       <Banner />
+      <CategoryShow/>
+      <ConnectVendorsWithBuyers/>
       <WhyReviews />
       <CallToAction />
       <JoinCommunity />

@@ -19,6 +19,7 @@ import ReviewInsights from '../components/ReviewInsights';
 import Insights from '../components/Insights';
 import PricingPlan from '../components/PricingPlan';
 import Tabs from '../components/Tabs';
+import Integrations from '../components/Integrations';
 
 const useStyles = makeStyles((theme) => ({
   dashboard: {
@@ -57,7 +58,7 @@ const Dashboard = () => {
   const [priceplan, setPriceplan] = useState(false);
   const [title, setTitle] = useState(false);
 
-  const Reviews = ['Service reviews', 'Product  reviews', 'Review Insights'];
+  
 
   const ShowServiceReview = () => {
     setReviewService(true);
@@ -101,7 +102,8 @@ const Dashboard = () => {
       />
 
       <Box className={classes.detail}>
-        <DashBoardDetailHeader title={Reviews[0]} />
+        <DashBoardDetailHeader title={"WithGreateness"} />
+        <Integrations/>
 
         {reviewService ? <Tabs /> : null}
         {reviewProduct ? <ProductReviews /> : null}

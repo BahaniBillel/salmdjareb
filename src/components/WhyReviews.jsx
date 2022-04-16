@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import Photo01 from '../images/why-photo-01.jpg';
-import Photo02 from '../images/why-photo-02.jpg';
-import Photo04 from '../images/why-photo-04.jpg';
+import Photo01 from '../images/qualityGraph.jpg';
+import Photo02 from '../images/communityShare.jpg';
+import Photo04 from '../images/easyDecision.jpg';
 import { Box, makeStyles, Container } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -11,11 +11,12 @@ import CardWhy from './CardWhy';
 const useStyles = makeStyles((theme) => ({
   whyReviews: {
     width: '100%',
-    height: 'auto',
+    height: '100vh',
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
+   
     [theme.breakpoints.down('sm')]: {
       height: 'auto',
     },
@@ -23,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
   cardWrapper: {
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'space-around',
     alignItems: 'center',
 
     [theme.breakpoints.down('sm')]: {

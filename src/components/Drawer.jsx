@@ -23,9 +23,10 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import IntegrationInstructionsOutlinedIcon from "@mui/icons-material/IntegrationInstructionsOutlined";
 import EqualizerOutlinedIcon from "@mui/icons-material/EqualizerOutlined";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
-import ApartmentOutlinedIcon from "@mui/icons-material/ApartmentOutlined";
+import PlaylistAddIcon from '@mui/icons-material/PlaylistAdd';
 import Divider from "@mui/material/Divider";
 import Logo from "../images/logoH.png";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   sidemenu: {
@@ -63,46 +64,23 @@ const Drawer = ({ serviceReview, productReview, insightReview, upgrade }) => {
       <CssBaseline />
 
       <Container className={classes.InnerSideMenu}>
-        <Button
-          variant="outlined"
-          startIcon={<ApartmentOutlinedIcon />}
-          style={{ border: "none", color: "#f9564f", padding: ".5rem 1rem" }}
-          gutterBottom
-        >
-          Business
-        </Button>
-        <Typography
-          variant="body1"
-          component="div"
-          style={{ color: "#fafafa", padding: " 1rem" }}
-        >
-          www.Company.com
-        </Typography>
         <ListItem>
-
-        <Button
-          variant="outlined"
-          startIcon={<HomeOutlinedIcon />}
-          style={{ border: "none", color: "#f9564f", padding: "0" }}
-          gutterBottom
-          href="/"
-        >
-          Home
-        </Button>
+          <Button
+            variant="outlined"
+            startIcon={<ShoppingCartIcon />}
+            style={{
+              border: "none",
+              color: "#f9564f",
+              padding: "0",
+              fontSize: ".8rem",
+            }}
+            gutterBottom
+            href="#"
+            onClick={upgrade}
+          >
+            Plancing plan
+          </Button>
         </ListItem>
-      <ListItem>
-
-        <Button
-          variant="outlined"
-          startIcon={<ShoppingCartIcon />}
-          style={{ border: "none", color: "#f9564f", padding: "0" }}
-          gutterBottom
-          href="#"
-          onClick={upgrade}
-        >
-          Plancing plan
-        </Button>
-      </ListItem>
 
         <Accordion
           className={classes.accordion}
@@ -121,28 +99,16 @@ const Drawer = ({ serviceReview, productReview, insightReview, upgrade }) => {
               Reviews
             </Button>
           </AccordionSummary>
-          <AccordionDetails>
-            <List
-              style={{
-                textDecoration: "none,",
-                listStyleType: "none",
-                paddingLeft: "1.5rem",
-                paddingTop: "0",
-                color: "#eee",
-                fontWeight: "300",
-              }}
-            >
-              <ListItem style={{ cursor: "pointer" }} onClick={serviceReview}>
-                Service reviews
-              </ListItem>
-              <ListItem style={{ cursor: "pointer" }} onClick={productReview}>
-                Product reviews
-              </ListItem>
-              <ListItem style={{ cursor: "pointer" }} onClick={insightReview}>
-                Review Insights
-              </ListItem>
-            </List>
-          </AccordionDetails>
+
+          <ListItem style={{ cursor: "pointer" , color:"#ccc" ,fontWeight:"300"}} onClick={serviceReview}>
+            Service reviews
+          </ListItem>
+          <ListItem style={{ cursor: "pointer" , color:"#ccc" ,fontWeight:"300"}} onClick={productReview}>
+            Product reviews
+          </ListItem>
+          <ListItem style={{ cursor: "pointer" , color:"#ccc" ,fontWeight:"300" }} onClick={insightReview}>
+            Review Insights
+          </ListItem>
         </Accordion>
 
         <Accordion
@@ -162,24 +128,11 @@ const Drawer = ({ serviceReview, productReview, insightReview, upgrade }) => {
               Analytics
             </Button>
           </AccordionSummary>
-          <AccordionDetails>
-            <List
-              style={{
-                textDecoration: "none,",
-                listStyleType: "none",
-                paddingLeft: "1.5rem",
-                paddingTop: "0",
-                color: "#eee",
-                fontWeight: "300",
-              }}
-            >
-              <ListItem style={{ cursor: "pointer" }}>Overview</ListItem>
-              <ListItem style={{ cursor: "pointer" }}>Reviews ratings</ListItem>
-              <ListItem style={{ cursor: "pointer" }}>Organic reach</ListItem>
-              <ListItem style={{ cursor: "pointer" }}>Replies</ListItem>
-              <ListItem style={{ cursor: "pointer" }}>Benchmark</ListItem>
-            </List>
-          </AccordionDetails>
+          <ListItem style={{ cursor: "pointer" , color:"#ccc" ,fontWeight:"300"}}>Overview</ListItem>
+          <ListItem style={{ cursor: "pointer" , color:"#ccc"  ,fontWeight:"300"}}>Reviews ratings</ListItem>
+          <ListItem style={{ cursor: "pointer" , color:"#ccc" ,fontWeight:"300"}}>Organic reach</ListItem>
+          <ListItem style={{ cursor: "pointer" , color:"#ccc" ,fontWeight:"300" }}>Replies</ListItem>
+          <ListItem style={{ cursor: "pointer" , color:"#ccc" ,fontWeight:"300"}}>Benchmark</ListItem>
         </Accordion>
 
         <Accordion
@@ -199,76 +152,76 @@ const Drawer = ({ serviceReview, productReview, insightReview, upgrade }) => {
               Integrations
             </Button>
           </AccordionSummary>
-          <AccordionDetails>
-            <List
-              style={{
-                textDecoration: "none,",
-                listStyleType: "none",
-                paddingLeft: "1.5rem",
-                paddingTop: "0",
-                color: "#eee",
-                fontWeight: "300",
-              }}
-            >
-              <ListItem style={{ cursor: "pointer" }}>Overview</ListItem>
-              <ListItem style={{ cursor: "pointer" }}>Website</ListItem>
-              <ListItem style={{ cursor: "pointer" }}>YouTube</ListItem>
-              <ListItem style={{ cursor: "pointer" }}>Facebook</ListItem>
-              <ListItem style={{ cursor: "pointer" }}>Instagram</ListItem>
-            </List>
-          </AccordionDetails>
+          <ListItem style={{ cursor: "pointer" , color:"#ccc" ,fontWeight:"300" }}>Website</ListItem>
+          <ListItem style={{ cursor: "pointer" , color:"#ccc",fontWeight:"300" }}>Social Network</ListItem>
         </Accordion>
-
         <Accordion
           className={classes.accordion}
           sx={{ backgroundColor: "transparent", border: "none" }}
           elevation={0}
         >
-          <AccordionSummary>
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon style={{ color: "#f9564f" }} />}
+          >
             <Button
               variant="outlined"
-              startIcon={<SettingsOutlinedIcon />}
+              startIcon={<PlaylistAddIcon />}
               style={{ border: "none", color: "#f9564f", padding: "0" }}
               gutterBottom
             >
-              Settings
+              Request
             </Button>
           </AccordionSummary>
+          <ListItem style={{ cursor: "pointer" , color:"#ccc" ,fontWeight:"300" }}>Expert</ListItem>
+          <ListItem style={{ cursor: "pointer" , color:"#ccc",fontWeight:"300" }}>Survey</ListItem>
         </Accordion>
+        <ListItem>
+          <Button
+            variant="outlined"
+            startIcon={<SettingsOutlinedIcon />}
+            style={{ border: "none", color: "#f9564f", padding: "0" }}
+            gutterBottom
+          >
+            Settings
+          </Button>
+        </ListItem>
       </Container>
 
       <Box>
         <Typography
           variant="body1"
           component="div"
-          style={{ color: "#fafafa", fontSize: ".9rem" }}
+          style={{ color: "#ccc", fontSize: ".9rem" }}
           gutterBottom
         >
-          Your plan is : Standard+
+          Your plan is : Basic
         </Typography>
 
         <Typography
           variant="body1"
           component="div"
-          style={{ color: "#fafafa", fontSize: ".9rem" }}
+          style={{ color: "#ccc", fontSize: ".9rem" }}
           gutterBottom
         >
           Expiry date: 31/12/2024
         </Typography>
         <Button
           style={{
-            padding: ".5rem 2rem ",
+            padding: ".3rem 2rem ",
             borderRadius: "4px",
             backgroundColor: "#f9564f",
-            color: "#fff",
+            color: "#ccc",
             margin: ".5rem auto",
           }}
           onClick={upgrade}
         >
           Upgrade now
         </Button>
+
         <Box>
-          <img src={Logo} style={{ width: "160px" }} />
+          <Link to="/">
+            <img src={Logo} style={{ width: "160px" }} />
+          </Link>
         </Box>
       </Box>
     </Box>

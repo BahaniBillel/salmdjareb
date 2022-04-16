@@ -14,7 +14,8 @@ import { Link } from 'react-router-dom';
 const useStyles = makeStyles((theme) => ({
   categoryShow: {
     width: '100%',
-    // height: '80vh',
+    padding:"5rem 0",
+    // height: '80vh',5re
 
     // backgroundColor: '#00bfa5',
     [theme.breakpoints.down('sm')]: {
@@ -25,19 +26,14 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   innerWrapper: {
-    // position: "absolute",
-    // top: "-25%",
-    // left: "50%",
     width: '100%',
     height: '100%',
-    // transform: "translateX(-50%)",
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
     flexWrap: 'nowrap',
     padding: '0',
-    // backgroundColor:"purple",
     [theme.breakpoints.down('sm')]: {
       padding: '0 2rem',
     },
@@ -45,18 +41,19 @@ const useStyles = makeStyles((theme) => ({
   upper: {
     height: '8%',
     width: '100%',
-    padding: '0',
+    padding: '2rem 4rem  ',
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'end',
+    textAlign:"right",
+    // backgroundColor:"pink",
 
     '& a': {
       color: '#000',
     },
   },
   showcase: {
-    // height: "93%",
     width: '100%',
     display: 'flex',
     flexDirection: 'row',
@@ -64,6 +61,7 @@ const useStyles = makeStyles((theme) => ({
     alignItem: 'center',
     justifyContent: 'center',
     padding: '0',
+    // backgroundColor:"purple",
     [theme.breakpoints.down('sm')]: {
       justifyContent: 'space-around',
 
@@ -111,7 +109,8 @@ const CategoryShow = () => {
       <Container maxWidth="md" className={classes.innerWrapper}>
         <Container className={classes.upper}>
           <Link to="/categories">
-            <Typography variant="h5">Explore All Categories</Typography>
+            <Typography variant="h5" component="div" style={{fontWeight:"300"}}>Explore all categories</Typography>
+            <Typography variant="h5" component="div" style={{fontWeight:"700",color:"rgb(70,128,131)"}}>Find what they are saying </Typography>
           </Link>
         </Container>
         <Container className={classes.showcase}>
