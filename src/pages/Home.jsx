@@ -7,12 +7,14 @@ import JoinCommunity from '../components/JoinCommunity';
 import CallToAction from '../components/CallToAction';
 import CategoryShow from '../components/CategoryShow';
 import ConnectVendorsWithBuyers from '../components/ConnectVendorsWithBuyers';
+import HomeSlides from '../components/HomeSlides';
 
 const Home = () => {
   return (
     <Box >
       <Banner />
       <CategoryShow/>
+      <HomeSlides/>
       <ConnectVendorsWithBuyers/>
       <WhyReviews />
       <CallToAction />

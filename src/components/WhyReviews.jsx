@@ -46,7 +46,7 @@ const WhyReviews = () => {
           image={Photo02}
           title="Why would your bother yourself to make a review?!!"
         />
-        <CardWhy image={Photo04} title="Making it easier for you to decide" />
+        <CardWhy image={Photo04} title="Making it easier for you to decide." />
       </Container>
     </Box>
   );

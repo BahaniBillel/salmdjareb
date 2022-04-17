@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ReadRating({ value}) {
+export default function ReadRatingSM({ value}) {
   return (
     <Box
       sx={{
@@ -52,7 +52,7 @@ export default function ReadRating({ value}) {
               color: '#f9564f',
               backgroundColor: 'rgb(70,128,131)',
               border: '1px solid #ccc',
-              // fontSize: '.8rem',
+              fontSize: '.8rem',
             }}
           />
         }
@@ -61,7 +61,7 @@ export default function ReadRating({ value}) {
             style={{
               opacity: 0.55,
               border: '1px solid #ccc',
-              // fontSize: '.8rem',
+              fontSize: '.8rem',
             }}
             fontSize="inherit"
           />
