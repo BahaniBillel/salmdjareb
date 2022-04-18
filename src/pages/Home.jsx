@@ -11,14 +11,14 @@ import HomeSlides from '../components/HomeSlides';
 
 const Home = () => {
   return (
-    <Box >
+    <Box>
       <Banner />
-      <CategoryShow/>
-      <HomeSlides/>
-      <ConnectVendorsWithBuyers/>
+      <CategoryShow />
+      <ConnectVendorsWithBuyers />
       <WhyReviews />
       <CallToAction />
       <JoinCommunity />
+      <HomeSlides />
     </Box>
   );
 };

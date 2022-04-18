@@ -15,6 +15,15 @@ import {
 
 import { Link } from 'react-router-dom';
 import LibraryAddCheckRoundedIcon from '@mui/icons-material/LibraryAddCheckRounded';
+import IntegrationAPICard from './IntegrationAPICard';
+import YoutubeLogo from '../images/youtube.jpg';
+import InstagramLogo from '../images/instagram.png';
+import FacebookLogo from '../images/facebook.png';
+import OuedKnissLogo from '../images/ouedkniss.png';
+import EnnaharLogo from '../images/ennahar.jpg';
+import SamiraTVLogo from '../images/samira.png';
+import GoogleLogo from '../images/google.jpg';
+import ShopifyLogo from '../images/shopify.jpg';
 
 const useStyles = makeStyles((theme) => ({
   integrations: {
@@ -46,6 +55,16 @@ const useStyles = makeStyles((theme) => ({
       '0px 2px 1px -1px rgba(0,0,0,.2) ,0px 1px 1px 0px rgba(0,0,0,.14),0px 1px 3px 0px rgba(0,0,0,.12)',
     backgroundColor: '#fff',
     padding: '6rem 2rem',
+  },
+  apiShowcase: {
+    marginTop: '10rem',
+  },
+  apis: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'flex-start',
+    flexWrap: 'wrap',
   },
 }));
 
@@ -164,6 +183,74 @@ const Integrations = () => {
           </ListItem>
         </Box>
       </Box>
+      <Container className={classes.apiShowcase}>
+        <Typography
+          variant="h4"
+          component="div"
+          gutterBottom
+          style={{ fontWeight: '300' }}
+        >
+          Connect with you preferred API
+        </Typography>
+        <Box className={classes.apis}>
+          <IntegrationAPICard
+            logo={YoutubeLogo}
+            name="Youtube"
+            description="  Gorgias helps independent ecommerce brands turn their support center
+          into a profit center. By centralising customer interactions and
+          automating responses to repetitive questions..."
+          />
+          <IntegrationAPICard
+            logo={InstagramLogo}
+            name="Instagram"
+            description="  Gorgias helps independent ecommerce brands turn their support center
+          into a profit center. By centralising customer interactions and
+          automating responses to repetitive questions..."
+          />
+          <IntegrationAPICard
+            logo={FacebookLogo}
+            name="Facebook"
+            description="  Gorgias helps independent ecommerce brands turn their support center
+          into a profit center. By centralising customer interactions and
+          automating responses to repetitive questions..."
+          />
+          <IntegrationAPICard
+            logo={OuedKnissLogo}
+            name="Ouedkniss"
+            description="  Gorgias helps independent ecommerce brands turn their support center
+          into a profit center. By centralising customer interactions and
+          automating responses to repetitive questions..."
+          />
+          <IntegrationAPICard
+            logo={EnnaharLogo}
+            name="Ennahar Tv"
+            description="  Gorgias helps independent ecommerce brands turn their support center
+          into a profit center. By centralising customer interactions and
+          automating responses to repetitive questions..."
+          />
+          <IntegrationAPICard
+            logo={SamiraTVLogo}
+            name="SamiraTV"
+            description="  Gorgias helps independent ecommerce brands turn their support center
+          into a profit center. By centralising customer interactions and
+          automating responses to repetitive questions..."
+          />
+          <IntegrationAPICard
+            logo={GoogleLogo}
+            name="Google"
+            description="  Gorgias helps independent ecommerce brands turn their support center
+          into a profit center. By centralising customer interactions and
+          automating responses to repetitive questions..."
+          />
+          <IntegrationAPICard
+            logo={ShopifyLogo}
+            name="Youtube"
+            description="  Gorgias helps independent ecommerce brands turn their support center
+          into a profit center. By centralising customer interactions and
+          automating responses to repetitive questions..."
+          />
+        </Box>
+      </Container>
     </Box>
   );
 };

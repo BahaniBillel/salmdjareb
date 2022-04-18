@@ -14,7 +14,7 @@ import { Link } from 'react-router-dom';
 const useStyles = makeStyles((theme) => ({
   categoryShow: {
     width: '100%',
-    padding:"5rem 0",
+    padding: '5rem 0',
     // height: '80vh',5re
 
     // backgroundColor: '#00bfa5',
@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'end',
-    textAlign:"right",
+    textAlign: 'right',
     // backgroundColor:"pink",
 
     '& a': {
@@ -109,8 +109,20 @@ const CategoryShow = () => {
       <Container maxWidth="md" className={classes.innerWrapper}>
         <Container className={classes.upper}>
           <Link to="/categories">
-            <Typography variant="h5" component="div" style={{fontWeight:"300"}}>Explore all categories</Typography>
-            <Typography variant="h5" component="div" style={{fontWeight:"700",color:"rgb(70,128,131)"}}>Find what they are saying </Typography>
+            <Typography
+              variant="h5"
+              component="div"
+              style={{ fontWeight: '300' }}
+            >
+              Explore all categories
+            </Typography>
+            <Typography
+              variant="h5"
+              component="div"
+              style={{ fontWeight: '700', color: 'rgb(70,128,131)' }}
+            >
+              Find what they are saying{' '}
+            </Typography>
           </Link>
         </Container>
         <Container className={classes.showcase}>
