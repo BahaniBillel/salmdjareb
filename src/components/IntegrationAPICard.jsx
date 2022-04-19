@@ -26,6 +26,7 @@ const useStyles = makeStyles((theme) => ({
     boxShadow:
       '0px 2px 1px -1px rgba(0,0,0,.2) ,0px 1px 1px 0px rgba(0,0,0,.14),0px 1px 3px 0px rgba(0,0,0,.12)',
     marginBottom: '2rem',
+    
   },
   imgBox: {
     height: '45%',
@@ -41,6 +42,8 @@ const IntegrationAPICard = ({ logo, name, description }) => {
   const classes = useStyles();
   return (
     <Box className={classes.apiCard}>
+      <Link to='/api' style={{color:"#000"}}>
+      
       <Box className={classes.imgBox}>
         <img src={logo} alt="/" />
       </Box>
@@ -69,6 +72,7 @@ const IntegrationAPICard = ({ logo, name, description }) => {
           {description}
         </Typography>
       </Box>
+      </Link>
     </Box>
   );
 };

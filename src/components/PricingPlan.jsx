@@ -19,6 +19,8 @@ import CloseIcon from '@mui/icons-material/Close';
 import CheckIcon from '@mui/icons-material/Check';
 import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
 import { CallToAction } from '@mui/icons-material';
+import { PropTypes } from 'prop-types';
+
 
 const useStyles = makeStyles((theme) => ({
   pricingplan: {
@@ -162,6 +164,7 @@ const SinglePlan = ({
         consectetur!
       </Typography>
       <Typography variant="h4" component="div" gutterBottom style={{fontWeight:"600"}}>
+  
         {price} DZD
       </Typography>
       <Typography
@@ -178,7 +181,7 @@ const SinglePlan = ({
           padding: '.5rem',
           color: '#fff',
           marginBottom: '2rem',
-          width: '80%',
+          width: '100%',
           fontSize:".8rem"
         }}
         gutterBottom
@@ -220,3 +223,26 @@ const SinglePlan = ({
     </Box>
   );
 };
+
+
+PricingPlan.propTypes={
+  scaleZ:PropTypes.number,
+  backColor:PropTypes.string,
+  icon:PropTypes.string,
+  textColor:PropTypes.string,
+  featureOne:PropTypes.string,
+  featureTwo:PropTypes.string,
+  featureThree:PropTypes.string,
+  featureFour:PropTypes.string,
+  featureFive:PropTypes.string,
+  featureSix:PropTypes.string,
+  CTA:PropTypes.string,
+  planType:PropTypes.string,
+  textOne:PropTypes.string,
+  textTwo:PropTypes.string,
+  textThree:PropTypes.string,
+  textFour:PropTypes.string,
+  textFive:PropTypes.string,
+  textSix:PropTypes.string,
+  price:PropTypes.number,
+}

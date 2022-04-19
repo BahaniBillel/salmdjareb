@@ -9,6 +9,8 @@ import {
 import BannerImage from '../images/trusted.png';
 import CategoryShow from '../components/CategoryShow';
 import HomeFeaures from './HomeFeatures';
+import SearchBar from './SearchBar';
+import BookData from '../Donnes.json';
 
 const useStyles = makeStyles((theme) => ({
   banner: {
@@ -39,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
   subText: {
     color: '#f9564f',
     fontSize: '1.5rem',
-    marginTop: '1.5rem',
+    marginTop: '.5rem',
     [theme.breakpoints.down('sm')]: {
       marginTop: '.5rem',
     },
@@ -54,7 +56,7 @@ const useStyles = makeStyles((theme) => ({
   },
   contentBox: {
     position: 'absolute',
-    top: '50%',
+    top: '45%',
     left: '50%',
     transform: 'translate(-50%,-50%)',
     padding: '2.5rem',
@@ -80,7 +82,7 @@ const useStyles = makeStyles((theme) => ({
   searchInput: {
     backgroundColor: 'rgba(255,255,255,.8)',
     marginTop: '.5rem',
-    borderRadius: '5px',
+    borderRadius: '4px',
     width: '',
   },
 }));
@@ -89,10 +91,7 @@ const Banner = () => {
   const classes = useStyles();
   const [input, setInput] = useState();
 
-  const HandleInput = (e) => {
-    e.preventDefault();
-    setInput(e.target.value.trim());
-  };
+  
 
   return (
     <Box className={classes.banner}>
@@ -124,16 +123,7 @@ const Banner = () => {
           Make your decision.
         </Typography>
 
-        <TextField
-          id="standard-search"
-          label="Search for a company or category"
-          type="search"
-          variant="outlined"
-          fullWidth
-          className={classes.searchInput}
-          value={input}
-          onChange={HandleInput}
-        />
+        <SearchBar data={BookData} placeholder='enter your seracg h...'/>
 
         <Typography
           component="p"
