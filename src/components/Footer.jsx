@@ -19,6 +19,7 @@ import CopyrightIcon from '@mui/icons-material/Copyright';
 
 const useStyles = makeStyles((theme) => ({
   footer: {
+    position: 'static',
     padding: '2rem',
     height: 'auto',
     background: 'rgb(70,128,131)',

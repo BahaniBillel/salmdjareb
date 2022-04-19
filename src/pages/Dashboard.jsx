@@ -20,6 +20,7 @@ import Insights from '../components/Insights';
 import PricingPlan from '../components/PricingPlan';
 import Tabs from '../components/Tabs';
 import Integrations from '../components/Integrations';
+import ApiCards from '../components/ApiCards';
 
 const useStyles = makeStyles((theme) => ({
   dashboard: {
@@ -56,16 +57,16 @@ const Dashboard = () => {
   const [reviewProduct, setReviewProduct] = useState(false);
   const [reviewInsights, setReviewInsights] = useState(false);
   const [priceplan, setPriceplan] = useState(false);
-  const [title, setTitle] = useState(false);
-
-  
+  const [webIntegration, setWebIntegration] = useState(false);
+  const [apicard, setApicard] = useState(false);
 
   const ShowServiceReview = () => {
     setReviewService(true);
     setReviewProduct(false);
     setReviewInsights(false);
     setPriceplan(false);
-    setTitle('title');
+    setWebIntegration(false);
+    setApicard(false);
   };
 
   const ShowProductReview = () => {
@@ -73,7 +74,8 @@ const Dashboard = () => {
     setReviewService(false);
     setReviewInsights(false);
     setPriceplan(false);
-    setTitle('title');
+    setWebIntegration(false);
+    setApicard(false);
   };
 
   const ShowInsights = () => {
@@ -81,7 +83,8 @@ const Dashboard = () => {
     setReviewProduct(false);
     setReviewService(false);
     setPriceplan(false);
-    setTitle('title');
+    setWebIntegration(false);
+    setApicard(false);
   };
 
   const ShowPricePlan = () => {
@@ -89,9 +92,27 @@ const Dashboard = () => {
     setReviewInsights(false);
     setReviewProduct(false);
     setReviewService(false);
-    setTitle('title');
+    setWebIntegration(false);
+    setApicard(false);
   };
 
+  const ShowWebsiteIntegration = () => {
+    setWebIntegration(true);
+    setPriceplan(false);
+    setReviewInsights(false);
+    setReviewProduct(false);
+    setReviewService(false);
+    setApicard(false);
+  };
+
+  const ShowApi = () => {
+    setApicard(true);
+    setWebIntegration(false);
+    setPriceplan(false);
+    setReviewInsights(false);
+    setReviewProduct(false);
+    setReviewService(false);
+  };
   return (
     <Box className={classes.dashboard}>
       <Drawer
@@ -99,22 +120,24 @@ const Dashboard = () => {
         productReview={ShowProductReview}
         insightReview={ShowInsights}
         upgrade={ShowPricePlan}
+        websiteIntegration={ShowWebsiteIntegration}
+        api={ShowApi}
       />
 
       <Box className={classes.detail}>
-        <DashBoardDetailHeader title={"WithGreateness"} />
-        <Integrations/>
+        <DashBoardDetailHeader title={'WithGreateness'} />
 
+        {webIntegration ? <Integrations /> : null}
+        {apicard ? <ApiCards /> : null}
         {reviewService ? <Tabs /> : null}
         {reviewProduct ? <ProductReviews /> : null}
         {reviewInsights ? <ReviewInsights /> : null}
         {priceplan ? <PricingPlan /> : null}
         {/* <ServicesReviews /> */}
-        {/* <ProductReviews /> */}
+
         {/* <Analytics /> */}
-        {/* <ReviewInsights /> */}
+
         {/* <Insights /> */}
-        {/* <PricingPlan /> */}
       </Box>
     </Box>
   );

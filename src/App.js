@@ -1,27 +1,28 @@
-import { Box } from "@material-ui/core";
-import { Routes, Route, useParams } from "react-router-dom";
-import Catergories from "./pages/Catergories";
-import Community from "./pages/Community";
-import Home from "./pages/Home";
-import Profile from "./pages/Profile";
-import WriteReviewPage from "./pages/WriteReviewPage";
-import Navigation from "./components/Navigation";
-import Footer from "./components/Footer";
-import LogInAndSignUp from "./pages/LogInAndSignUp";
-import BranchList from "./pages/BranchList";
-import "./App.scss";
-import { makeStyles } from "@material-ui/core";
-import Dashboard from "./pages/Dashboard";
-import { useLocation } from "react-router-dom";
-import LogIn from "./components/Login";
-import SignUp from "./components/SignUp";
+import { Box } from '@material-ui/core';
+import { Routes, Route, useParams } from 'react-router-dom';
+import Catergories from './pages/Catergories';
+import Community from './pages/Community';
+import Home from './pages/Home';
+import Profile from './pages/Profile';
+import WriteReviewPage from './pages/WriteReviewPage';
+import Navigation from './components/Navigation';
+import Footer from './components/Footer';
+import LogInAndSignUp from './pages/LogInAndSignUp';
+import BranchList from './pages/BranchList';
+import './App.scss';
+import { makeStyles } from '@material-ui/core';
+import Dashboard from './pages/Dashboard';
+import { useLocation } from 'react-router-dom';
+import LogIn from './components/Login';
+import SignUp from './components/SignUp';
+import ApiProviderIntegration from './pages/ApiProviderIntegration';
 
 const useStyles = makeStyles((theme) => ({
   app: {
-    width: "100vw",
+    width: '100vw',
   },
   footerSection: {
-    marginTop: "20rem",
+    marginTop: '20rem',
   },
 }));
 
@@ -31,13 +32,13 @@ function App() {
   console.log(location.pathname);
 
   const ReturnNavigation = () => {
-    if (location.pathname !== "/login" && location.pathname !== "/register") {
+    if (location.pathname !== '/login' && location.pathname !== '/register') {
       return <Navigation />;
     }
   };
 
   const ReturnFooter = () => {
-    if (location.pathname !== "/login" && location.pathname !== "/register") {
+    if (location.pathname !== '/login' && location.pathname !== '/register') {
       return <Footer />;
     }
   };
@@ -45,7 +46,7 @@ function App() {
   return (
     <div className={classes.app}>
       <Box>
-        {location.pathname === "/dashboard/1" ? null : ReturnNavigation()}
+        {location.pathname === '/dashboard/1' ? null : ReturnNavigation()}
 
         <Routes>
           <Route exact path="/" element={<Home />} />
@@ -58,10 +59,11 @@ function App() {
           <Route exact path="/register" element={<SignUp />} />
           <Route exact path="/write-review" element={<WriteReviewPage />} />
           <Route exact path="/dashboard/:id" element={<Dashboard />} />
+          <Route exact path="/api" element={<ApiProviderIntegration />} />
         </Routes>
       </Box>
 
-      {location.pathname === "/dashboard/1" ? null : ReturnFooter()}
+      {location.pathname === '/dashboard/1' ? null : ReturnFooter()}
     </div>
   );
 }
