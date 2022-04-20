@@ -59,8 +59,8 @@ const HomeSlides = () => {
           navigation
           pagination={{ clickable: true }}
           scrollbar={{ draggable: true }}
-          onSlideChange={() => console.log('slide change')}
-          onSwiper={(swiper) => console.log(swiper)}
+          // onSlideChange={() => console.log('slide change')}
+          // onSwiper={(swiper) => console.log(swiper)}
           autoplay={{}}
           breakpoints={{
             '@0.00': {

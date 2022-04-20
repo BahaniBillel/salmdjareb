@@ -21,6 +21,7 @@ import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../firebase-config';
 import ReviewForm from '../components/ReviewForm';
 import TextRating from '../components/TextRating';
+import ProfileHeader from './ProfileHeader';
 
 const useStyles = makeStyles((theme) => ({
   upperWrapper: {
@@ -98,6 +99,7 @@ const useStyles = makeStyles((theme) => ({
   },
   sideInfo: {
     width: '33%',
+    marginTop: '1rem',
     // backgroundColor: "blue",
     [theme.breakpoints.down('sm')]: {
       width: '100%',
@@ -216,57 +218,16 @@ const Profile = () => {
             if (company.id === pageId) {
               return (
                 <Box className={classes.upperWrapper}>
-                  <Box className={classes.profileHeader}>
-                    <Container
-                      maxWidth="md"
-                      className={classes.profile_header_wrapper}
-                    >
-                      {/* breadcrumbs */}
-                      <Typography component="div" variant="p1">
-                        {main.activity} > {item.subactivity}>
-                        {company.businessname}
-                      </Typography>
-                      <Box className={classes.logo_name_link_box}>
-                        {/*  logo+name+ avrage score*/}
-                        <Box className={classes.companyIdentification}>
-                          <Box className={classes.imgBox}>
-                            <CardMedia component="img" image={Lays} alt="/" />
-                          </Box>
-                          <Box className={classes.companyScoreInfo}>
-                            <Typography variant="h4" component="h4">
-                              {company.businessname}
-                            </Typography>
-                            <ListItem>
-                              <Typography>
-                                Reviews {company.reviewsNumber} .{' '}
-                                {company.appreciation}
-                              </Typography>
-                            </ListItem>
-                            <ListItem>
-                              <TextRating />
-                              {/* <Rating name="no-value" value={company.rating} /> */}
-                              <Typography varaint="caption" component="div">
-                                {company.overalRating}
-                              </Typography>
-                            </ListItem>
-                          </Box>
-                        </Box>
-                        {/* link to the website */}
-
-                        <Box className={classes.visitWebsite}>
-                          <Typography variant="p1" component="p">
-                            Visit this website
-                            <Button
-                              startIcon={<LanguageIcon />}
-                              endIcon={<ArrowForwardIosOutlinedIcon />}
-                            >
-                              {`wwww.${company.businessname}.com`}
-                            </Button>
-                          </Typography>
-                        </Box>
-                      </Box>
-                    </Container>
-                  </Box>
+                  <ProfileHeader
+                    logo={company.logo}
+                    businessname={company.businessname}
+                    overalRating={company.overalRating}
+                    reviewsCounts={company.reviewsNumber}
+                    main={main.activity}
+                    subactivity={item.subactivity}
+                    appreciation={company.appreciation}
+                    rating={company.overalRating}
+                  />
 
                   {/* /////////////////////////////////////////////////////////////////////////////////////////////////////////////// */}
 

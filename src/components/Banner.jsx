@@ -7,10 +7,10 @@ import {
   TextField,
 } from '@material-ui/core';
 import BannerImage from '../images/trusted.png';
-import CategoryShow from '../components/CategoryShow';
 import HomeFeaures from './HomeFeatures';
 import SearchBar from './SearchBar';
 import BookData from '../Donnes.json';
+import Data from '../components/Data';
 
 const useStyles = makeStyles((theme) => ({
   banner: {
@@ -89,9 +89,6 @@ const useStyles = makeStyles((theme) => ({
 
 const Banner = () => {
   const classes = useStyles();
-  const [input, setInput] = useState();
-
-  
 
   return (
     <Box className={classes.banner}>
@@ -123,7 +120,7 @@ const Banner = () => {
           Make your decision.
         </Typography>
 
-        <SearchBar data={BookData} placeholder='enter your seracg h...'/>
+        <SearchBar data={BookData} placeholder="enter your seracg h..." />
 
         <Typography
           component="p"
