@@ -8,7 +8,6 @@ import Chip from "@mui/material/Chip";
 import HomeIcon from "@mui/icons-material/Home";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ActivitieZData from "../components/Data";
-import useMediaQuery from "@mui/material/useMediaQuery";
 import { Link } from "react-router-dom";
 
 const StyledBreadcrumb = styled(Chip)(({ theme }) => {
@@ -80,9 +79,7 @@ const BranchList = () => {
     Data: [...rest],
   } = ActivitieZData();
 
-  // console.log(rest);
 
-  // the question: how to import data based on a local file
 
   return (
     <Box className={classes.upperWrapper}>
@@ -127,7 +124,7 @@ const BranchList = () => {
           {/* Side bar */}
           <h3>side bar</h3>
         </Container>
-        <Container>
+        <Container >
           {/* this is where card business  will be mapped */}
 
           {rest.map((item) => {
@@ -140,6 +137,7 @@ const BranchList = () => {
                         <SingleCardCategory
                           key={business.id}
                           companyName={business.businessname}
+                          logo={business.logo}
                         />
                       </Link>
                     </div>
