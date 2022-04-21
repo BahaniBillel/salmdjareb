@@ -9,7 +9,7 @@ import {
 import BannerImage from '../images/trusted.png';
 import HomeFeaures from './HomeFeatures';
 import SearchBar from './SearchBar';
-import BookData from '../Donnes.json';
+import CompaniezData from '../Donnes.json';
 import Data from '../components/Data';
 
 const useStyles = makeStyles((theme) => ({
@@ -120,7 +120,7 @@ const Banner = () => {
           Make your decision.
         </Typography>
 
-        <SearchBar data={BookData} placeholder="enter your seracg h..." />
+        <SearchBar data={CompaniezData} placeholder="enter your seracg h..." />
 
         <Typography
           component="p"

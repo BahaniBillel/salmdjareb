@@ -15,6 +15,7 @@ import TextRating from '../components/TextRating';
 import ReadRating from '../components/ReadRating';
 import Tooltip from '@mui/material/Tooltip';
 import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
+import BreadCrumb from '../components/BreadCrumb';
 
 const useStyles = makeStyles((theme) => ({
   profileHeader: {
@@ -85,9 +86,10 @@ const ProfileHeader = ({
     <Box className={classes.profileHeader}>
       <Container maxWidth="md" className={classes.profile_header_wrapper}>
         {/* breadcrumbs */}
-        <Typography component="div" variant="p1">
-          {main} > {subactivity}>{businessname}
-        </Typography>
+        {/* <Typography component="div" variant="h6" style={{ fontWeight: '300' }}>
+          {main} > {subactivity} >{businessname}
+        </Typography> */}
+        <BreadCrumb />
 
         <Box className={classes.logo_name_link_box}>
           {/*  logo+name+ avrage score*/}

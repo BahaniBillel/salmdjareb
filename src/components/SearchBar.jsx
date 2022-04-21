@@ -6,11 +6,13 @@ import { Link } from 'react-router-dom';
 import './SearchBar.css';
 
 const useStyles = makeStyles((theme) => ({
+  search: {
+    width: '100%',
+  },
   searchInput: {
     backgroundColor: 'rgba(255,255,255,.8)',
     marginTop: '.5rem',
     borderRadius: '4px',
-    width: '',
   },
 }));
 
