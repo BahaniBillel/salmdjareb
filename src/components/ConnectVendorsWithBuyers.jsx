@@ -24,8 +24,8 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    borderTop: 'solid 1px #ccc',
-    borderBottom: 'solid 1px #ccc',
+    // borderTop: 'solid 1px #ccc',
+    // borderBottom: 'solid 1px #ccc',
   },
 }));
 

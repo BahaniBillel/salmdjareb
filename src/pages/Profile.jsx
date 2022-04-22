@@ -215,7 +215,7 @@ const Profile = () => {
       {Data.map((main) =>
         main.subCat.map((item) =>
           item.businesses.map((company) => {
-            if (company.id === pageId) {
+            if (company.businessname === pageId) {
               return (
                 <Box className={classes.upperWrapper}>
                   <ProfileHeader
@@ -239,7 +239,7 @@ const Profile = () => {
                       />
                       <ReviewForm
                         businessname={company.businessname}
-                        companyId={company.id}
+                        companyId={company.businessname}
                         refresh={() => getReviews()}
                       />
 

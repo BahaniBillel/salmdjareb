@@ -9,6 +9,7 @@ import HomeIcon from "@mui/icons-material/Home";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ActivitieZData from "../components/Data";
 import { Link } from "react-router-dom";
+import BreadCrumb from "../components/BreadCrumb";
 
 const StyledBreadcrumb = styled(Chip)(({ theme }) => {
   const backgroundColor =
@@ -57,7 +58,7 @@ const useStyles = makeStyles({
     width: "100vw",
     height: "30vh",
     backgroundColor: "#fff",
-    padding: "3rem",
+    padding: "5rem 3rem",
   },
   categoryHeaderContent: {
     display: "flex",
@@ -85,20 +86,7 @@ const BranchList = () => {
     <Box className={classes.upperWrapper}>
       <Box className={classes.categoryHeaderTitle}>
         <Container className={classes.categoryHeaderContent}>
-          <Breadcrumbs aria-label="breadcrumb">
-            <StyledBreadcrumb
-              component="a"
-              href="/"
-              label="Home"
-              icon={<HomeIcon fontSize="small" />}
-            />
-            <StyledBreadcrumb component="a" href="#" label="Catalog" />
-            <StyledBreadcrumb
-              label="Accessories"
-              deleteIcon={<ExpandMoreIcon />}
-              onDelete={handleClick}
-            />
-          </Breadcrumbs>
+          <BreadCrumb/>
           <Typography
             component="h4"
             variant="h4"
@@ -106,7 +94,7 @@ const BranchList = () => {
           >
             {rest.map(main=>(
               main.subCat.map(sub=>{
-                if (id === sub.id) {
+                if (id === sub.subactivity) {
                   return `Best in ${sub.subactivity}`
                 }
               }
@@ -130,10 +118,10 @@ const BranchList = () => {
           {rest.map((item) => {
             return item.subCat.map((sub) => {
               return sub.businesses.map((business) => {
-                if (sub.id === id) {
+                if (sub.subactivity === id) {
                   return (
                     <div>
-                      <Link to={`/profile/${business.id}`}>
+                      <Link to={`/profile/${business.businessname}`}>
                         <SingleCardCategory
                           key={business.id}
                           companyName={business.businessname}

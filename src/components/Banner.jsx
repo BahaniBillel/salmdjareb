@@ -14,7 +14,7 @@ import Data from '../components/Data';
 
 const useStyles = makeStyles((theme) => ({
   banner: {
-    background: `url(${BannerImage}) top/cover`,
+    background: `linear-gradient(100deg, rgba(63, 63, 63, 0.8) 0%, rgba(255, 255, 255, .4) 55%),url(${BannerImage}) top/cover`,
     position: 'relative',
     height: '100vh',
     [theme.breakpoints.down('sm')]: {
@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
   mainText: {
     // color: '#00695c',
     // textTransform: 'uppercase',
-    fontSize: '3rem',
+    fontSize: '4rem',
     // fontWeight: '600',
     wordSpacing: '.1rem',
     [theme.breakpoints.down('sm')]: {
@@ -108,6 +108,7 @@ const Banner = () => {
           className={classes.mainText}
           gutterBottom
           color="success"
+          style={{fontSize:"3rem",fontWeight:"600", color:"white"}}
         >
           Share your experience.
         </Typography>
@@ -116,6 +117,7 @@ const Banner = () => {
           variant="h1"
           className={classes.mainText}
           gutterBottom
+          style={{fontSize:"3rem",fontWeight:"600", color:"white"}}
         >
           Make your decision.
         </Typography>

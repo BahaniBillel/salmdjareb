@@ -129,7 +129,7 @@ const CategoryShow = () => {
           {/* Mapping the card activities  */}
           {Data.map((card) =>
             card.subCat.map((sub) => (
-              <Link to={`/categories/${sub.id}`}>
+              <Link to={`/categories/${sub.subactivity}`}>
                 <Card key={sub.id} component="div" className={classes.card}>
                   <CardMedia className={classes.cardIcon}>{sub.icon}</CardMedia>
                   <Typography

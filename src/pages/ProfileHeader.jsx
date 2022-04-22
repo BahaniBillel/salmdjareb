@@ -25,6 +25,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'row',
     marginTop: '60px',
+    padding:"2rem 0 0 0",
     [theme.breakpoints.down('sm')]: {
       width: 'auto',
     },

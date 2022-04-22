@@ -8,6 +8,7 @@ import CallToAction from '../components/CallToAction';
 import CategoryShow from '../components/CategoryShow';
 import ConnectVendorsWithBuyers from '../components/ConnectVendorsWithBuyers';
 import HomeSlides from '../components/HomeSlides';
+import HomeProduct from '../components/HomeProduct';
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
       <Banner />
       <CategoryShow />
       <ConnectVendorsWithBuyers />
+      <HomeProduct/>
       <WhyReviews />
       <CallToAction />
       <JoinCommunity />
