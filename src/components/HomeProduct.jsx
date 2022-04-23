@@ -13,6 +13,9 @@ import {
 } from "@material-ui/core";
 import FormatQuoteIcon from "@mui/icons-material/FormatQuote";
 import { Link } from "react-router-dom";
+import Trust from "../images/trust.jpg";
+import Showcase from "../images/showcase.svg";
+import Showcase2 from "../images/showcase2.svg";
 
 const useStyles = makeStyles((theme) => ({
   homeProduct: {
@@ -63,18 +66,95 @@ const HomeProduct = () => {
           <FormatQuoteIcon
             style={{ transform: "rotate(180deg)", fontSize: "3.5rem" }}
           />
-          <Typography variant="h5">
-            REVIEWS.io helped us build trust with customers, which has had a
+          <Typography variant="h5" style={{padding:"0 2rem 0 0"}} component="div">
+            SAL-MADJAREB helped us build trust with customers, which has had a
             positive impact on customer satisfaction and conversion.
           </Typography>
         </Box>
-        <Box style={{ width: "65%" }}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur
-          tenetur esse quibusdam unde commodi ad minima suscipit, iusto ipsa
-          culpa architecto, maxime accusamus. Perferendis nisi possimus ea
-          placeat labore eius repellendus quis iure voluptatum! Laborum nostrum
-          saepe vitae incidunt magni? Aperiam assumenda est adipisci expedita,
-          tenetur asperiores iure alias consectetur.
+
+        {/* Right side */}
+        <Box
+          style={{
+            width: "65%",
+            height: "100%",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "flex-start",
+            alignItems: "center",
+          }}
+        >
+          <Box
+            style={{
+              height: "60%",
+              width: "100%",
+              background: "rgb(131,70,119)",
+              background:
+                "linear-gradient(286deg, rgba(131,70,119,1) 0%, rgba(249,86,79,1) 71%, rgba(230,230,230,1) 100%)",
+              padding: "1rem",
+            }}
+          >
+            <Box
+              style={{
+                width: "60%",
+                transform: "translateY(-28%)",
+                background: "#fff",
+                padding: "1rem",
+              }}
+            >
+              <img
+                src={Trust}
+                alt=""
+                style={{ objectFit: "scale-down", width: "100%" }}
+              />
+            </Box>
+            <Box style={{ width: "60%", transform: "translate(30%,-100%)" }}>
+              <img
+                src={Showcase}
+                alt=""
+                style={{ objectFit: "cover", width: "100%", height: "100%" }}
+              />
+            </Box>
+          </Box>
+          <Box
+            style={{
+              height: "40%",
+              width: "100%",
+              display: "flex",
+              flexDirection: "row",
+              justifyConent: "space-between",
+              padding:"2rem 0"
+            }}
+          >
+            <Box style={{width:"32%", padding:"1rem"}}>
+              <Typography variant="h6" component="div">
+                Product reviews
+              </Typography>
+              <Typography variant="body1" component="div">
+                See greater conversion with product review throughout the buyer
+                journey. The more feedback you collect, the greater the SEO
+                benefits.
+              </Typography>
+            </Box>
+            <Box  style={{width:"32%", padding:"1rem"}}>
+              <Typography variant="h6" component="div">
+                Product insights
+              </Typography>
+              <Typography variant="body1" component="div">
+                Enhance the shopping experience and help customers choose the
+                right products for their needs with Reviewer attributes
+              </Typography>
+            </Box>
+            <Box  style={{width:"32%", padding:"1rem"}}>
+              <Typography variant="h6" component="div">
+                Smarter collection
+              </Typography>
+              <Typography variant="body1" component="div">
+                Set predefined sending conditions and get more reviews with our
+                Flow collection tool. Use SMS invites to follow up, and boost
+                review conversion by an average of 22%.
+              </Typography>
+            </Box>
+          </Box>
         </Box>
       </Container>
     </Box>

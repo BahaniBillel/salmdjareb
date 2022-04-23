@@ -76,7 +76,7 @@ const CategoryTemplate = ({ catIcon, catName, subCat, url }) => {
               </ListItem>
               {activity.subCat.map((sub) => (
                 <ListItem key={sub.id} divider alignItems="start">
-                  <Link to={`/categories/${sub.id}`}>
+                  <Link to={`/categories/${sub.subactivity}`}>
                     <ListItemText primary={sub.subactivity} />
                   </Link>
                 </ListItem>
