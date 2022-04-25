@@ -18,7 +18,7 @@ import ConnectLogo from '../images/link.png';
 
 const useStyles = makeStyles((theme) => ({
   connect: {
-    height: '80vh',
+    height: '100vh',
     width: '100%',
     display: 'flex',
     flexDirection: 'column',

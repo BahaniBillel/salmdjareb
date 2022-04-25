@@ -16,6 +16,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
+    marginBottom:"10rem",
    
     [theme.breakpoints.down('sm')]: {
       height: 'auto',

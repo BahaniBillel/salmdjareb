@@ -15,9 +15,10 @@ const Home = () => {
     <Box>
       <Banner />
       <CategoryShow />
-      <ConnectVendorsWithBuyers />
       <HomeProduct/>
+      <ConnectVendorsWithBuyers />
       <WhyReviews />
+      <HomeProduct/>
       <CallToAction />
       <JoinCommunity />
       <HomeSlides />

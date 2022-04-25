@@ -21,6 +21,7 @@ const useStyles = makeStyles((theme) => ({
   homeProduct: {
     width: "100%",
     height: "120vh",
+    margin:"10rem 0"
   },
 
   innerWrapper: {
