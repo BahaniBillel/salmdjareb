@@ -46,7 +46,7 @@ const HomeSlides = () => {
         variant="body1"
         component="div"
         gutterBottom
-        style={{ fontSize: '2rem' }}
+        style={{ fontSize: '2rem', padding: '0 1rem' }}
         fontWeight="500"
       >
         Top recent reviews of the current month.

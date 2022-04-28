@@ -24,8 +24,40 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    // borderTop: 'solid 1px #ccc',
-    // borderBottom: 'solid 1px #ccc',
+    marginBottom: '3rem',
+    [theme.breakpoints.down('sm')]: {
+      height: 'auto',
+    },
+  },
+  textContent: {
+    width: '60%',
+    [theme.breakpoints.down('sm')]: {
+      width: '100%',
+    },
+  },
+
+  mainTitle: {
+    color: '#f9564f',
+    textAlign: 'center',
+    fontWeight: '600',
+    fontSize: '1.8rem',
+    [theme.breakpoints.down('sm')]: {
+      // textAlign: 'left',
+      padding: ' 0 2rem',
+      fontSize: '2.45rem',
+    },
+  },
+  mainText: {
+    textAlign: 'center',
+    padding: '0 5rem',
+    [theme.breakpoints.down('sm')]: {
+      width: 'auto',
+      padding: '2rem',
+      fontSize: '1.245rem',
+      lineHeight: '2.3rem',
+      textAlign: 'left',
+      fontWeight: '300',
+    },
   },
 }));
 
@@ -36,24 +68,19 @@ const ConnectVendorsWithBuyers = () => {
       <Box>
         <img src={ConnectLogo} alt="" style={{ width: '100px' }} />
       </Box>
-      <Box style={{ width: '60%', padding: '2rem' }}>
+      <Box className={classes.textContent}>
         <Typography
           variant="h4"
           component="div"
-          style={{
-            color: '#f9564f',
-            textAlign: 'center',
-            fontWeight: '600',
-            fontSize: '1.8rem',
-          }}
           gutterBottom
+          className={classes.mainTitle}
         >
           We connect buyers and vendors <br /> with the most trusted content.
         </Typography>
         <Typography
           variant="body1"
           component="div"
-          style={{ textAlign: 'center', padding: '0 5rem' }}
+          className={classes.mainText}
         >
           We believe truth should drive every business decision. Our reviews
           empower buyers to make informed decisions, but they are also a

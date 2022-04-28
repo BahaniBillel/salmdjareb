@@ -11,11 +11,13 @@ import HomeSlides from '../components/HomeSlides';
 import HomeProduct from '../components/HomeProduct';
 import Trust from '../images/trust.jpg';
 import Pattern from '../images/showcase.svg';
+import HomeFeaures from '../components/HomeFeatures';
 
 const Home = () => {
   return (
     <Box>
       <Banner />
+      <HomeFeaures />
       <CategoryShow />
       <HomeProduct
         title={'Trust.'}
@@ -53,25 +55,22 @@ const Home = () => {
       <HomeProduct
         title={'Advocacy.'}
         text1={
-          '  Reviews help consumers buy with confidence - and 93% of online shoppers say they impact their purchase decisions.'
-        }
-        text2={
-          ' Boost your brand’s conversion with trust signals at every point of contact.'
+          '  Customer advocacy is far more powerful than sales led marketing. Use our range of innovative features to amplify the voice of the consumer and take your brand to the next level.'
         }
         text3={
-          'SAL-MADJAREB helped us build trust with customers, which has had a positive impact on customer satisfaction and conversion.'
+          'SAL-MDJAREB.help us understand who our brand advocates are, shaping and growing our social media campaigns.'
         }
-        SMtitle1={'  Product reviews'}
-        SMtitle2={'  Product insights'}
-        SMtitle3={' Smarter collection'}
+        SMtitle1={'  Collect UGC        '}
+        SMtitle2={'  Social proof ads'}
+        SMtitle3={' Instagram influencers'}
         box1={
-          ' See greater conversion with product review throughout the buyer journey. The more feedback you collect, the greater the SEO benefits.'
+          ' Bring products to life with photo and video reviews reviews from your biggest brand advocates. UGC is easy to collect, and perfect for your social campaigns.'
         }
         box2={
-          'Enhance the shopping experience and help customers choose the right products for their needs with Reviewer attributes'
+          'Transform review content into branded posts and ads with our user friendly Social Proof editor.'
         }
         box3={
-          'Set predefined sending conditions and get more reviews with our Flow collection tool. Use SMS invites to follow up, and boost review conversion by an average of 22%.'
+          'Identify and connect with influencers that have engaged with your brand. Leverage their following, and turn Instagram content into shoppable galleries'
         }
         bkg1={'rgb(121,210,32)'}
         bkg2={

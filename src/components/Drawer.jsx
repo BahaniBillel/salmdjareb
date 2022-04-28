@@ -198,7 +198,7 @@ const Drawer = ({
             style={{ cursor: 'pointer', color: '#ccc', fontWeight: '300' }}
             onClick={api}
           >
-            Social Network
+            Popular API
           </ListItem>
         </Accordion>
         <Accordion

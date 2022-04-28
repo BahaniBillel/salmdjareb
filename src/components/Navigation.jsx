@@ -15,7 +15,6 @@ const useStyles = makeStyles((theme) => ({
     maxHeight: '5vh',
     transition: '1s',
     zIndex: '100',
-
     background: 'rgb(70,128,131)',
     background:
       'linear-gradient(206deg, rgba(70,128,131,1) 0%, rgba(60,110,113,1) 70%, rgba(42,78,80,1) 100%)',
@@ -26,12 +25,13 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     justifyContent: 'space-around',
     padding: '1rem 0rem',
+    overFlow: 'hidden',
     [theme.breakpoints.down('sm')]: {
-      padding: '.5rem 2rem',
+      padding: '1.8rem 0rem',
       flexDirection: 'row',
-      justifyContent: 'space-between',
+      justifyContent: 'space-around',
       alignItems: 'center',
-      width: 'auto',
+      width: '100%',
     },
   },
   shrinkNav: {
@@ -119,7 +119,7 @@ const Navigation = () => {
     <>
       <Box
         sx={{ flexGrow: 0 }}
-        position="static"
+        // position="static"
         className={nav ? classes.shrinkNav : classes.nav}
         onScroll={ShrinkNav}
       >

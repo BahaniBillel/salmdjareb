@@ -125,7 +125,7 @@ const Dashboard = () => {
       />
 
       <Box className={classes.detail}>
-        <DashBoardDetailHeader title={'WithGreateness'} />
+        <DashBoardDetailHeader title={'Business X'} />
 
         {webIntegration ? <Integrations /> : null}
         {apicard ? <ApiCards /> : null}

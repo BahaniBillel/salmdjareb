@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
 
     // backgroundColor: '#00bfa5',
     [theme.breakpoints.down('sm')]: {
-      marginTop: '15rem',
+      marginTop: '2rem',
       height: 'auto',
       // backgroundColor: 'red',
       overflow: 'hidden',

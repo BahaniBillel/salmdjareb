@@ -42,6 +42,12 @@ const useStyles = makeStyles((theme) => ({
       flexDirection: 'column',
     },
   },
+
+  logo: {
+    objectFit: 'scale-down',
+    width: '200px',
+    marginBottom: '2rem',
+  },
 }));
 
 const Footer = () => {
@@ -86,12 +92,12 @@ const Footer = () => {
               <ListItemText>Leader opinion</ListItemText>
             </ListItem>
             <ListItem>
-              <Link to="/login">
+              <Link to="/login" style={{ color: '#ccc' }}>
                 <ListItemText>LogIn</ListItemText>
               </Link>
             </ListItem>
             <ListItem>
-              <Link to="/signup">
+              <Link to="/signup" style={{ color: '#ccc' }}>
                 <ListItemText>SignUp</ListItemText>
               </Link>
             </ListItem>

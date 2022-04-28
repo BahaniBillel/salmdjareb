@@ -7,7 +7,7 @@ import {
   TextField,
 } from '@material-ui/core';
 import BannerImage from '../images/trusted.png';
-import HomeFeaures from './HomeFeatures';
+
 import SearchBar from './SearchBar';
 import CompaniezData from '../Donnes.json';
 import Data from '../components/Data';
@@ -17,9 +17,12 @@ const useStyles = makeStyles((theme) => ({
     background: `linear-gradient(100deg, rgba(63, 63, 63, 0.8) 0%, rgba(255, 255, 255, .4) 55%),url(${BannerImage}) top/cover`,
     position: 'relative',
     height: '100vh',
+    marginBottom: '-250px',
+    zIndex: '-1',
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column',
       width: '100%',
+      marginBottom: '0px',
     },
   },
 
@@ -72,8 +75,8 @@ const useStyles = makeStyles((theme) => ({
       opacity: '.9',
       maxWidth: '70vw',
       left: '50%',
-      top: '70%',
-      transform: 'translateX(-50%)',
+      top: '50%',
+      transform: 'translate(-50%,-50%)',
 
       // backgroundColor: 'yellow',
       margin: '0',
@@ -108,7 +111,7 @@ const Banner = () => {
           className={classes.mainText}
           gutterBottom
           color="success"
-          style={{fontSize:"3rem",fontWeight:"600", color:"white"}}
+          style={{ fontSize: '3rem', fontWeight: '600', color: 'white' }}
         >
           Share your experience.
         </Typography>
@@ -117,7 +120,7 @@ const Banner = () => {
           variant="h1"
           className={classes.mainText}
           gutterBottom
-          style={{fontSize:"3rem",fontWeight:"600", color:"white"}}
+          style={{ fontSize: '3rem', fontWeight: '600', color: 'white' }}
         >
           Make your decision.
         </Typography>
@@ -134,7 +137,6 @@ const Banner = () => {
           1,450,092 reviews & rating from 100% verified users{' '}
         </Typography>
       </Box>
-      <HomeFeaures />
     </Box>
   );
 };

@@ -19,6 +19,9 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     height: '120vh',
     margin: '10rem 0',
+    [theme.breakpoints.down('sm')]: {
+      height: 'auto',
+    },
   },
 
   innerWrapper: {
@@ -31,6 +34,59 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'flex-start',
     justifyContent: 'center',
     flexWrap: 'nowrap',
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'column',
+    },
+  },
+
+  leftBox: {
+    width: '35%',
+    [theme.breakpoints.down('sm')]: {
+      width: '100%',
+    },
+  },
+  rightBox: {
+    width: '65%',
+    height: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    [theme.breakpoints.down('sm')]: {
+      width: '100%',
+      justifyContent: 'space-around',
+    },
+  },
+  boxImg: {
+    height: '60%',
+    width: '100%',
+    padding: '1rem',
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '5rem',
+    },
+  },
+  Img: {
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '5rem',
+    },
+  },
+  advantages: {
+    height: '40%',
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyConent: 'space-between',
+    padding: '2rem 0',
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'column',
+    },
+  },
+  advBox: {
+    width: '32%',
+    padding: '1rem',
+    [theme.breakpoints.down('sm')]: {
+      width: '100%',
+    },
   },
 }));
 
@@ -58,7 +114,8 @@ const HomeProduct = ({
         className={classes.innerWrapper}
         style={{ background: `${backColor}` }}
       >
-        <Box style={{ width: '35%' }}>
+        {/* Left box*/}
+        <Box className={classes.leftBox}>
           <Typography variant="h2" style={{ fontWeight: '600' }}>
             {title}
           </Typography>
@@ -90,25 +147,14 @@ const HomeProduct = ({
           </Typography>
         </Box>
 
-        {/* Right side */}
-        <Box
-          style={{
-            width: '65%',
-            height: '100%',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'flex-start',
-            alignItems: 'center',
-          }}
-        >
+        {/* Right box */}
+        <Box className={classes.rightBox}>
           <Box
             style={{
-              height: '60%',
-              width: '100%',
               background: `${bkg1}`,
               background: `${bkg2}`,
-              padding: '1rem',
             }}
+            className={classes.boxImg}
           >
             <Box
               style={{
@@ -117,6 +163,7 @@ const HomeProduct = ({
                 background: '#fff',
                 padding: '1rem',
               }}
+              className={classes.Img}
             >
               <img
                 src={bigImg}
@@ -132,17 +179,8 @@ const HomeProduct = ({
               />
             </Box>
           </Box>
-          <Box
-            style={{
-              height: '40%',
-              width: '100%',
-              display: 'flex',
-              flexDirection: 'row',
-              justifyConent: 'space-between',
-              padding: '2rem 0',
-            }}
-          >
-            <Box style={{ width: '32%', padding: '1rem' }}>
+          <Box className={classes.advantages}>
+            <Box className={classes.advBox}>
               <Typography variant="h6" component="div">
                 {SMtitle1}
               </Typography>
@@ -150,7 +188,7 @@ const HomeProduct = ({
                 {box1}
               </Typography>
             </Box>
-            <Box style={{ width: '32%', padding: '1rem' }}>
+            <Box className={classes.advBox}>
               <Typography variant="h6" component="div">
                 {SMtitle2}
               </Typography>
@@ -158,7 +196,7 @@ const HomeProduct = ({
                 {box2}
               </Typography>
             </Box>
-            <Box style={{ width: '32%', padding: '1rem' }}>
+            <Box className={classes.advBox}>
               <Typography variant="h6" component="div">
                 {SMtitle3}
               </Typography>
