@@ -14,10 +14,10 @@ import Data from '../components/Data';
 
 const useStyles = makeStyles((theme) => ({
   banner: {
-    background: `linear-gradient(100deg, rgba(63, 63, 63, 0.8) 0%, rgba(255, 255, 255, .4) 55%),url(${BannerImage}) top/cover`,
+    background: `linear-gradient(100deg, rgba(63, 63, 63, 0.8) 0%, rgba(205, 255, 255, .4) 55%),url(${BannerImage}) top/cover`,
     position: 'relative',
     height: '100vh',
-    marginBottom: '-250px',
+    marginBottom: '-100px',
     zIndex: '-1',
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column',

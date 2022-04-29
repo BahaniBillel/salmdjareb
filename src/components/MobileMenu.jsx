@@ -33,10 +33,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const MobileMenu = ({ CloseMobileMenu }) => {
+const MobileMenu = ({ CloseMobileMenu ,slideX}) => {
   const classes = useStyles();
   return (
-    <Box className={classes.mobileMenu}>
+    <Box className={classes.mobileMenu} style={{
+      // transform:`translateX(${slideX})`,
+      transform:`${slideX} translateY(0%)`,
+    
+    }}>
       <Link to="/" sx={{ minWidth: 100 }} onClick={CloseMobileMenu}>
         Home
       </Link>

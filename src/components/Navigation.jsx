@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
 import MobileMenu from './MobileMenu';
 import CloseIcon from '@mui/icons-material/Close';
+import set from 'date-fns/set/index';
 
 const useStyles = makeStyles((theme) => ({
   nav: {
@@ -98,9 +99,11 @@ const Navigation = () => {
   const classes = useStyles();
   const [menu, setMenu] = useState(false);
   const [nav, setNav] = useState(false);
+  const [slideMenu, setSlideMenu] = useState("translateX(100%)");
 
   const HandleClick = () => {
     setMenu(!menu);
+    setSlideMenu("translateX(0%)")
   };
 
   const ShrinkNav = () => {
@@ -111,9 +114,18 @@ const Navigation = () => {
     }
   };
 
+
+  const HandleCloseMobileMenu=()=>{
+    setMenu(false) 
+     setSlideMenu("translateX(100%)")
+  }
   window.addEventListener('scroll', ShrinkNav);
 
-  // Animating mobile menu
+
+  const SelectedLink =()=>{
+    setSlideMenu("translateX(100%)")
+    setMenu(false)
+  }
 
   return (
     <>
@@ -136,14 +148,14 @@ const Navigation = () => {
         >
           <Box className={classes.burgerMenu}>
             {menu ? (
-              <CloseIcon onClick={() => setMenu(false)} />
+              <CloseIcon onClick={() => setMenu(HandleCloseMobileMenu)} />
             ) : (
               <MenuIcon value={menu} onClick={HandleClick} />
             )}
           </Box>
         </Box>
-
-        {menu ? <MobileMenu CloseMobileMenu={() => setMenu(false)} /> : null}
+        <MobileMenu slideX={slideMenu} CloseMobileMenu={ SelectedLink} /> 
+        {/* {menu ? <MobileMenu slideX={"50%"}  CloseMobileMenu={() => setMenu(false)} /> : null} */}
       </Box>
     </>
   );
