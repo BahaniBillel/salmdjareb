@@ -17,6 +17,7 @@ import LogIn from './components/Login';
 import SignUp from './components/SignUp';
 import ApiProviderIntegration from './pages/ApiProviderIntegration';
 import Found from './pages/Found';
+import Businesses from './pages/Businesses';
 
 const useStyles = makeStyles((theme) => ({
   app: {
@@ -62,6 +63,7 @@ function App() {
           <Route exact path="/dashboard/:id" element={<Dashboard />} />
           <Route exact path="/api" element={<ApiProviderIntegration />} />
           <Route exact path="/found" element={<Found />} />
+          <Route exact path="/businesses" element={<Businesses/>} />
         </Routes>
       </Box>
 

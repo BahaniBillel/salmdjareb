@@ -17,8 +17,8 @@ const useStyles = makeStyles((theme) => ({
     background: `linear-gradient(100deg, rgba(63, 63, 63, 0.8) 0%, rgba(205, 255, 255, .4) 55%),url(${BannerImage}) top/cover`,
     position: 'relative',
     height: '100vh',
-    marginBottom: '-100px',
-    zIndex: '-1',
+    // marginBottom: '-100pxs',
+    // zIndex: '-1',
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column',
       width: '100%',
@@ -67,7 +67,6 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: '90%',
     maxHeight: '50vh',
     // backgroundColor: "#fff",
-    zIndex: '20',
     borderRadius: '4px',
     [theme.breakpoints.down('sm')]: {
       width: '300px',
@@ -86,7 +85,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: 'rgba(255,255,255,.8)',
     marginTop: '.5rem',
     borderRadius: '4px',
-    width: '',
+   
   },
 }));
 

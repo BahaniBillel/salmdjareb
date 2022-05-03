@@ -37,7 +37,7 @@ export default function BreadCrumb() {
   const navigate = useNavigate();
   const location = useLocation()
   const pathnames=location.pathname.split('/').filter(x=>x)
-  console.log(pathnames);
+  // console.log(pathnames);
 
   return (
     <div role="presentation" onClick={handleClick}>

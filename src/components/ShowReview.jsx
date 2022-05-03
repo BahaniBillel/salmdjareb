@@ -53,7 +53,7 @@ const useStyles = makeStyles({
   },
 });
 
-const ShowReview = ({ rating, title, review }) => {
+const ShowReview = ({ rating, title, review ,createdAt}) => {
   const classes = useStyles();
   return (
     <Box className={classes.wrapper}>
@@ -70,7 +70,7 @@ const ShowReview = ({ rating, title, review }) => {
                 <ImageIcon />
               </Avatar>
             </ListItemAvatar>
-            <ListItemText primary="Bahani Billel" secondary="Av 9, 2022" />
+            <ListItemText primary="Bahani Billel" secondary={createdAt} />
           </div>
         </div>
 
