@@ -24,10 +24,11 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   content: {
-    width: '65%',
+    width: '55%',
     transform: 'translate(0%,50%)',
-    backgroundColor: '#FF9671',
+    backgroundColor: 'rgba(249,86,79,.85)',
     padding: '1rem',
+    borderRadius:'4px',
     [theme.breakpoints.down('sm')]: {
       width: 'auto',
       transform: 'translate(0%,70%)',
@@ -37,6 +38,7 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: '700',
     fontSize: '3.2rem',
     lineHeight: '4.5rem',
+    
 
     [theme.breakpoints.down('sm')]: {
       fontSize: '2rem',
@@ -51,7 +53,7 @@ const Aboutbanner = () => {
     <Container className={classes.aboutbanner}>
       <Box className={classes.content}>
         <Typography variant="h3" className={classes.mainheadline}>
-          We build a ground of understanding <br />
+          We build a common ground of understanding <br />
           between businesses and consumers <br />
           for the greater good.
           <br />
