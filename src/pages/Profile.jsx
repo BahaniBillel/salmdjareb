@@ -245,7 +245,7 @@ const [rating,setRating]=useState([])
                   <Container maxWidth="md" className={classes.detailsWrapper}>
                     <Box className={classes.detailsBox}>
                       <DisplayReviewResult
-                        reviewsNumber={count}
+                        reviewsNumber={company.reviewsNumber}
                         params={company.parameters}
                       />
                       <ReviewForm

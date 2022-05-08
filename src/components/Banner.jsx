@@ -38,12 +38,12 @@ const useStyles = makeStyles((theme) => ({
     // fontWeight: '600',
     wordSpacing: '.1rem',
     [theme.breakpoints.down('sm')]: {
-      fontSize: '1.5rem',
+      fontSize: '2.8rem',
     },
   },
   subText: {
     color: '#f9564f',
-    fontSize: '1.5rem',
+    fontSize: '1.3rem',
     marginTop: '.5rem',
     [theme.breakpoints.down('sm')]: {
       marginTop: '.5rem',
@@ -100,17 +100,18 @@ const Banner = () => {
           variant="h1"
           className={classes.mainText}
           gutterBottom
-          style={{ color: '#00695c', fontWeight: '500' }}
+          style={{  color: '#00695c', fontWeight: '500' }}
         >
-          Find trusty reviews{' '}
+          In Reviews We Trust.
         </Typography>
+        
         <Typography
           component="h1"
           variant="h1"
           className={classes.mainText}
           gutterBottom
           color="success"
-          style={{ fontSize: '3rem', fontWeight: '600', color: 'white' }}
+          style={{ fontSize:"2.8rem", fontWeight: '600', color: 'white' }}
         >
           Share your experience.
         </Typography>
@@ -119,13 +120,12 @@ const Banner = () => {
           variant="h1"
           className={classes.mainText}
           gutterBottom
-          style={{ fontSize: '3rem', fontWeight: '600', color: 'white' }}
+          style={{ fontSize:"2.8rem",fontWeight: '600', color: 'white' }}
         >
           Make your decision.
         </Typography>
 
         <SearchBar data={CompaniezData} placeholder="enter your seracg h..." />
-
         <Typography
           component="p"
           variant="subtitle2"
@@ -135,6 +135,7 @@ const Banner = () => {
           {' '}
           1,450,092 reviews & rating from 100% verified users{' '}
         </Typography>
+        
       </Box>
     </Box>
   );

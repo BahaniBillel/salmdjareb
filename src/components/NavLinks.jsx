@@ -46,7 +46,12 @@ const useStyles = makeStyles((theme) => ({
           background: '#ccc',
           padding: '1rem 10rem 1rem 1rem',
           width: '30%',
-          color: '#fafafa',
+          color: '#ccc',
+          transition:"300ms ease-out all",
+
+          '&:hover':{
+            color:"#f9564f",
+          },
           [theme.breakpoints.up('sm')]: {
             background: 'transparent',
             border: 'none',

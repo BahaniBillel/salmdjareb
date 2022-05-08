@@ -13,27 +13,24 @@ import {
 } from "@material-ui/core";
 
 import { Link } from "react-router-dom";
-import BusinessesBanner from "../components/BusinessesBanner";
-import BusinessesAnalyze from "../components/BusinessesAnalyze";
+import Aboutbanner from "../components/AboutBanner";
 
 const useStyles = makeStyles((theme) => ({
-  businesses:{
-    
-  }
+    about:{
+        height:"300vh"
+    }
 }));
 
 
 
 
-const Businesses = () => {
+const About = () => {
   const classes = useStyles();
   return (
-    <Box className={classes.businesses}>
-      
-       <BusinessesBanner/>
-       <BusinessesAnalyze/>
+    <Box className={classes.about}>
+      <Aboutbanner/>
     </Box>
   )
 }
 
-export default Businesses
+export default About

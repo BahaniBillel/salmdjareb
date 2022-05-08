@@ -2,26 +2,26 @@
   {
     "id": "111",
     "company": "Condor",
-    "link": "/profile/111"
+    "link": "/profile/Condor"
   },
   {
     "id": "112",
     "company": "Samsung",
-    "link": "/profile/112"
+    "link": "/profile/Samsung"
   },
   {
     "id": "113",
     "company": "Stream System",
-    "link": "/profile/113"
+    "link": "/profile/Stream System"
   },
   {
     "id": "114",
     "company": "Brandt",
-    "link": "/profile/114"
+    "link": "/profile/Brandt"
   },
   {
     "id": "115",
     "company": "LG",
-    "link": "/profile/115"
+    "link": "/profile/LG"
   }
 ]
