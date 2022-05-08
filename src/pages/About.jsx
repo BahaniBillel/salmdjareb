@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react';
 import {
   Container,
   makeStyles,
@@ -10,27 +10,26 @@ import {
   Button,
   ButtonGroup,
   Box,
-} from "@material-ui/core";
+} from '@material-ui/core';
 
-import { Link } from "react-router-dom";
-import Aboutbanner from "../components/AboutBanner";
+import { Link } from 'react-router-dom';
+import Aboutbanner from '../components/AboutBanner';
+import Article from '../components/Article';
 
 const useStyles = makeStyles((theme) => ({
-    about:{
-        height:"300vh"
-    }
+  about: {
+    height: '300vh',
+  },
 }));
-
-
-
 
 const About = () => {
   const classes = useStyles();
   return (
     <Box className={classes.about}>
-      <Aboutbanner/>
+      <Aboutbanner />
+      <Article />
     </Box>
-  )
-}
+  );
+};
 
-export default About
+export default About;

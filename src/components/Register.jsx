@@ -8,6 +8,7 @@ import {
   Typography,
   makeStyles,
 } from '@material-ui/core';
+import BreadCrumb from './BreadCrumb';
 
 const useStyles = makeStyles({
   signUp: {
@@ -16,17 +17,19 @@ const useStyles = makeStyles({
     alignItems: 'center',
     justifyContent: 'center',
     flexWrap: 'nowrap',
-    width:"100vw",
+    width: '100vw',
+    height: '100vh',
   },
 });
 
-function SignUp() {
+function Register() {
   const classes = useStyles();
 
   return (
     <div className={classes.signUp}>
+      <BreadCrumb />
       <Typography gutterBottom variant="h4" align="center">
-        SingUp page
+        Register
       </Typography>
       <Grid>
         <Card style={{ maxWidth: 450, padding: '20px 5px', margin: '0 auto' }}>
@@ -113,4 +116,4 @@ function SignUp() {
   );
 }
 
-export default SignUp;
+export default Register;

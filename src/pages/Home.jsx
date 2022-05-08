@@ -2,7 +2,6 @@ import React from 'react';
 import { Box, Container } from '@material-ui/core';
 import Banner from '../components/Banner';
 
-import WhyReviews from '../components/WhyReviews';
 import JoinCommunity from '../components/JoinCommunity';
 import CallToAction from '../components/CallToAction';
 import CategoryShow from '../components/CategoryShow';
@@ -51,7 +50,7 @@ const Home = () => {
         SMimg={Pattern}
       />
       <ConnectVendorsWithBuyers />
-      <WhyReviews />
+
       <HomeProduct
         title={'Advocacy.'}
         text1={

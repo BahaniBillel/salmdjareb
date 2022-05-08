@@ -14,7 +14,7 @@ import { makeStyles } from '@material-ui/core';
 import Dashboard from './pages/Dashboard';
 import { useLocation } from 'react-router-dom';
 import LogIn from './components/Login';
-import SignUp from './components/SignUp';
+import Register from './components/Register';
 import ApiProviderIntegration from './pages/ApiProviderIntegration';
 import Found from './pages/Found';
 import Businesses from './pages/Businesses';
@@ -35,13 +35,13 @@ function App() {
   console.log(location.pathname);
 
   const ReturnNavigation = () => {
-    if (location.pathname !== '/login' && location.pathname !== '/register') {
+    if (location.pathname !== '/Login' && location.pathname !== '/Register') {
       return <Navigation />;
     }
   };
 
   const ReturnFooter = () => {
-    if (location.pathname !== '/login' && location.pathname !== '/register') {
+    if (location.pathname !== '/Login' && location.pathname !== '/Register') {
       return <Footer />;
     }
   };
@@ -58,14 +58,14 @@ function App() {
           <Route exact path="/profile/:id" element={<Profile />} />
           <Route exact path="/community" element={<Community />} />
           <Route exact path="/logInAndSignUp" element={<LogInAndSignUp />} />
-          <Route exact path="/login" element={<LogIn />} />
-          <Route exact path="/register" element={<SignUp />} />
+          <Route exact path="/Login" element={<LogIn />} />
+          <Route exact path="/Register" element={<Register />} />
           <Route exact path="/write-review" element={<WriteReviewPage />} />
           <Route exact path="/dashboard/:id" element={<Dashboard />} />
           <Route exact path="/api" element={<ApiProviderIntegration />} />
           <Route exact path="/found" element={<Found />} />
-          <Route exact path="/businesses" element={<Businesses/>} />
-          <Route exact path="/about" element={<About/>} />
+          <Route exact path="/businesses" element={<Businesses />} />
+          <Route exact path="/about" element={<About />} />
         </Routes>
       </Box>
 

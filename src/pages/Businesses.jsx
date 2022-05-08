@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react';
 import {
   Container,
   makeStyles,
@@ -10,30 +10,26 @@ import {
   Button,
   ButtonGroup,
   Box,
-} from "@material-ui/core";
+} from '@material-ui/core';
 
-import { Link } from "react-router-dom";
-import BusinessesBanner from "../components/BusinessesBanner";
-import BusinessesAnalyze from "../components/BusinessesAnalyze";
+import { Link } from 'react-router-dom';
+import BusinessesBanner from '../components/BusinessesBanner';
+import BusinessesAnalyze from '../components/BusinessesAnalyze';
+import WhyReviews from '../components/WhyReviews';
 
 const useStyles = makeStyles((theme) => ({
-  businesses:{
-    
-  }
+  businesses: {},
 }));
-
-
-
 
 const Businesses = () => {
   const classes = useStyles();
   return (
     <Box className={classes.businesses}>
-      
-       <BusinessesBanner/>
-       <BusinessesAnalyze/>
+      <BusinessesBanner />
+      <BusinessesAnalyze />
+      <WhyReviews />
     </Box>
-  )
-}
+  );
+};
 
-export default Businesses
+export default Businesses;

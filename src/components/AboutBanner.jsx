@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react';
 import {
   Container,
   makeStyles,
@@ -10,46 +10,55 @@ import {
   Button,
   ButtonGroup,
   Box,
-} from "@material-ui/core";
+} from '@material-ui/core';
 
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import Understanding from '../images/understanding.jpg';
 const useStyles = makeStyles((theme) => ({
-    aboutbanner:{
-        height:'100vh',
-        background:`url(${Understanding}) center/cover`,
+  aboutbanner: {
+    height: '100vh',
+    background: `url(${Understanding}) center/cover`,
+    [theme.breakpoints.down('sm')]: {
+      padding: '.5rem',
+      height: '80vh',
     },
-    content:{
-        width:"65%",
-        transform:"translate(10%,50%)",
-        backgroundColor:"rgba(70,128,131,.5)",
-        padding:'1rem',
-      
+  },
+  content: {
+    width: '65%',
+    transform: 'translate(0%,50%)',
+    backgroundColor: '#FF9671',
+    padding: '1rem',
+    [theme.breakpoints.down('sm')]: {
+      width: 'auto',
+      transform: 'translate(0%,70%)',
     },
-    mainheadline:{
-        fontWeight:"700",
-        fontSize:"3.2rem",
-        lineHeight:"4.5rem",
+  },
+  mainheadline: {
+    fontWeight: '700',
+    fontSize: '3.2rem',
+    lineHeight: '4.5rem',
 
-    }
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '2rem',
+      lineHeight: '3rem',
+    },
+  },
 }));
-
-
-
 
 const Aboutbanner = () => {
   const classes = useStyles();
   return (
-    <Box className={classes.aboutbanner}>
-        <Box className={classes.content}>
-            <Typography variant="h3" className={classes.mainheadline} >
-                We create a ground of understanding <br/>
-                between businesses and consumers <br/>
-                for the greater good.<br/>
-            </Typography>
-        </Box>
-    </Box>
-  )
-}
+    <Container className={classes.aboutbanner}>
+      <Box className={classes.content}>
+        <Typography variant="h3" className={classes.mainheadline}>
+          We build a ground of understanding <br />
+          between businesses and consumers <br />
+          for the greater good.
+          <br />
+        </Typography>
+      </Box>
+    </Container>
+  );
+};
 
-export default Aboutbanner
+export default Aboutbanner;

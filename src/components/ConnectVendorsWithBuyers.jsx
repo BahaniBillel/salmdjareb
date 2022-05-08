@@ -50,6 +50,9 @@ const useStyles = makeStyles((theme) => ({
   mainText: {
     textAlign: 'center',
     padding: '0 5rem',
+    fontSize: '1.2rem',
+    lineHeight: '1.95rem',
+    fontWeight: '300',
     [theme.breakpoints.down('sm')]: {
       width: 'auto',
       padding: '2rem',

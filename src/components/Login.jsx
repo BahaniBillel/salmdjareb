@@ -9,6 +9,7 @@ import {
   makeStyles,
 } from '@material-ui/core';
 import { Link } from 'react-router-dom';
+import BreadCrumb from '../components/BreadCrumb';
 
 const useStyles = makeStyles({
   logIn: {
@@ -18,7 +19,7 @@ const useStyles = makeStyles({
     justifyContent: 'center',
     flexWrap: 'nowrap',
     width: '100vw',
-    height: 'auto',
+    height: '100vh',
   },
 });
 
@@ -31,6 +32,7 @@ function LogIn({ username }) {
 
   return (
     <div className={classes.logIn}>
+      <BreadCrumb />
       <Typography gutterBottom variant="h4" align="center">
         Welcom back
       </Typography>
@@ -118,7 +120,7 @@ function LogIn({ username }) {
             </form>
             <Typography variant="body1" style={{ marginTop: '1rem' }}>
               You don't have an account?, please
-              <Link to="/signup"> SignUp</Link>
+              <Link to="/Register"> Register</Link>
             </Typography>
           </CardContent>
         </Card>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Login from '../components/Login';
-import SignUp from '../components/SignUp';
+import Register from '../components/Register';
 import { makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles({
@@ -24,7 +24,7 @@ const LogInAndSignUp = () => {
   };
   return (
     <div className={classes.loginLogOut}>
-      {users.name ? <Login /> : <SignUp />}
+      {users.name ? <Login /> : <Register />}
     </div>
   );
 };
