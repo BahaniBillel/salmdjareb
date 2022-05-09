@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
   joinCommunity: {
     width: '100%',
     height: '100vh',
-    marginBottom:"2rem",
+    marginBottom: '2rem',
     [theme.breakpoints.down('sm')]: {
       height: 'auto',
     },
@@ -74,7 +74,17 @@ const JoinCommunity = () => {
           <Typography component="div" variant="h4" gutterBottom>
             Join the community of active reviewers across Algeria
           </Typography>
-          <Typography component="div" variant="body1" gutterBottom style={{color: "gray", lineHeight: "1.6rem", fontSize: ".9rem"}}>
+          <Typography
+            component="div"
+            variant="body1"
+            gutterBottom
+            style={{
+              color: 'gray',
+              lineHeight: '1.6rem',
+              fontSize: '1.1rem',
+              fontWeight: '300',
+            }}
+          >
             We aim to create a larfge community of algerian consumers to help
             defend their rights and better be understood by the major active
             businesses.
@@ -85,7 +95,16 @@ const JoinCommunity = () => {
         </Box>
         <Box className={classes.thirdBox}>
           <img src={Join01} />
-          <Typography variant="body1" component="div" style={{color: "gray", lineHeight: "1.6rem", fontSize: ".9rem"}}>
+          <Typography
+            variant="body1"
+            component="div"
+            style={{
+              color: 'gray',
+              lineHeight: '1.6rem',
+              fontSize: '1.1rem',
+              fontWeight: '300',
+            }}
+          >
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis
             doloremque repellat aperiam vel quae eos consectetur recusandae
             ipsum, inventore repudiandae?
@@ -93,7 +112,16 @@ const JoinCommunity = () => {
         </Box>
         <Box className={classes.thirdBox}>
           <img src={Join02} />
-          <Typography variant="body1" component="div" style={{color: "gray", lineHeight: "1.6rem", fontSize: ".9rem"}}>
+          <Typography
+            variant="body1"
+            component="div"
+            style={{
+              color: 'gray',
+              lineHeight: '1.6rem',
+              fontSize: '1.1rem',
+              fontWeight: '300',
+            }}
+          >
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis
             doloremque repellat aperiam vel quae eos consectetur recusandae
             ipsum, inventore repudiandae?
@@ -101,7 +129,16 @@ const JoinCommunity = () => {
         </Box>
         <Box className={classes.thirdBox}>
           <img src={Join03} />
-          <Typography variant="body1" component="div" style={{color: "gray", lineHeight: "1.6rem", fontSize: ".9rem"}}>
+          <Typography
+            variant="body1"
+            component="div"
+            style={{
+              color: 'gray',
+              lineHeight: '1.6rem',
+              fontSize: '1.1rem',
+              fontWeight: '300',
+            }}
+          >
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis
             doloremque repellat aperiam vel quae eos consectetur recusandae
             ipsum, inventore repudiandae?

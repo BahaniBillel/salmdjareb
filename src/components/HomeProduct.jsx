@@ -36,6 +36,7 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: 'nowrap',
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column',
+      padding: '3rem 0',
     },
   },
 
@@ -63,6 +64,7 @@ const useStyles = makeStyles((theme) => ({
     padding: '1rem',
     [theme.breakpoints.down('sm')]: {
       marginTop: '5rem',
+      padding: '1rem 0',
     },
   },
   Img: {
