@@ -14,7 +14,7 @@ import { Link } from 'react-router-dom';
 const useStyles = makeStyles((theme) => ({
   categoryShow: {
     width: '100%',
-    padding: '5rem 0',
+    // padding: '5rem 0',
     // height: '80vh',5re
 
     // backgroundColor: '#00bfa5',
@@ -74,6 +74,7 @@ const useStyles = makeStyles((theme) => ({
   card: {
     display: 'flex',
     flexDirection: 'row',
+    justifyContent: 'center',
     alignItems: 'center',
     fontWeght: '300',
     minWidth: '150px',
@@ -91,7 +92,7 @@ const useStyles = makeStyles((theme) => ({
   cardText: {
     fontSize: '.8rem',
     fontWeight: 300,
-    width: '65%',
+    // width: '65%',
     textAlign: 'left',
   },
   cardIcon: {
@@ -131,7 +132,7 @@ const CategoryShow = () => {
             card.subCat.map((sub) => (
               <Link to={`/categories/${sub.subactivity}`}>
                 <Card key={sub.id} component="div" className={classes.card}>
-                  <CardMedia className={classes.cardIcon}>{sub.icon}</CardMedia>
+                  {/* <CardMedia className={classes.cardIcon}>{sub.icon}</CardMedia> */}
                   <Typography
                     variant="subtitle2"
                     className={classes.cardText}

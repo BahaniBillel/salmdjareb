@@ -25,14 +25,14 @@ import BannerImage from '../images/brush-2.jpg';
 
 const useStyles = makeStyles((theme) => ({
   slideWrapper: {
-    height: '80vh',
+    height: '60vh',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-evenly',
     alignItems: 'center',
-    background: 'rgb(250,128,114)',
-    background:
-      'linear-gradient(90deg, rgba(250,128,114,0.5) 0%, rgba(250,128,114,0.8) 35%, rgba(255,128,114,0.02) 100%)',
+    // background: '#fff',
+    // background:
+    //   'linear-gradient(90deg, rgba(250,128,114,0.5) 0%, rgba(250,128,114,0.8) 35%, rgba(255,128,114,0.02) 100%)',
     // background: `url(${BannerImage}) top/cover`,
   },
 }));
@@ -47,9 +47,10 @@ const HomeSlides = () => {
         component="div"
         gutterBottom
         style={{ fontSize: '2rem', padding: '0 1rem' }}
-        fontWeight="500"
+        fontWeight="600"
+        color="rgb(70,128,131)"
       >
-        Top recent reviews of the current month.
+        TOP REVIEWS OF THE CURRENT MONTH
       </Box>
       <Container>
         <Swiper
