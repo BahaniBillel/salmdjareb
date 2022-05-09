@@ -34,6 +34,7 @@ const useStyles = makeStyles((theme) => ({
 
     [theme.breakpoints.down('sm')]: {
       width: 'auto',
+      flexFlow:"column nowrap"
     },
   },
 
@@ -133,11 +134,11 @@ const Dashboard = () => {
         {reviewProduct ? <ProductReviews /> : null}
         {reviewInsights ? <ReviewInsights /> : null}
         {priceplan ? <PricingPlan /> : null}
-        {/* <ServicesReviews /> */}
+        {/* <ServicesReviews />
 
-        {/* <Analytics /> */}
+        <Analytics />
 
-        {/* <Insights /> */}
+        <Insights /> */}
       </Box>
     </Box>
   );

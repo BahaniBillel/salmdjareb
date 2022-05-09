@@ -15,6 +15,9 @@ import {
 import { Link } from 'react-router-dom';
 import Aboutbanner from '../components/AboutBanner';
 import Article from '../components/Article';
+import ConnectVendorsWithBuyers from '../components/ConnectVendorsWithBuyers';
+
+
 
 const useStyles = makeStyles((theme) => ({
   about: {
@@ -28,6 +31,7 @@ const About = () => {
     <Box className={classes.about}>
       <Aboutbanner />
       <Article />
+      <ConnectVendorsWithBuyers /> 
     </Box>
   );
 };

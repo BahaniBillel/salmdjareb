@@ -45,6 +45,12 @@ const useStyles = makeStyles((theme) => ({
     position: 'fixed',
     top: '0',
     left: '0',
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'row',
+      width:"100%",
+      height:"10vh"
+     
+    },
   },
   InnerSideMenu: {
     // backgroundColor: "#fff",

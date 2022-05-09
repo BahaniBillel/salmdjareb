@@ -31,6 +31,7 @@ const Businesses = () => {
   return (
     <Box className={classes.businesses}>
       <BusinessesBanner />
+      
       <BusinessesAnalyze />
       <WhyReviews />
       <HomeProduct

@@ -1,12 +1,12 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import { styled } from '@mui/material/styles';
-import Paper from '@mui/material/Paper';
-import Masonry from '@mui/lab/Masonry';
-import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
-import ArrowDropDownTwoToneIcon from '@mui/icons-material/ArrowDropDownTwoTone';
-import ArrowDropUpTwoToneIcon from '@mui/icons-material/ArrowDropUpTwoTone';
-import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
+import * as React from "react";
+import Box from "@mui/material/Box";
+import { styled } from "@mui/material/styles";
+import Paper from "@mui/material/Paper";
+import Masonry from "@mui/lab/Masonry";
+import FormatQuoteIcon from "@mui/icons-material/FormatQuote";
+import ArrowDropDownTwoToneIcon from "@mui/icons-material/ArrowDropDownTwoTone";
+import ArrowDropUpTwoToneIcon from "@mui/icons-material/ArrowDropUpTwoTone";
+import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
 import {
   Container,
   makeStyles,
@@ -17,63 +17,83 @@ import {
   ListItem,
   Button,
   ButtonGroup,
-} from '@material-ui/core';
+} from "@material-ui/core";
 
-import ReadRating from './ReadRating';
-import ReadTextRating from './ReadTextRating';
-import Tooltip from '@mui/material/Tooltip';
-import { Divider } from '@material-ui/core';
+import ReadRating from "./ReadRating";
+import ReadTextRating from "./ReadTextRating";
+import Tooltip from "@mui/material/Tooltip";
+import { Divider } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   widget: {
-    width: '100%',
-    height: '100%',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    padding: '2rem 6rem',
+    width: "100%",
+    height: "100%",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+    alignItems: "center",
+    padding: "2rem 2rem",
   },
   top: {
-    width: '100%',
+    width: "100%",
   },
   selectButtons: {
-    float: 'right',
+    float: "right",
   },
   bottom: {
-    width: '100%',
-    height: '90%',
+    width: "100%",
+    height: "90%",
     // backgroundColor: 'yellow',
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItem: 'center',
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItem: "center",
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'column',
+      
+    },
   },
   rectangle: {
     boxShadow:
-      '0px 2px 1px -1px rgba(0,0,0,.2) ,0px 1px 1px 0px rgba(0,0,0,.14),0px 1px 3px 0px rgba(0,0,0,.12)',
+      "0px 2px 1px -1px rgba(0,0,0,.2) ,0px 1px 1px 0px rgba(0,0,0,.14),0px 1px 3px 0px rgba(0,0,0,.12)",
 
     // width: '380px',
     // height: '650px',
-    minWidth: '320px',
-    borderradius: '4px',
-    backgroundColor: '#fff',
-    padding: '1rem',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'flex-start',
-    alignItems: 'flex-start',
+    width: "320px",
+    borderradius: "4px",
+    backgroundColor: "#fff",
+    padding: "1rem",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "flex-start",
+    alignItems: "flex-start",
   },
   performance: {
-    display: 'flex',
-    '& svg': {
-      color: 'gray',
-      fontSize: '1rem',
+    display: "flex",
+    "& svg": {
+      color: "gray",
+      fontSize: "1rem",
     },
   },
 }));
 
-const ServicesReviews = () => {
+const ServicesReviews = ({
+  reviewsNumber,
+  avgScore,
+  visibilitySecondBox,
+  diliveredIndicator,
+  diliveredRate,
+  repliedIndicator,
+  repliedRate,
+  queuedIndicator,
+  queuedRate,
+  rejectIndicator,
+  rejectRate,
+  arrow1,
+  arrow2,
+  arrow3,
+  arrow4
+}) => {
   const classes = useStyles();
 
   return (
@@ -94,17 +114,17 @@ const ServicesReviews = () => {
           </Box>
 
           <Box>
-            <ReadTextRating value="4.5" />
+            <ReadTextRating value={avgScore} />
           </Box>
           <Typography variant="caption" component="div">
-            Based on 5260 reviews
+            Based on {reviewsNumber} reviews
           </Typography>
           <Box
             sx={{
-              border: '1px solid #ccc',
-              borderRadius: '4px',
-              padding: '2rem 2rem',
-              marginTop: '4rem',
+              border: "1px solid #ccc",
+              borderRadius: "4px",
+              padding: "2rem 2rem",
+              marginTop: "4rem",
             }}
           >
             <Typography
@@ -116,7 +136,7 @@ const ServicesReviews = () => {
               AVERAGE SCORE
             </Typography>
             <Typography variant="h5" component="div" color="gray">
-              4.5 out 5
+              {avgScore}out 5
             </Typography>
           </Box>
         </Box>
@@ -125,8 +145,8 @@ const ServicesReviews = () => {
         <Box
           className={classes.rectangle}
           style={{
-            display: 'flex',
-            flexDirection: 'column',
+            visibility: `${visibilitySecondBox}`,
+            flexDirection: "column",
           }}
         >
           <Box className={classes.performance} gutterBottom>
@@ -188,41 +208,53 @@ const ServicesReviews = () => {
           </Box>
           <Box
             style={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              justifyContent: 'center',
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
             }}
           >
             <Box
               style={{
-                display: 'flex',
-                flexDirection: 'row',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                marginBottom: '1rem',
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "space-between",
+                marginBottom: "1rem",
               }}
             >
-              <IndicatorBoxDown
+              <IndicatorBox
                 title="DILIVERED"
-                indicator="4563"
-                percentage="-78%"
+                indicator={diliveredIndicator}
+                percentage={diliveredRate}
+                arrow={arrow1}
               />
-              <IndicatorBoxUp title="REPLIED" indicator="3" percentage="27%" />
+              <IndicatorBox
+                title="REPLIED"
+                indicator={repliedIndicator}
+                percentage={repliedRate}
+                arrow={arrow2}
+              />
             </Box>
             <Box
               style={{
-                display: 'flex',
-                flexDirection: 'row',
-                alignItems: 'center',
-                justifyContent: 'space-between',
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "space-between",
               }}
             >
-              <IndicatorBoxUp title="IN QUEUE" indicator="0" percentage="0%" />
-              <IndicatorBoxDown
+              <IndicatorBox
+                title="IN QUEUE"
+                indicator={queuedIndicator}
+                percentage={queuedRate}
+                arrow={arrow3}
+              />
+              <IndicatorBox
                 title="REJECTED"
-                indicator="12"
-                percentage="5%"
+                indicator={rejectIndicator}
+                percentage={rejectRate}
+                arrow={arrow4}
               />
             </Box>
           </Box>
@@ -239,22 +271,22 @@ const EmbedReview = ({ comment, value, reviewer }) => {
     <Box gutterBottom marginBottom={1.4}>
       <Box
         style={{
-          maxWidth: '200px',
-          display: 'flex',
-          flexDirection: 'row',
-          justifyContent: 'flex-start',
+          maxWidth: "200px",
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "flex-start",
         }}
         gutterBottom
       >
         <FormatQuoteIcon
-          style={{ transform: 'rotate(180deg) translateY(20%)' }}
+          style={{ transform: "rotate(180deg) translateY(20%)" }}
         />
         <Typography
           variant="h6"
           component="div"
           color="gray"
           gutterBottom
-          style={{ fontSize: '.7rem', fontWeight: '400' }}
+          style={{ fontSize: ".7rem", fontWeight: "400" }}
         >
           {comment}
         </Typography>
@@ -262,10 +294,10 @@ const EmbedReview = ({ comment, value, reviewer }) => {
 
       <Box
         style={{
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'space-between',
-          alignItems: 'flex-start',
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-between",
+          alignItems: "flex-start",
         }}
       >
         <ReadRating value={value} size="3rem" />
@@ -277,15 +309,15 @@ const EmbedReview = ({ comment, value, reviewer }) => {
   );
 };
 
-const IndicatorBoxDown = ({ title, indicator, percentage }) => {
+const IndicatorBox = ({ title, indicator, percentage,arrow }) => {
   return (
     <Box
       style={{
-        padding: '.5rem',
-        border: '#616161 solid 1px',
-        borderRadius: '4px',
-        margin: '0 1rem ',
-        width: '120px',
+        padding: ".5rem",
+        border: "#616161 solid 1px",
+        borderRadius: "4px",
+        margin: "0 1rem ",
+        width: "120px",
       }}
     >
       <Typography
@@ -293,8 +325,8 @@ const IndicatorBoxDown = ({ title, indicator, percentage }) => {
         component="div"
         color="gray"
         style={{
-          fontSize: '1rem',
-          color: 'grey',
+          fontSize: "1rem",
+          color: "grey",
         }}
       >
         {title}
@@ -304,17 +336,18 @@ const IndicatorBoxDown = ({ title, indicator, percentage }) => {
       </Typography>
       <Box
         style={{
-          display: 'flex',
-          flexDirection: 'row',
-          justifyContent: 'space-between',
-          alignItems: 'center',
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-between",
+          alignItems: "center",
         }}
       >
-        <ArrowDropDownTwoToneIcon style={{ color: 'red' }} />
+       
+        {arrow === 'down' ?  <ArrowDropDownTwoToneIcon style={{ color: "red" }} /> : <ArrowDropUpTwoToneIcon style={{ color: "green" }} />}
         <Typography
           variant="h4"
           component="div"
-          style={{ color: 'red', fontSize: '1rem' }}
+          style={arrow === 'down' ? { color: "red", fontSize: "1rem" }: { color: "green", fontSize: "1rem" } }
         >
           {percentage}
         </Typography>
@@ -323,48 +356,48 @@ const IndicatorBoxDown = ({ title, indicator, percentage }) => {
   );
 };
 
-const IndicatorBoxUp = ({ title, indicator, percentage }) => {
-  return (
-    <Box
-      style={{
-        padding: '.5rem',
-        border: '#616161 solid 1px',
-        borderRadius: '4px',
-        margin: '0 1rem ',
-        width: '120px',
-      }}
-    >
-      <Typography
-        variant="h6"
-        component="div"
-        color="gray"
-        style={{
-          fontSize: '1rem',
-          color: 'grey',
-        }}
-      >
-        {title}
-      </Typography>
-      <Typography variant="h4" component="div" color="gray" style={{}}>
-        {indicator}
-      </Typography>
-      <Box
-        style={{
-          display: 'flex',
-          flexDirection: 'row',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-        }}
-      >
-        <ArrowDropUpTwoToneIcon style={{ color: 'green' }} />
-        <Typography
-          variant="h4"
-          component="div"
-          style={{ color: 'green', fontSize: '1rem' }}
-        >
-          {percentage}
-        </Typography>
-      </Box>
-    </Box>
-  );
-};
+// const IndicatorBoxUp = ({ title, indicator, percentage }) => {
+//   return (
+//     <Box
+//       style={{
+//         padding: ".5rem",
+//         border: "#616161 solid 1px",
+//         borderRadius: "4px",
+//         margin: "0 1rem ",
+//         width: "120px",
+//       }}
+//     >
+//       <Typography
+//         variant="h6"
+//         component="div"
+//         color="gray"
+//         style={{
+//           fontSize: "1rem",
+//           color: "grey",
+//         }}
+//       >
+//         {title}
+//       </Typography>
+//       <Typography variant="h4" component="div" color="gray" style={{}}>
+//         {indicator}
+//       </Typography>
+//       <Box
+//         style={{
+//           display: "flex",
+//           flexDirection: "row",
+//           justifyContent: "space-between",
+//           alignItems: "center",
+//         }}
+//       >
+        
+//         <Typography
+//           variant="h4"
+//           component="div"
+//           style={{ color: "green", fontSize: "1rem" }}
+//         >
+//           {percentage}
+//         </Typography>
+//       </Box>
+//     </Box>
+//   );
+// };
