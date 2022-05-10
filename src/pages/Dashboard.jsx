@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
 
     [theme.breakpoints.down('sm')]: {
       width: 'auto',
-      flexFlow:"column nowrap"
+      flexFlow: 'column nowrap',
     },
   },
 
@@ -46,6 +46,10 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: '#f5f5f5',
     // padding: '1rem',
     marginLeft: 'auto',
+    [theme.breakpoints.down('sm')]: {
+      jjustifyContent: 'center',
+      alignItems: 'center',
+    },
   },
 }));
 

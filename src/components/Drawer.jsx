@@ -47,9 +47,8 @@ const useStyles = makeStyles((theme) => ({
     left: '0',
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'row',
-      width:"100%",
-      height:"10vh"
-     
+      width: '100%',
+      height: '10vh',
     },
   },
   InnerSideMenu: {

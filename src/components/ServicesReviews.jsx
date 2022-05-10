@@ -1,12 +1,12 @@
-import * as React from "react";
-import Box from "@mui/material/Box";
-import { styled } from "@mui/material/styles";
-import Paper from "@mui/material/Paper";
-import Masonry from "@mui/lab/Masonry";
-import FormatQuoteIcon from "@mui/icons-material/FormatQuote";
-import ArrowDropDownTwoToneIcon from "@mui/icons-material/ArrowDropDownTwoTone";
-import ArrowDropUpTwoToneIcon from "@mui/icons-material/ArrowDropUpTwoTone";
-import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
+import * as React from 'react';
+import Box from '@mui/material/Box';
+import { styled } from '@mui/material/styles';
+import Paper from '@mui/material/Paper';
+import Masonry from '@mui/lab/Masonry';
+import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
+import ArrowDropDownTwoToneIcon from '@mui/icons-material/ArrowDropDownTwoTone';
+import ArrowDropUpTwoToneIcon from '@mui/icons-material/ArrowDropUpTwoTone';
+import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
 import {
   Container,
   makeStyles,
@@ -17,62 +17,100 @@ import {
   ListItem,
   Button,
   ButtonGroup,
-} from "@material-ui/core";
+} from '@material-ui/core';
 
-import ReadRating from "./ReadRating";
-import ReadTextRating from "./ReadTextRating";
-import Tooltip from "@mui/material/Tooltip";
-import { Divider } from "@material-ui/core";
+import ReadRating from './ReadRating';
+import ReadTextRating from './ReadTextRating';
+import Tooltip from '@mui/material/Tooltip';
+import { Divider } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   widget: {
-    width: "100%",
-    height: "100%",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "space-between",
-    alignItems: "center",
-    padding: "2rem 2rem",
+    width: '100%',
+    height: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: '2rem 2rem',
+    [theme.breakpoints.down('sm')]: {
+      width: '200px',
+      padding: '2rem 0',
+    },
   },
   top: {
-    width: "100%",
+    width: '100%',
   },
   selectButtons: {
-    float: "right",
+    float: 'right',
   },
   bottom: {
-    width: "100%",
-    height: "90%",
+    width: '100%',
+    height: '90%',
     // backgroundColor: 'yellow',
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItem: "center",
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItem: 'center',
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column',
-      
     },
   },
   rectangle: {
     boxShadow:
-      "0px 2px 1px -1px rgba(0,0,0,.2) ,0px 1px 1px 0px rgba(0,0,0,.14),0px 1px 3px 0px rgba(0,0,0,.12)",
+      '0px 2px 1px -1px rgba(0,0,0,.2) ,0px 1px 1px 0px rgba(0,0,0,.14),0px 1px 3px 0px rgba(0,0,0,.12)',
 
     // width: '380px',
     // height: '650px',
-    width: "320px",
-    borderradius: "4px",
-    backgroundColor: "#fff",
-    padding: "1rem",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "flex-start",
-    alignItems: "flex-start",
+    width: '320px',
+    borderradius: '4px',
+    backgroundColor: '#fff',
+    padding: '1rem',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
+    [theme.breakpoints.down('sm')]: {
+      width: '235px',
+      marginBottom: '2rem',
+      justifyContent: 'center',
+    },
   },
   performance: {
-    display: "flex",
-    "& svg": {
-      color: "gray",
-      fontSize: "1rem",
+    display: 'flex',
+    '& svg': {
+      color: 'gray',
+      fontSize: '1rem',
+    },
+  },
+  indicatorBox: {
+    padding: '.5rem',
+    border: '#616161 solid 1px',
+    borderRadius: '4px',
+    margin: '0 1rem ',
+    width: '120px',
+    [theme.breakpoints.down('sm')]: {},
+  },
+
+  fourBoxes: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    [theme.breakpoints.down('sm')]: {
+      width: '100%',
+    },
+  },
+  twoBoxes: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginBottom: '1rem',
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'column',
+      justifyContent: 'space-evenly',
+      height: '300px',
     },
   },
 }));
@@ -92,7 +130,7 @@ const ServicesReviews = ({
   arrow1,
   arrow2,
   arrow3,
-  arrow4
+  arrow4,
 }) => {
   const classes = useStyles();
 
@@ -121,10 +159,10 @@ const ServicesReviews = ({
           </Typography>
           <Box
             sx={{
-              border: "1px solid #ccc",
-              borderRadius: "4px",
-              padding: "2rem 2rem",
-              marginTop: "4rem",
+              border: '1px solid #ccc',
+              borderRadius: '4px',
+              padding: '2rem 2rem',
+              marginTop: '4rem',
             }}
           >
             <Typography
@@ -141,12 +179,59 @@ const ServicesReviews = ({
           </Box>
         </Box>
 
-        {/* Second box */}
+        {/* second box */}
+        <Box className={classes.rectangle}>
+          <Box className={classes.performance} gutterBottom>
+            <Typography variant="h6" component="div" color="gray" gutterBottom>
+              Invitation Status
+            </Typography>
+            <Tooltip
+              title="Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Blanditiis ratione ea perspiciatis in adipisci animi praesentium
+              aperiam numquam, molestias autem vero molestiae ipsum, at
+              inventore quas perferendis facere corporis ducimus."
+              disableInteractive
+            >
+              <HelpOutlineOutlinedIcon />
+            </Tooltip>
+          </Box>
+          <Box className={classes.fourBoxes}>
+            <Box className={classes.twoBoxes}>
+              <IndicatorBox
+                title="DILIVERED"
+                indicator={diliveredIndicator}
+                percentage={diliveredRate}
+                arrow={arrow1}
+              />
+              <IndicatorBox
+                title="REPLIED"
+                indicator={repliedIndicator}
+                percentage={repliedRate}
+                arrow={arrow2}
+              />
+            </Box>
+            <Box className={classes.twoBoxes}>
+              <IndicatorBox
+                title="IN QUEUE"
+                indicator={queuedIndicator}
+                percentage={queuedRate}
+                arrow={arrow3}
+              />
+              <IndicatorBox
+                title="REJECTED"
+                indicator={rejectIndicator}
+                percentage={rejectRate}
+                arrow={arrow4}
+              />
+            </Box>
+          </Box>
+        </Box>
+        {/* third box */}
         <Box
           className={classes.rectangle}
           style={{
             visibility: `${visibilitySecondBox}`,
-            flexDirection: "column",
+            flexDirection: 'column',
           }}
         >
           <Box className={classes.performance} gutterBottom>
@@ -189,76 +274,6 @@ const ServicesReviews = ({
             reviewer="By Salwa B.10 days ago."
           />
         </Box>
-
-        {/* third box */}
-        <Box className={classes.rectangle}>
-          <Box className={classes.performance} gutterBottom>
-            <Typography variant="h6" component="div" color="gray" gutterBottom>
-              Invitation Status
-            </Typography>
-            <Tooltip
-              title="Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Blanditiis ratione ea perspiciatis in adipisci animi praesentium
-              aperiam numquam, molestias autem vero molestiae ipsum, at
-              inventore quas perferendis facere corporis ducimus."
-              disableInteractive
-            >
-              <HelpOutlineOutlinedIcon />
-            </Tooltip>
-          </Box>
-          <Box
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <Box
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-                justifyContent: "space-between",
-                marginBottom: "1rem",
-              }}
-            >
-              <IndicatorBox
-                title="DILIVERED"
-                indicator={diliveredIndicator}
-                percentage={diliveredRate}
-                arrow={arrow1}
-              />
-              <IndicatorBox
-                title="REPLIED"
-                indicator={repliedIndicator}
-                percentage={repliedRate}
-                arrow={arrow2}
-              />
-            </Box>
-            <Box
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-                justifyContent: "space-between",
-              }}
-            >
-              <IndicatorBox
-                title="IN QUEUE"
-                indicator={queuedIndicator}
-                percentage={queuedRate}
-                arrow={arrow3}
-              />
-              <IndicatorBox
-                title="REJECTED"
-                indicator={rejectIndicator}
-                percentage={rejectRate}
-                arrow={arrow4}
-              />
-            </Box>
-          </Box>
-        </Box>
       </Box>
     </div>
   );
@@ -271,22 +286,22 @@ const EmbedReview = ({ comment, value, reviewer }) => {
     <Box gutterBottom marginBottom={1.4}>
       <Box
         style={{
-          maxWidth: "200px",
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "flex-start",
+          maxWidth: '200px',
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'flex-start',
         }}
         gutterBottom
       >
         <FormatQuoteIcon
-          style={{ transform: "rotate(180deg) translateY(20%)" }}
+          style={{ transform: 'rotate(180deg) translateY(20%)' }}
         />
         <Typography
           variant="h6"
           component="div"
           color="gray"
           gutterBottom
-          style={{ fontSize: ".7rem", fontWeight: "400" }}
+          style={{ fontSize: '.7rem', fontWeight: '400' }}
         >
           {comment}
         </Typography>
@@ -294,10 +309,10 @@ const EmbedReview = ({ comment, value, reviewer }) => {
 
       <Box
         style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
-          alignItems: "flex-start",
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'space-between',
+          alignItems: 'flex-start',
         }}
       >
         <ReadRating value={value} size="3rem" />
@@ -309,24 +324,17 @@ const EmbedReview = ({ comment, value, reviewer }) => {
   );
 };
 
-const IndicatorBox = ({ title, indicator, percentage,arrow }) => {
+const IndicatorBox = ({ title, indicator, percentage, arrow }) => {
+  const classes = useStyles();
   return (
-    <Box
-      style={{
-        padding: ".5rem",
-        border: "#616161 solid 1px",
-        borderRadius: "4px",
-        margin: "0 1rem ",
-        width: "120px",
-      }}
-    >
+    <Box className={classes.indicatorBox}>
       <Typography
         variant="h6"
         component="div"
         color="gray"
         style={{
-          fontSize: "1rem",
-          color: "grey",
+          fontSize: '1rem',
+          color: 'grey',
         }}
       >
         {title}
@@ -336,18 +344,25 @@ const IndicatorBox = ({ title, indicator, percentage,arrow }) => {
       </Typography>
       <Box
         style={{
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "space-between",
-          alignItems: "center",
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          alignItems: 'center',
         }}
       >
-       
-        {arrow === 'down' ?  <ArrowDropDownTwoToneIcon style={{ color: "red" }} /> : <ArrowDropUpTwoToneIcon style={{ color: "green" }} />}
+        {arrow === 'down' ? (
+          <ArrowDropDownTwoToneIcon style={{ color: 'red' }} />
+        ) : (
+          <ArrowDropUpTwoToneIcon style={{ color: 'green' }} />
+        )}
         <Typography
           variant="h4"
           component="div"
-          style={arrow === 'down' ? { color: "red", fontSize: "1rem" }: { color: "green", fontSize: "1rem" } }
+          style={
+            arrow === 'down'
+              ? { color: 'red', fontSize: '1rem' }
+              : { color: 'green', fontSize: '1rem' }
+          }
         >
           {percentage}
         </Typography>
@@ -355,49 +370,3 @@ const IndicatorBox = ({ title, indicator, percentage,arrow }) => {
     </Box>
   );
 };
-
-// const IndicatorBoxUp = ({ title, indicator, percentage }) => {
-//   return (
-//     <Box
-//       style={{
-//         padding: ".5rem",
-//         border: "#616161 solid 1px",
-//         borderRadius: "4px",
-//         margin: "0 1rem ",
-//         width: "120px",
-//       }}
-//     >
-//       <Typography
-//         variant="h6"
-//         component="div"
-//         color="gray"
-//         style={{
-//           fontSize: "1rem",
-//           color: "grey",
-//         }}
-//       >
-//         {title}
-//       </Typography>
-//       <Typography variant="h4" component="div" color="gray" style={{}}>
-//         {indicator}
-//       </Typography>
-//       <Box
-//         style={{
-//           display: "flex",
-//           flexDirection: "row",
-//           justifyContent: "space-between",
-//           alignItems: "center",
-//         }}
-//       >
-        
-//         <Typography
-//           variant="h4"
-//           component="div"
-//           style={{ color: "green", fontSize: "1rem" }}
-//         >
-//           {percentage}
-//         </Typography>
-//       </Box>
-//     </Box>
-//   );
-// };
