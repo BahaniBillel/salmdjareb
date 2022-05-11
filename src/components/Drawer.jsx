@@ -56,6 +56,16 @@ const useStyles = makeStyles((theme) => ({
       zIndex: '100',
     },
   },
+
+  InnerSideMenuXXL: {
+    // backgroundColor: "#fff",
+    borderRadius: '5px',
+    padding: '1rem 0',
+    overflow: 'hidden',
+    [theme.breakpoints.down('sm')]: {
+      display: 'none',
+    },
+  },
   InnerSideMenu: {
     // backgroundColor: "#fff",
     borderRadius: '5px',
@@ -118,6 +128,8 @@ const Drawer = ({
   upgrade,
   api,
   websiteIntegration,
+  analytics,
+  organicsearch,
 }) => {
   const classes = useStyles();
 
@@ -141,7 +153,205 @@ const Drawer = ({
   return (
     <Box className={classes.sidemenu}>
       <CssBaseline />
+      {/* for desktop view */}
+      <Container className={classes.InnerSideMenuXXL}>
+        <ListItem>
+          <Button
+            variant="outlined"
+            startIcon={<ShoppingCartIcon />}
+            style={{
+              border: 'none',
+              color: '#f9564f',
+              padding: '0',
+              fontSize: '.8rem',
+            }}
+            gutterBottom
+            href="#"
+            onClick={upgrade}
+          >
+            Plancing plan
+          </Button>
+        </ListItem>
 
+        <Accordion
+          className={classes.accordion}
+          sx={{ backgroundColor: 'transparent', border: 'none' }}
+          elevation={0}
+        >
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon style={{ color: '#f9564f' }} />}
+          >
+            <Button
+              variant="outlined"
+              startIcon={<ReviewsIcon />}
+              style={{ border: 'none', color: '#f9564f', padding: '0' }}
+              gutterBottom
+            >
+              Reviews
+            </Button>
+          </AccordionSummary>
+          <Box onClick={ClosingItem}>
+            <ListItem
+              style={{ cursor: 'pointer', color: '#ccc', fontWeight: '300' }}
+              onClick={serviceReview}
+            >
+              Service reviews
+            </ListItem>
+          </Box>
+          <Box onClick={ClosingItem}>
+            <ListItem
+              style={{ cursor: 'pointer', color: '#ccc', fontWeight: '300' }}
+              onClick={productReview}
+            >
+              Product reviews
+            </ListItem>
+          </Box>
+          <Box onClick={ClosingItem}>
+            <ListItem
+              style={{ cursor: 'pointer', color: '#ccc', fontWeight: '300' }}
+              onClick={insightReview}
+            >
+              Review Insights
+            </ListItem>
+          </Box>
+        </Accordion>
+
+        <Accordion
+          className={classes.accordion}
+          sx={{ backgroundColor: 'transparent', border: 'none' }}
+          elevation={0}
+        >
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon style={{ color: '#f9564f' }} />}
+          >
+            <Button
+              variant="outlined"
+              startIcon={<EqualizerOutlinedIcon />}
+              style={{ border: 'none', color: '#f9564f', padding: '0' }}
+              gutterBottom
+            >
+              Analytics
+            </Button>
+          </AccordionSummary>
+          <Box onClick={ClosingItem}>
+            <ListItem
+              style={{ cursor: 'pointer', color: '#ccc', fontWeight: '300' }}
+              onClick={analytics}
+            >
+              Overview
+            </ListItem>
+          </Box>
+          <Box onClick={ClosingItem}>
+            <ListItem
+              style={{ cursor: 'pointer', color: '#ccc', fontWeight: '300' }}
+            >
+              Reviews ratings
+            </ListItem>
+          </Box>
+          <Box onClick={ClosingItem}>
+            <ListItem
+              style={{ cursor: 'pointer', color: '#ccc', fontWeight: '300' }}
+              onClick={organicsearch}
+            >
+              Organic reach
+            </ListItem>
+          </Box>
+          <Box onClick={ClosingItem}>
+            <ListItem
+              style={{ cursor: 'pointer', color: '#ccc', fontWeight: '300' }}
+            >
+              Replies
+            </ListItem>
+          </Box>
+          <Box onClick={ClosingItem}>
+            <ListItem
+              style={{ cursor: 'pointer', color: '#ccc', fontWeight: '300' }}
+            >
+              Benchmark
+            </ListItem>
+          </Box>
+        </Accordion>
+
+        <Accordion
+          className={classes.accordion}
+          sx={{ backgroundColor: 'transparent', border: 'none' }}
+          elevation={0}
+        >
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon style={{ color: '#f9564f' }} />}
+          >
+            <Button
+              variant="outlined"
+              startIcon={<IntegrationInstructionsOutlinedIcon />}
+              style={{ border: 'none', color: '#f9564f', padding: '0' }}
+              gutterBottom
+            >
+              <Box onClick={ClosingItem}>Integrations</Box>
+            </Button>
+          </AccordionSummary>
+          <Box onClick={ClosingItem}>
+            <ListItem
+              style={{ cursor: 'pointer', color: '#ccc', fontWeight: '300' }}
+              onClick={websiteIntegration}
+            >
+              Website
+            </ListItem>
+          </Box>
+          <Box onClick={ClosingItem}>
+            <ListItem
+              style={{ cursor: 'pointer', color: '#ccc', fontWeight: '300' }}
+              onClick={api}
+            >
+              Popular API
+            </ListItem>
+          </Box>
+        </Accordion>
+        <Accordion
+          className={classes.accordion}
+          sx={{ backgroundColor: 'transparent', border: 'none' }}
+          elevation={0}
+        >
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon style={{ color: '#f9564f' }} />}
+          >
+            <Button
+              variant="outlined"
+              startIcon={<PlaylistAddIcon />}
+              style={{ border: 'none', color: '#f9564f', padding: '0' }}
+              gutterBottom
+            >
+              <Box onClick={ClosingItem}>Request</Box>
+            </Button>
+          </AccordionSummary>
+          <Box onClick={ClosingItem}>
+            <ListItem
+              style={{ cursor: 'pointer', color: '#ccc', fontWeight: '300' }}
+            >
+              Expert
+            </ListItem>
+          </Box>
+          <Box onClick={ClosingItem}>
+            <ListItem
+              style={{ cursor: 'pointer', color: '#ccc', fontWeight: '300' }}
+            >
+              Survey
+            </ListItem>
+          </Box>
+        </Accordion>
+        <Box onClick={ClosingItem}>
+          <ListItem>
+            <Button
+              variant="outlined"
+              startIcon={<SettingsOutlinedIcon />}
+              style={{ border: 'none', color: '#f9564f', padding: '0' }}
+              gutterBottom
+            >
+              Settings
+            </Button>
+          </ListItem>
+        </Box>
+      </Container>
+      {/* for small mobile views */}
       <Container
         className={drawer ? classes.slideDrawer : classes.InnerSideMenu}
         style={{ transform: `${slideMenu}` }}

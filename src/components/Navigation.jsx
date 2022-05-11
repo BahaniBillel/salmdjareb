@@ -110,7 +110,7 @@ const Navigation = () => {
   const [nav, setNav] = useState(false);
   const [slideMenu, setSlideMenu] = useState('translateX(100%)');
 
-  const HandleClick = () => {
+  const OpenMenu = () => {
     setMenu(!menu);
     setSlideMenu('translateX(0%)');
   };
@@ -161,7 +161,7 @@ const Navigation = () => {
             {menu ? (
               <CloseIcon onClick={() => setMenu(HandleCloseMobileMenu)} />
             ) : (
-              <MenuIcon value={menu} onClick={HandleClick} />
+              <MenuIcon value={menu} onClick={OpenMenu} />
             )}
           </Box>
         </Box>

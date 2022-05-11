@@ -40,7 +40,72 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     justifyContent: 'flex-start',
     alignItems: 'center',
-    // padding: '2rem 6rem',
+    [theme.breakpoints.down('sm')]: {},
+  },
+  displayarea: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    padding: '2rem 0',
+    [theme.breakpoints.down('sm')]: {},
+  },
+  embededproduct: {
+    borderRadius: '4px',
+    backgroundColor: '#fff',
+    width: '80%',
+    // height: "350px",
+    // maxHeight: "350px",
+    padding: '1rem',
+    marginBottom: '2.5rem',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    [theme.breakpoints.down('sm')]: {},
+  },
+  topsection: {
+    borderBottom: '1px solid #ccc',
+    width: '100%',
+    paddingBottom: '.5rem',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+
+    [theme.breakpoints.down('sm')]: {},
+  },
+  contentsection: {
+    borderTop: '1px solid #ccc',
+    width: '100%',
+    padding: '1rem',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    alignItems: 'flex-start',
+
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'column',
+    },
+  },
+  bottomsection: {
+    borderTop: '1px solid #ccc',
+    width: '100%',
+    paddingTop: '.5rem',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+
+    [theme.breakpoints.down('sm')]: {},
+  },
+  rating: {
+    display: 'flex',
+    flexDirection: 'column',
+    padding: '0 1rem',
+    [theme.breakpoints.down('sm')]: {
+      padding: '0',
+    },
   },
 }));
 
@@ -50,16 +115,7 @@ const ProductReviews = () => {
   return (
     <div className={classes.widget}>
       <SelectButtonBar />
-      <Box
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'flex-start',
-          alignItems: 'center',
-          // backgroundColor: 'beige',
-          padding: '2rem 0',
-        }}
-      >
+      <Box className={classes.displayarea}>
         <EmbededProduct />
         <EmbededProduct />
         <EmbededProduct />
@@ -73,34 +129,11 @@ const ProductReviews = () => {
 export default ProductReviews;
 
 const EmbededProduct = () => {
+  const classes = useStyles();
   return (
-    <Box
-      style={{
-        borderRadius: '4px',
-        backgroundColor: '#fff',
-        width: '80%',
-        // height: "350px",
-        // maxHeight: "350px",
-        padding: '1rem',
-        marginBottom: '2.5rem',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}
-    >
+    <Box className={classes.embededproduct}>
       {/* Top section */}
-      <Box
-        style={{
-          borderBottom: '1px solid #ccc',
-          width: '100%',
-          paddingBottom: '.5rem',
-          display: 'flex',
-          flexDirection: 'row',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-        }}
-      >
+      <Box classeName={classes.topsection}>
         <Typography variant="caption" component="div">
           Bahani Billel
         </Typography>
@@ -109,24 +142,8 @@ const EmbededProduct = () => {
         </Typography>
       </Box>
       {/* the content */}
-      <Box
-        style={{
-          borderTop: '1px solid #ccc',
-          width: '100%',
-          padding: '1rem',
-          display: 'flex',
-          flexDirection: 'row',
-          justifyContent: 'space-evenly',
-          alignItems: 'flex-start',
-        }}
-      >
-        <Box
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            padding: '0 1rem',
-          }}
-        >
+      <Box className={classes.contentsection}>
+        <Box className={classes.rating}>
           <ReadRating value={3.5} />
           <Typography
             variant="h6"
@@ -136,6 +153,7 @@ const EmbededProduct = () => {
             PRODUCT SCORE: 3.5
           </Typography>
         </Box>
+
         <Box>
           <Typography variant="h6" component="div" color="gray" gutterBottom>
             NextDay: Innovative Product for Zgeneration.
@@ -173,7 +191,7 @@ const EmbededProduct = () => {
                 style={{
                   marginLeft: '.3rem',
                   height: '15px',
-                  width: '150px',
+                  width: '100px',
                   borderRadius: '1px',
                   backgroundColor: 'rgb(70,128,131)',
                 }}
@@ -193,7 +211,7 @@ const EmbededProduct = () => {
                 style={{
                   marginLeft: '.3rem',
                   height: '15px',
-                  width: '300px',
+                  width: '200px',
                   borderRadius: '1px',
                   backgroundColor: 'gold',
                 }}
@@ -232,6 +250,7 @@ const EmbededProduct = () => {
             </Typography>
           </Link>
         </Box>
+
         <Box>
           <Typography
             variant="caption"
@@ -265,17 +284,7 @@ const EmbededProduct = () => {
       </Box>
 
       {/* Bottom */}
-      <Box
-        style={{
-          borderTop: '1px solid #ccc',
-          width: '100%',
-          paddingTop: '.5rem',
-          display: 'flex',
-          flexDirection: 'row',
-          justifyContent: 'space-evenly',
-          alignItems: 'center',
-        }}
-      >
+      <Box className={classes.bottomsection}>
         <ButtonGroup>
           <Button variant="outlined" startIcon={<ReplyAllOutlinedIcon />}>
             Reply

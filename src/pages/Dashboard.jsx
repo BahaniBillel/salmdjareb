@@ -21,6 +21,7 @@ import PricingPlan from '../components/PricingPlan';
 import Tabs from '../components/Tabs';
 import Integrations from '../components/Integrations';
 import ApiCards from '../components/ApiCards';
+import OrganicSearch from '../components/OrganicSearch';
 
 const useStyles = makeStyles((theme) => ({
   dashboard: {
@@ -69,7 +70,8 @@ const Dashboard = () => {
   const [priceplan, setPriceplan] = useState(false);
   const [webIntegration, setWebIntegration] = useState(false);
   const [apicard, setApicard] = useState(false);
-  const [drawer, setDrawer] = useState(false);
+  const [analytics, setAnalytics] = useState(false);
+  const [organic, setOrganic] = useState(false);
 
   const ShowServiceReview = () => {
     setReviewService(true);
@@ -78,7 +80,8 @@ const Dashboard = () => {
     setPriceplan(false);
     setWebIntegration(false);
     setApicard(false);
-    // setDrawer(drawer);
+    setAnalytics(false);
+    setOrganic(false);
   };
 
   const ShowProductReview = () => {
@@ -88,6 +91,8 @@ const Dashboard = () => {
     setPriceplan(false);
     setWebIntegration(false);
     setApicard(false);
+    setAnalytics(false);
+    setOrganic(false);
   };
 
   const ShowInsights = () => {
@@ -97,6 +102,8 @@ const Dashboard = () => {
     setPriceplan(false);
     setWebIntegration(false);
     setApicard(false);
+    setAnalytics(false);
+    setOrganic(false);
   };
 
   const ShowPricePlan = () => {
@@ -106,6 +113,8 @@ const Dashboard = () => {
     setReviewService(false);
     setWebIntegration(false);
     setApicard(false);
+    setAnalytics(false);
+    setOrganic(false);
   };
 
   const ShowWebsiteIntegration = () => {
@@ -115,6 +124,8 @@ const Dashboard = () => {
     setReviewProduct(false);
     setReviewService(false);
     setApicard(false);
+    setAnalytics(false);
+    setOrganic(false);
   };
 
   const ShowApi = () => {
@@ -124,7 +135,32 @@ const Dashboard = () => {
     setReviewInsights(false);
     setReviewProduct(false);
     setReviewService(false);
+    setAnalytics(false);
+    setOrganic(false);
   };
+
+  const ShowAnalytics = () => {
+    setAnalytics(true);
+    setApicard(false);
+    setWebIntegration(false);
+    setPriceplan(false);
+    setReviewInsights(false);
+    setReviewProduct(false);
+    setReviewService(false);
+    setOrganic(false);
+  };
+
+  const ShowOrganicSearch = () => {
+    setOrganic(true);
+    setAnalytics(false);
+    setApicard(false);
+    setWebIntegration(false);
+    setPriceplan(false);
+    setReviewInsights(false);
+    setReviewProduct(false);
+    setReviewService(false);
+  };
+
   return (
     <Box className={classes.dashboard}>
       <Box>
@@ -135,23 +171,28 @@ const Dashboard = () => {
           upgrade={ShowPricePlan}
           websiteIntegration={ShowWebsiteIntegration}
           api={ShowApi}
+          analytics={ShowAnalytics}
+          organicsearch={ShowOrganicSearch}
         />
       </Box>
 
       <Box className={classes.detail}>
-        <DashBoardDetailHeader title={'Business X'} />
+        <DashBoardDetailHeader title={'Business X'} upgrade={ShowPricePlan} />
 
+        {analytics ? <Analytics /> : null}
         {webIntegration ? <Integrations /> : null}
         {apicard ? <ApiCards /> : null}
         {reviewService ? <Tabs /> : null}
         {reviewProduct ? <ProductReviews /> : null}
         {reviewInsights ? <ReviewInsights /> : null}
         {priceplan ? <PricingPlan /> : null}
+        {organic ? <OrganicSearch /> : null}
+
         {/* <ServicesReviews />
 
-        <Analytics />
 
-        <Insights /> */}
+*/}
+        {/* <Insights /> */}
       </Box>
     </Box>
   );

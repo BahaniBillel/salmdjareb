@@ -4,16 +4,29 @@ import MenuItem from '@mui/material/MenuItem';
 import FormHelperText from '@mui/material/FormHelperText';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
+import { makeStyles } from '@material-ui/core';
+
+const useStyles = makeStyles((theme) => ({
+  formcontrolarea: {
+    width: '100%',
+    backgroundColor: '#fff',
+
+    [theme.breakpoints.down('sm')]: {
+      padding: '0 3.5rem',
+    },
+  },
+}));
 
 export default function SelectButtonBar() {
   const [age, setAge] = React.useState('');
+  const classes = useStyles();
 
   const handleChange = (event) => {
     setAge(event.target.value);
   };
 
   return (
-    <div style={{ width: '100%', backgroundColor: '#fff' }}>
+    <div className={classes.formcontrolarea}>
       <FormControl sx={{ m: 1, minWidth: 120 }}>
         <InputLabel
           id="demo-simple-select-disabled-label"

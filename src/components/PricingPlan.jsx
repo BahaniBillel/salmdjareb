@@ -21,7 +21,6 @@ import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
 import { CallToAction } from '@mui/icons-material';
 import { PropTypes } from 'prop-types';
 
-
 const useStyles = makeStyles((theme) => ({
   pricingplan: {
     display: 'flex',
@@ -29,6 +28,23 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     alignItems: 'center',
     padding: '3rem',
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'column',
+      justifyContent: 'space-between',
+    },
+  },
+
+  card: {
+    width: '30%',
+    // height: '100vh',
+    borderRadius: '4px',
+    boxShadow:
+      '0px 2px 1px -1px rgba(0,0,0,.2) ,0px 1px 1px 0px rgba(0,0,0,.14),0px 1px 3px 0px rgba(0,0,0,.12)',
+    padding: '2rem',
+    [theme.breakpoints.down('sm')]: {
+      width: '100%',
+      marginBottom: '3rem',
+    },
   },
 }));
 
@@ -46,7 +62,7 @@ const PricingPlan = () => {
 
   return (
     <Box className={classes.pricingplan}>
-      <SinglePlan
+      <Card
         backColor="#fff"
         featureOne={checkIcon}
         featureTwo={checkIcon}
@@ -64,7 +80,7 @@ const PricingPlan = () => {
         textSix=" No experts Advice"
         price="0"
       />
-      <SinglePlan
+      <Card
         scaleZ={1.05}
         icon={premiumIcon}
         backColor="#fff"
@@ -84,7 +100,7 @@ const PricingPlan = () => {
         textSix=" No experts Advice"
         price="8 999"
       />
-      <SinglePlan
+      <Card
         backColor="#fff"
         icon={premiumIcon}
         featureOne={checkIcon}
@@ -109,7 +125,7 @@ const PricingPlan = () => {
 
 export default PricingPlan;
 
-const SinglePlan = ({
+const Card = ({
   scaleZ,
   backColor,
   icon,
@@ -133,14 +149,9 @@ const SinglePlan = ({
   const classes = useStyles();
   return (
     <Box
+      className={classes.card}
       style={{
-        width: '30%',
-        // height: '100vh',
-        borderRadius: '4px',
         backgroundColor: `${backColor}`,
-        boxShadow:
-          '0px 2px 1px -1px rgba(0,0,0,.2) ,0px 1px 1px 0px rgba(0,0,0,.14),0px 1px 3px 0px rgba(0,0,0,.12)',
-        padding: '2rem',
         transform: `scaleY(${scaleZ})`,
         color: `${textColor}`,
       }}
@@ -163,8 +174,12 @@ const SinglePlan = ({
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis,
         consectetur!
       </Typography>
-      <Typography variant="h4" component="div" gutterBottom style={{fontWeight:"600"}}>
-  
+      <Typography
+        variant="h4"
+        component="div"
+        gutterBottom
+        style={{ fontWeight: '600' }}
+      >
         {price} DZD
       </Typography>
       <Typography
@@ -182,7 +197,7 @@ const SinglePlan = ({
           color: '#fff',
           marginBottom: '2rem',
           width: '100%',
-          fontSize:".8rem"
+          fontSize: '.8rem',
         }}
         gutterBottom
       >
@@ -224,25 +239,24 @@ const SinglePlan = ({
   );
 };
 
-
-PricingPlan.propTypes={
-  scaleZ:PropTypes.number,
-  backColor:PropTypes.string,
-  icon:PropTypes.string,
-  textColor:PropTypes.string,
-  featureOne:PropTypes.string,
-  featureTwo:PropTypes.string,
-  featureThree:PropTypes.string,
-  featureFour:PropTypes.string,
-  featureFive:PropTypes.string,
-  featureSix:PropTypes.string,
-  CTA:PropTypes.string,
-  planType:PropTypes.string,
-  textOne:PropTypes.string,
-  textTwo:PropTypes.string,
-  textThree:PropTypes.string,
-  textFour:PropTypes.string,
-  textFive:PropTypes.string,
-  textSix:PropTypes.string,
-  price:PropTypes.number,
-}
+PricingPlan.propTypes = {
+  scaleZ: PropTypes.number,
+  backColor: PropTypes.string,
+  icon: PropTypes.string,
+  textColor: PropTypes.string,
+  featureOne: PropTypes.string,
+  featureTwo: PropTypes.string,
+  featureThree: PropTypes.string,
+  featureFour: PropTypes.string,
+  featureFive: PropTypes.string,
+  featureSix: PropTypes.string,
+  CTA: PropTypes.string,
+  planType: PropTypes.string,
+  textOne: PropTypes.string,
+  textTwo: PropTypes.string,
+  textThree: PropTypes.string,
+  textFour: PropTypes.string,
+  textFive: PropTypes.string,
+  textSix: PropTypes.string,
+  price: PropTypes.number,
+};

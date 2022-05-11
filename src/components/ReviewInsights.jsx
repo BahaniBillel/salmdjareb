@@ -24,7 +24,7 @@ const ReviewInsights = () => {
   const classes = useStyles();
   return (
     <Box className={classes.reviewInsights}>
-      <SelectButtonBar />
+      {/* <SelectButtonBar /> */}
       <InsightsTable />
     </Box>
   );

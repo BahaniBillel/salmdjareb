@@ -77,7 +77,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const DashBoardDetailHeader = ({ title, upgrade, Logo }) => {
+const DashBoardDetailHeader = ({ title, upgrade }) => {
   const classes = useStyles();
 
   return (
