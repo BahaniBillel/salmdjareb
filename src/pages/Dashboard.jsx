@@ -22,6 +22,11 @@ import Tabs from '../components/Tabs';
 import Integrations from '../components/Integrations';
 import ApiCards from '../components/ApiCards';
 import OrganicSearch from '../components/OrganicSearch';
+import ReviewsRatings from '../components/ReviewsRatings';
+import Showcase from '../components/Showcase';
+import Benchmark from '../components/Benchmark';
+import Expert from '../components/Expert';
+import Survey from '../components/Survey';
 
 const useStyles = makeStyles((theme) => ({
   dashboard: {
@@ -72,6 +77,11 @@ const Dashboard = () => {
   const [apicard, setApicard] = useState(false);
   const [analytics, setAnalytics] = useState(false);
   const [organic, setOrganic] = useState(false);
+  const [reviewsRatings, setReviewsRatings] = useState(false);
+  const [benchmark, setBenchmark] = useState(false);
+  const [expert, setExpert] = useState(false);
+  const [survey, setSurvey] = useState(false);
+  const [showcase, setShowcase] = useState(false);
 
   const ShowServiceReview = () => {
     setReviewService(true);
@@ -82,6 +92,9 @@ const Dashboard = () => {
     setApicard(false);
     setAnalytics(false);
     setOrganic(false);
+    setReviewsRatings(false);
+    setBenchmark(false);
+    setShowcase(false)
   };
 
   const ShowProductReview = () => {
@@ -93,6 +106,12 @@ const Dashboard = () => {
     setApicard(false);
     setAnalytics(false);
     setOrganic(false);
+    setReviewsRatings(false);
+    setBenchmark(false);
+    setExpert(false);
+    setSurvey(false);
+    setShowcase(false)
+  
   };
 
   const ShowInsights = () => {
@@ -104,6 +123,11 @@ const Dashboard = () => {
     setApicard(false);
     setAnalytics(false);
     setOrganic(false);
+    setReviewsRatings(false);
+    setBenchmark(false);
+    setExpert(false);
+    setSurvey(false);
+    setShowcase(false)
   };
 
   const ShowPricePlan = () => {
@@ -115,6 +139,11 @@ const Dashboard = () => {
     setApicard(false);
     setAnalytics(false);
     setOrganic(false);
+    setReviewsRatings(false);
+    setBenchmark(false);
+    setExpert(false);
+    setSurvey(false);
+    setShowcase(false)
   };
 
   const ShowWebsiteIntegration = () => {
@@ -126,6 +155,11 @@ const Dashboard = () => {
     setApicard(false);
     setAnalytics(false);
     setOrganic(false);
+    setReviewsRatings(false);
+    setBenchmark(false);
+    setExpert(false);
+    setSurvey(false);
+    setShowcase(false)
   };
 
   const ShowApi = () => {
@@ -137,6 +171,11 @@ const Dashboard = () => {
     setReviewService(false);
     setAnalytics(false);
     setOrganic(false);
+    setReviewsRatings(false);
+    setBenchmark(false);
+    setExpert(false);
+    setSurvey(false);
+    setShowcase(false)
   };
 
   const ShowAnalytics = () => {
@@ -148,6 +187,11 @@ const Dashboard = () => {
     setReviewProduct(false);
     setReviewService(false);
     setOrganic(false);
+    setReviewsRatings(false);
+    setBenchmark(false);
+    setExpert(false);
+    setSurvey(false);
+    setShowcase(false)
   };
 
   const ShowOrganicSearch = () => {
@@ -159,7 +203,89 @@ const Dashboard = () => {
     setReviewInsights(false);
     setReviewProduct(false);
     setReviewService(false);
+    setReviewsRatings(false);
+    setBenchmark(false);
+    setExpert(false);
+    setSurvey(false);
+    setShowcase(false)
   };
+  const ShowReviewsRatings = () => {
+    setReviewsRatings(true)
+    setOrganic(false);
+    setAnalytics(false);
+    setApicard(false);
+    setWebIntegration(false);
+    setPriceplan(false);
+    setReviewInsights(false);
+    setReviewProduct(false);
+    setReviewService(false);
+    setBenchmark(false);
+    setExpert(false);
+    setSurvey(false);
+    setShowcase(false)
+  };
+  const ShowBenchmark = () => {
+    setBenchmark(true)
+    setReviewsRatings(false)
+    setOrganic(false);
+    setAnalytics(false);
+    setApicard(false);
+    setWebIntegration(false);
+    setPriceplan(false);
+    setReviewInsights(false);
+    setReviewProduct(false);
+    setReviewService(false);
+    setExpert(false);
+    setSurvey(false);
+    setShowcase(false)
+  };
+  const ShowExpert = () => {
+    setExpert(true)
+    setBenchmark(false)
+    setReviewsRatings(false)
+    setOrganic(false);
+    setAnalytics(false);
+    setApicard(false);
+    setWebIntegration(false);
+    setPriceplan(false);
+    setReviewInsights(false);
+    setReviewProduct(false);
+    setReviewService(false);
+    setSurvey(false);
+    setShowcase(false)
+  };
+  const ShowSurvey = () => {
+    setSurvey(true)
+    setBenchmark(false)
+    setReviewsRatings(false)
+    setOrganic(false);
+    setAnalytics(false);
+    setApicard(false);
+    setWebIntegration(false);
+    setPriceplan(false);
+    setReviewInsights(false);
+    setReviewProduct(false);
+    setReviewService(false);
+    setExpert(false)
+    setShowcase(false)
+  };
+
+  const ShowShowcase = () => {
+    setShowcase(true)
+    setSurvey(false)
+    setBenchmark(false)
+    setReviewsRatings(false)
+    setOrganic(false);
+    setAnalytics(false);
+    setApicard(false);
+    setWebIntegration(false);
+    setPriceplan(false);
+    setReviewInsights(false);
+    setReviewProduct(false);
+    setReviewService(false);
+    setExpert(false)
+  };
+
 
   return (
     <Box className={classes.dashboard}>
@@ -173,6 +299,11 @@ const Dashboard = () => {
           api={ShowApi}
           analytics={ShowAnalytics}
           organicsearch={ShowOrganicSearch}
+          reviewsratings={ShowReviewsRatings}
+          benchmark={ShowBenchmark}
+          expert={ShowExpert}
+          survey={ShowSurvey}
+          showcase={ShowShowcase}
         />
       </Box>
 
@@ -184,15 +315,20 @@ const Dashboard = () => {
         {apicard ? <ApiCards /> : null}
         {reviewService ? <Tabs /> : null}
         {reviewProduct ? <ProductReviews /> : null}
-        {reviewInsights ? <ReviewInsights /> : null}
+        {reviewInsights ?  <Insights /> : null}
         {priceplan ? <PricingPlan /> : null}
         {organic ? <OrganicSearch /> : null}
+        {reviewsRatings ?  <ReviewsRatings/>:null}
+        {showcase ?  <Showcase/> :null}
+        {benchmark ?  <Benchmark/> :null}
+        {expert ?  <Expert/> :null}
+        {survey ?  <Survey/> :null}
 
-        {/* <ServicesReviews />
 
 
-*/}
-        {/* <Insights /> */}
+
+
+       
       </Box>
     </Box>
   );

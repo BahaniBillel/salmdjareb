@@ -56,7 +56,7 @@ const Insights = () => {
   const classes = useStyles();
   return (
     <Box className={classes.insights}>
-      <SelectButtonBar />
+      {/* <SelectButtonBar /> */}
 
       <Grid
         container

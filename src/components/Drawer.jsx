@@ -61,7 +61,7 @@ const useStyles = makeStyles((theme) => ({
     // backgroundColor: "#fff",
     borderRadius: '5px',
     padding: '1rem 0',
-    overflow: 'hidden',
+    // overflow: 'auto',
     [theme.breakpoints.down('sm')]: {
       display: 'none',
     },
@@ -70,7 +70,7 @@ const useStyles = makeStyles((theme) => ({
     // backgroundColor: "#fff",
     borderRadius: '5px',
     padding: '1rem 0',
-    overflow: 'hidden',
+    overflow: 'auto',
     [theme.breakpoints.down('sm')]: {
       position: 'absolute',
       top: '20vh',
@@ -130,6 +130,12 @@ const Drawer = ({
   websiteIntegration,
   analytics,
   organicsearch,
+  reviewsratings,
+  benchmark,
+  expert,
+  survey,
+  showcase
+  
 }) => {
   const classes = useStyles();
 
@@ -244,6 +250,7 @@ const Drawer = ({
           <Box onClick={ClosingItem}>
             <ListItem
               style={{ cursor: 'pointer', color: '#ccc', fontWeight: '300' }}
+              onClick={reviewsratings}
             >
               Reviews ratings
             </ListItem>
@@ -259,13 +266,15 @@ const Drawer = ({
           <Box onClick={ClosingItem}>
             <ListItem
               style={{ cursor: 'pointer', color: '#ccc', fontWeight: '300' }}
+              onClick={showcase}
             >
-              Replies
+              Showcase
             </ListItem>
           </Box>
           <Box onClick={ClosingItem}>
             <ListItem
               style={{ cursor: 'pointer', color: '#ccc', fontWeight: '300' }}
+              onClick={benchmark}
             >
               Benchmark
             </ListItem>
@@ -326,6 +335,7 @@ const Drawer = ({
           <Box onClick={ClosingItem}>
             <ListItem
               style={{ cursor: 'pointer', color: '#ccc', fontWeight: '300' }}
+              onClick={expert}
             >
               Expert
             </ListItem>
@@ -333,6 +343,7 @@ const Drawer = ({
           <Box onClick={ClosingItem}>
             <ListItem
               style={{ cursor: 'pointer', color: '#ccc', fontWeight: '300' }}
+              onClick={survey}
             >
               Survey
             </ListItem>
