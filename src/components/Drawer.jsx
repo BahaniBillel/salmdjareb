@@ -27,6 +27,8 @@ import PlaylistAddIcon from '@mui/icons-material/PlaylistAdd';
 import Divider from '@mui/material/Divider';
 import Logo from '../images/logoH.png';
 import { Link } from 'react-router-dom';
+import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
 
 const useStyles = makeStyles((theme) => ({
   sidemenu: {
@@ -48,7 +50,10 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'row',
       width: '100%',
-      height: '10vh',
+      height: '20vh',
+      postion: 'relative',
+      overflow: 'visible',
+      zIndex: '100',
     },
   },
   InnerSideMenu: {
@@ -56,9 +61,54 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: '5px',
     padding: '1rem 0',
     overflow: 'hidden',
-    [theme.breakpoints.down('sm')]: {},
+    [theme.breakpoints.down('sm')]: {
+      position: 'absolute',
+      top: '20vh',
+      width: '80%',
+      height: '100vh',
+      backgroundColor: '#fff',
+      transition: ' all 500ms ease-out',
+      // transform: 'translateX(-120%)',
+    },
   },
-  accordion: {},
+
+  slideDrawer: {
+    // backgroundColor: "#fff",
+    borderRadius: '5px',
+    padding: '1rem 0',
+    overflow: 'hidden',
+    transition: ' all 500ms ease-out',
+    [theme.breakpoints.down('sm')]: {
+      position: 'absolute',
+      top: '20vh',
+      width: '80%',
+      height: '100vh',
+      backgroundColor: '#fff',
+      // transform: 'translateX(0%)',
+    },
+  },
+
+  logoBox: {
+    [theme.breakpoints.down('sm')]: {
+      display: 'flex',
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      width: '100%',
+    },
+  },
+  menuBox: {
+    display: 'none',
+
+    '& svg': {
+      fontSize: '2.5rem',
+      color: '#f9564f',
+    },
+    [theme.breakpoints.down('sm')]: {
+      display: 'block',
+      cursor: 'pointer',
+    },
+  },
 }));
 
 const Drawer = ({
@@ -71,11 +121,31 @@ const Drawer = ({
 }) => {
   const classes = useStyles();
 
+  const [drawer, setDrawer] = useState(false);
+  const [slideMenu, setSlideMenu] = useState('translateX(-120%)');
+
+  const OpenDrawer = () => {
+    setDrawer(!drawer);
+    setSlideMenu('translateX(0%)');
+  };
+
+  const CloseDrawer = () => {
+    setDrawer(false);
+    setSlideMenu('translateX(-120%)');
+  };
+  const ClosingItem = () => {
+    setDrawer(false);
+    setSlideMenu('translateX(-120%)');
+  };
+
   return (
     <Box className={classes.sidemenu}>
       <CssBaseline />
 
-      <Container className={classes.InnerSideMenu}>
+      <Container
+        className={drawer ? classes.slideDrawer : classes.InnerSideMenu}
+        style={{ transform: `${slideMenu}` }}
+      >
         <ListItem>
           <Button
             variant="outlined"
@@ -111,25 +181,30 @@ const Drawer = ({
               Reviews
             </Button>
           </AccordionSummary>
-
-          <ListItem
-            style={{ cursor: 'pointer', color: '#ccc', fontWeight: '300' }}
-            onClick={serviceReview}
-          >
-            Service reviews
-          </ListItem>
-          <ListItem
-            style={{ cursor: 'pointer', color: '#ccc', fontWeight: '300' }}
-            onClick={productReview}
-          >
-            Product reviews
-          </ListItem>
-          <ListItem
-            style={{ cursor: 'pointer', color: '#ccc', fontWeight: '300' }}
-            onClick={insightReview}
-          >
-            Review Insights
-          </ListItem>
+          <Box onClick={ClosingItem}>
+            <ListItem
+              style={{ cursor: 'pointer', color: '#ccc', fontWeight: '300' }}
+              onClick={serviceReview}
+            >
+              Service reviews
+            </ListItem>
+          </Box>
+          <Box onClick={ClosingItem}>
+            <ListItem
+              style={{ cursor: 'pointer', color: '#ccc', fontWeight: '300' }}
+              onClick={productReview}
+            >
+              Product reviews
+            </ListItem>
+          </Box>
+          <Box onClick={ClosingItem}>
+            <ListItem
+              style={{ cursor: 'pointer', color: '#ccc', fontWeight: '300' }}
+              onClick={insightReview}
+            >
+              Review Insights
+            </ListItem>
+          </Box>
         </Accordion>
 
         <Accordion
@@ -149,31 +224,41 @@ const Drawer = ({
               Analytics
             </Button>
           </AccordionSummary>
-          <ListItem
-            style={{ cursor: 'pointer', color: '#ccc', fontWeight: '300' }}
-          >
-            Overview
-          </ListItem>
-          <ListItem
-            style={{ cursor: 'pointer', color: '#ccc', fontWeight: '300' }}
-          >
-            Reviews ratings
-          </ListItem>
-          <ListItem
-            style={{ cursor: 'pointer', color: '#ccc', fontWeight: '300' }}
-          >
-            Organic reach
-          </ListItem>
-          <ListItem
-            style={{ cursor: 'pointer', color: '#ccc', fontWeight: '300' }}
-          >
-            Replies
-          </ListItem>
-          <ListItem
-            style={{ cursor: 'pointer', color: '#ccc', fontWeight: '300' }}
-          >
-            Benchmark
-          </ListItem>
+          <Box onClick={ClosingItem}>
+            <ListItem
+              style={{ cursor: 'pointer', color: '#ccc', fontWeight: '300' }}
+            >
+              Overview
+            </ListItem>
+          </Box>
+          <Box onClick={ClosingItem}>
+            <ListItem
+              style={{ cursor: 'pointer', color: '#ccc', fontWeight: '300' }}
+            >
+              Reviews ratings
+            </ListItem>
+          </Box>
+          <Box onClick={ClosingItem}>
+            <ListItem
+              style={{ cursor: 'pointer', color: '#ccc', fontWeight: '300' }}
+            >
+              Organic reach
+            </ListItem>
+          </Box>
+          <Box onClick={ClosingItem}>
+            <ListItem
+              style={{ cursor: 'pointer', color: '#ccc', fontWeight: '300' }}
+            >
+              Replies
+            </ListItem>
+          </Box>
+          <Box onClick={ClosingItem}>
+            <ListItem
+              style={{ cursor: 'pointer', color: '#ccc', fontWeight: '300' }}
+            >
+              Benchmark
+            </ListItem>
+          </Box>
         </Accordion>
 
         <Accordion
@@ -190,21 +275,25 @@ const Drawer = ({
               style={{ border: 'none', color: '#f9564f', padding: '0' }}
               gutterBottom
             >
-              Integrations
+              <Box onClick={ClosingItem}>Integrations</Box>
             </Button>
           </AccordionSummary>
-          <ListItem
-            style={{ cursor: 'pointer', color: '#ccc', fontWeight: '300' }}
-            onClick={websiteIntegration}
-          >
-            Website
-          </ListItem>
-          <ListItem
-            style={{ cursor: 'pointer', color: '#ccc', fontWeight: '300' }}
-            onClick={api}
-          >
-            Popular API
-          </ListItem>
+          <Box onClick={ClosingItem}>
+            <ListItem
+              style={{ cursor: 'pointer', color: '#ccc', fontWeight: '300' }}
+              onClick={websiteIntegration}
+            >
+              Website
+            </ListItem>
+          </Box>
+          <Box onClick={ClosingItem}>
+            <ListItem
+              style={{ cursor: 'pointer', color: '#ccc', fontWeight: '300' }}
+              onClick={api}
+            >
+              Popular API
+            </ListItem>
+          </Box>
         </Accordion>
         <Accordion
           className={classes.accordion}
@@ -220,67 +309,48 @@ const Drawer = ({
               style={{ border: 'none', color: '#f9564f', padding: '0' }}
               gutterBottom
             >
-              Request
+              <Box onClick={ClosingItem}>Request</Box>
             </Button>
           </AccordionSummary>
-          <ListItem
-            style={{ cursor: 'pointer', color: '#ccc', fontWeight: '300' }}
-          >
-            Expert
-          </ListItem>
-          <ListItem
-            style={{ cursor: 'pointer', color: '#ccc', fontWeight: '300' }}
-          >
-            Survey
-          </ListItem>
+          <Box onClick={ClosingItem}>
+            <ListItem
+              style={{ cursor: 'pointer', color: '#ccc', fontWeight: '300' }}
+            >
+              Expert
+            </ListItem>
+          </Box>
+          <Box onClick={ClosingItem}>
+            <ListItem
+              style={{ cursor: 'pointer', color: '#ccc', fontWeight: '300' }}
+            >
+              Survey
+            </ListItem>
+          </Box>
         </Accordion>
-        <ListItem>
-          <Button
-            variant="outlined"
-            startIcon={<SettingsOutlinedIcon />}
-            style={{ border: 'none', color: '#f9564f', padding: '0' }}
-            gutterBottom
-          >
-            Settings
-          </Button>
-        </ListItem>
+        <Box onClick={ClosingItem}>
+          <ListItem>
+            <Button
+              variant="outlined"
+              startIcon={<SettingsOutlinedIcon />}
+              style={{ border: 'none', color: '#f9564f', padding: '0' }}
+              gutterBottom
+            >
+              Settings
+            </Button>
+          </ListItem>
+        </Box>
       </Container>
 
-      <Box>
-        <Typography
-          variant="body1"
-          component="div"
-          style={{ color: '#ccc', fontSize: '.9rem' }}
-          gutterBottom
-        >
-          Your plan is : Basic
-        </Typography>
-
-        <Typography
-          variant="body1"
-          component="div"
-          style={{ color: '#ccc', fontSize: '.9rem' }}
-          gutterBottom
-        >
-          Expiry date: 31/12/2024
-        </Typography>
-        <Button
-          style={{
-            padding: '.3rem 2rem ',
-            borderRadius: '4px',
-            backgroundColor: '#f9564f',
-            color: '#ccc',
-            margin: '.5rem auto',
-          }}
-          onClick={upgrade}
-        >
-          Upgrade now
-        </Button>
-
-        <Box>
-          <Link to="/">
-            <img src={Logo} style={{ width: '160px' }} />
-          </Link>
+      <Box className={classes.logoBox}>
+        <Link to="/">
+          <img src={Logo} style={{ width: '160px' }} />
+        </Link>
+        <Box className={classes.menuBox}>
+          {drawer ? (
+            <CloseIcon onClick={CloseDrawer} />
+          ) : (
+            <MenuIcon onClick={() => setDrawer(OpenDrawer)} />
+          )}
         </Box>
       </Box>
     </Box>

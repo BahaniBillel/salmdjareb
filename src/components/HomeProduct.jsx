@@ -43,7 +43,8 @@ const useStyles = makeStyles((theme) => ({
   leftBox: {
     width: '35%',
     [theme.breakpoints.down('sm')]: {
-      width: '100%',
+      width: 'auto',
+      padding: '1rem',
     },
   },
   rightBox: {
@@ -87,7 +88,7 @@ const useStyles = makeStyles((theme) => ({
     width: '32%',
     padding: '1rem',
     [theme.breakpoints.down('sm')]: {
-      width: '100%',
+      width: 'auto',
     },
   },
 }));

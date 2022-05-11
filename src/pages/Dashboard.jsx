@@ -49,7 +49,12 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('sm')]: {
       jjustifyContent: 'center',
       alignItems: 'center',
+      marginLeft: '0',
+      width: '100%',
     },
+  },
+  drawer: {
+    [theme.breakpoints.down('sm')]: {},
   },
 }));
 
@@ -64,6 +69,7 @@ const Dashboard = () => {
   const [priceplan, setPriceplan] = useState(false);
   const [webIntegration, setWebIntegration] = useState(false);
   const [apicard, setApicard] = useState(false);
+  const [drawer, setDrawer] = useState(false);
 
   const ShowServiceReview = () => {
     setReviewService(true);
@@ -72,6 +78,7 @@ const Dashboard = () => {
     setPriceplan(false);
     setWebIntegration(false);
     setApicard(false);
+    // setDrawer(drawer);
   };
 
   const ShowProductReview = () => {
@@ -120,14 +127,16 @@ const Dashboard = () => {
   };
   return (
     <Box className={classes.dashboard}>
-      <Drawer
-        serviceReview={ShowServiceReview}
-        productReview={ShowProductReview}
-        insightReview={ShowInsights}
-        upgrade={ShowPricePlan}
-        websiteIntegration={ShowWebsiteIntegration}
-        api={ShowApi}
-      />
+      <Box>
+        <Drawer
+          serviceReview={ShowServiceReview}
+          productReview={ShowProductReview}
+          insightReview={ShowInsights}
+          upgrade={ShowPricePlan}
+          websiteIntegration={ShowWebsiteIntegration}
+          api={ShowApi}
+        />
+      </Box>
 
       <Box className={classes.detail}>
         <DashBoardDetailHeader title={'Business X'} />

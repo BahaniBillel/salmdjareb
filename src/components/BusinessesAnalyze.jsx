@@ -24,8 +24,9 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('sm')]: {
       width: '100%',
       // height: '50%',
-      flexDirection: 'column',
-      height: 'auto',
+      flexDirection: 'column-reverse',
+      height: '100vh',
+      position: 'relative',
     },
   },
   imageBox: {
@@ -35,7 +36,10 @@ const useStyles = makeStyles((theme) => ({
     background: `url(${BannerImage}) top/80%`,
     backgroundRepeat: 'no-repeat',
     [theme.breakpoints.down('sm')]: {
-      display: 'none',
+      position: 'absolute',
+      left: '0',
+      top: '20%',
+      zIndex: -1,
     },
   },
   textBox: {
@@ -49,18 +53,28 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     alignItems: 'center',
     [theme.breakpoints.down('sm')]: {
-      display: 'none',
+      padding: '1rem',
+      transform: 'none',
+      position: 'static',
+      width: 'auto',
     },
   },
   headline: {
     fontSize: '3.5rem',
     fontWeight: '700',
     textAlign: 'center',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '2.5rem',
+    },
   },
   text: {
     fontSize: '1.4rem',
     textAlign: 'center',
     fontWeight: '300',
+    [theme.breakpoints.down('sm')]: {
+      // display: 'none',
+      width: 'auto',
+    },
   },
   demoButton: {
     padding: ' .5rem 1rem',

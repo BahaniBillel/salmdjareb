@@ -34,6 +34,10 @@ const useStyles = makeStyles((theme) => ({
   mainheadline: {
     fontSize: '2rem',
     fontWeight: '500',
+    width: '100%',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '1.8rem',
+    },
   },
   textBox: {
     width: '30%',
