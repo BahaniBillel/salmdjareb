@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react';
 import {
   Container,
   makeStyles,
@@ -10,93 +10,104 @@ import {
   Button,
   ButtonGroup,
   Box,
-} from "@material-ui/core";
+} from '@material-ui/core';
 
-import { Link } from "react-router-dom";
-import MutualUnderstanding from "../images/mutualUnderstanding.png";
-import MyPhoto from "../images/myphoto2.jpg";
-import WhiteSmoke from "../images/whiteSmoke.jpg";
+import { Link } from 'react-router-dom';
+import MutualUnderstanding from '../images/mutualUnderstanding.png';
+import MyPhoto from '../images/myphoto02.jpg';
+import Quote from './QuoteIcon';
 
 const useStyles = makeStyles((theme) => ({
   article: {
-    height: "150vh",
-    padding: "3rem",
-    backgroundColor: "#fff",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "flex-start",
-    [theme.breakpoints.down("sm")]: {},
+    height: '150vh',
+    padding: '3rem',
+    backgroundColor: '#fff',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'flex-start',
+
+    [theme.breakpoints.down('sm')]: {},
   },
   row: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "flex-start",
-    position: "relative",
-    marginBottom: "5rem",
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'flex-start',
+    position: 'relative',
+    marginBottom: '5rem',
   },
 
   leftBox: {
-    width: "50%",
+    width: '50%',
   },
   mainheadline: {
-    fontSize: "2rem",
-    fontWeight: "500",
+    fontSize: '2rem',
+    fontWeight: '500',
   },
   textBox: {
-    marginTop: "2rem",
+    marginTop: '2rem',
   },
   text: {
-    fontSize: "1.5rem",
-    lineHeight: "2.5rem",
-    fontWeight: "300",
+    fontSize: '1.5rem',
+    lineHeight: '2.5rem',
+    fontWeight: '300',
   },
 
   rightBox: {
-    width: "50%",
-    position: "relative",
+    width: '50%',
+    position: 'relative',
     background: `url(${MutualUnderstanding}) center/cover`,
-    height: "100%",
+    height: '100%',
   },
 
   ownerSaying: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-    position: "relative",
-    marginBottom: "5rem",
-    width: "100%",
-   
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: 'relative',
+    marginBottom: '5rem',
+    marginTop: '10rem',
+    width: '100%',
+    position: 'relative',
   },
   imageBox: {
-    width: "30%",
-    height: "550px",
-    position: "relative",
-    background: `url(${MyPhoto}) center/cover`,
+    width: '1000%',
+    height: '550px',
+    position: 'relative',
+    background: `url(${MyPhoto}) center/80%`,
+    backgroundRepeat: 'no-repeat',
   },
   content: {
-    padding: "2rem",
-    height: "400px",
-    width: "350px",
-    position: "relative",
-    background: " rgb(249,255,9)",
+    position: 'absolute',
+    left: '55%',
+    top: '10%',
+    padding: '1.5rem',
+    height: '400px',
+    width: '350px',
+    background: ' rgb(249,255,9)',
     background:
-      "linear-gradient(286deg, rgba(249,255,9,1) 0%, rgba(249,230,79,1) 71%, rgba(251,239,46,1) 100%)",
+      'linear-gradient(286deg, rgba(249,255,9,1) 0%, rgba(249,230,79,1) 71%, rgba(251,239,46,1) 100%)',
   },
   contentText: {
-    fontSize: "1.5rem",
-    lineHeight: "2.5rem",
-    fontWeight: "600",
+    fontSize: '1rem',
+    lineHeight: '2.5rem',
+    fontWeight: '300',
   },
-  lowerThird: {
-    width: "600px",
-    height: "80px",
-    postion: "absolute",
-    left: "0",
-    bottom: "-40%",
-    background: `url(${WhiteSmoke}) center/cover`,
+  innerContent: {
+    width: '100%',
+    height: 'auto',
+    background: '#fff',
+    padding: '2rem',
+    borderRadius: '4px',
+  },
+  name: {
+    fontWeight: '600',
+  },
+  jobtitle: {
+    fontWeight: '300',
+    fontSize: '.8rem',
   },
 }));
 
@@ -129,19 +140,36 @@ const Article = () => {
         <Box className={classes.rightBox}></Box>
       </Box>
       <Box className={classes.ownerSaying}>
-        <Box className={classes.imageBox}>
-          <Box className={classes.lowerThird}></Box>
-        </Box>
+        <Box className={classes.imageBox}></Box>
         <Box className={classes.content}>
-          <Typography
-            variant="body1"
-            className={classes.contentText}
-            component="div"
-          >
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum eius
-            dolorum accusantium ab fugit eveniet nesciunt magnam, corrupti
-            praesentium temporibus.
-          </Typography>
+          <Box className={classes.innerContent}>
+            <Typography
+              variant="body1"
+              className={classes.contentText}
+              component="div"
+            >
+              <Quote fontsize={'2'} rotate="180" color="#ccc" />
+              The issue of low quality preoccupies a considerable portion of our
+              daily life, as a quality manager, the idea of finding a solution
+              to fix the situation on a greater scale stroke my mind.it is then
+              that I decided to launch the SAL MDJAREB project as innovant idea
+              that would give all consumers a powerful voice and enable
+              businesses to improve by interacting with their consumers within
+              an environment built with mutual trust and credibility and improve
+              on a continual basis.
+              <Quote fontsize={'2'} rotate="0" color="#ccc" />
+            </Typography>
+            <Typography variant="h6" className={classes.name} component="div">
+              BAHANI Billel
+            </Typography>
+            <Typography
+              variant="h6"
+              className={classes.jobtitle}
+              component="div"
+            >
+              founder of SAL-MDJAREB.
+            </Typography>
+          </Box>
         </Box>
       </Box>
     </Container>
