@@ -19,7 +19,7 @@ import Quote from './QuoteIcon';
 
 const useStyles = makeStyles((theme) => ({
   article: {
-    height: '150vh',
+    height: 'auto',
     padding: '3rem',
     backgroundColor: '#fff',
     display: 'flex',
@@ -58,7 +58,7 @@ const useStyles = makeStyles((theme) => ({
     width: '50%',
     position: 'relative',
     background: `url(${MutualUnderstanding}) center/cover`,
-    height: '100%',
+    height: '300px',
   },
 
   ownerSaying: {
@@ -73,7 +73,7 @@ const useStyles = makeStyles((theme) => ({
     position: 'relative',
   },
   imageBox: {
-    width: '1000%',
+    width: '100%',
     height: '550px',
     position: 'relative',
     background: `url(${MyPhoto}) center/80%`,
@@ -85,14 +85,14 @@ const useStyles = makeStyles((theme) => ({
     top: '10%',
     padding: '1.5rem',
     height: '400px',
-    width: '350px',
+    width: '380px',
     background: ' rgb(249,255,9)',
     background:
       'linear-gradient(286deg, rgba(249,255,9,1) 0%, rgba(249,230,79,1) 71%, rgba(251,239,46,1) 100%)',
   },
   contentText: {
     fontSize: '1rem',
-    lineHeight: '2.5rem',
+    lineHeight: '2.3rem',
     fontWeight: '300',
   },
   innerContent: {
@@ -104,6 +104,7 @@ const useStyles = makeStyles((theme) => ({
   },
   name: {
     fontWeight: '600',
+    marginTop: '2rem',
   },
   jobtitle: {
     fontWeight: '300',
@@ -150,13 +151,13 @@ const Article = () => {
             >
               <Quote fontsize={'2'} rotate="180" color="#ccc" />
               The issue of low quality preoccupies a considerable portion of our
-              daily life, as a quality manager, the idea of finding a solution
-              to fix the situation on a greater scale stroke my mind.it is then
-              that I decided to launch the SAL MDJAREB project as innovant idea
-              that would give all consumers a powerful voice and enable
-              businesses to improve by interacting with their consumers within
-              an environment built with mutual trust and credibility and improve
-              on a continual basis.
+              daily life. As a quality manager, the idea of finding a solution
+              to fix the situation on a greater scale stroke my mind
+              everytime.It was one day when I thought to launch the SAL MDJAREB
+              project as innovant idea that would give all consumers a powerful
+              voice and enable businesses to improve by interacting with their
+              consumers within an environment built with mutual trust and
+              credibility and improve on a continual basis.
               <Quote fontsize={'2'} rotate="0" color="#ccc" />
             </Typography>
             <Typography variant="h6" className={classes.name} component="div">

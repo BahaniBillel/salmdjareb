@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
     transform: 'translate(0%,50%)',
     backgroundColor: 'rgba(249,86,79,.85)',
     padding: '1rem',
-    borderRadius:'4px',
+    borderRadius: '4px',
     [theme.breakpoints.down('sm')]: {
       width: 'auto',
       transform: 'translate(0%,70%)',
@@ -38,7 +38,6 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: '700',
     fontSize: '3.2rem',
     lineHeight: '4.5rem',
-    
 
     [theme.breakpoints.down('sm')]: {
       fontSize: '2rem',

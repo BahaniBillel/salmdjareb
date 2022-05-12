@@ -18,13 +18,14 @@ import ConnectLogo from '../images/link.png';
 
 const useStyles = makeStyles((theme) => ({
   connect: {
-    height: '40vh',
+    height: '60vh',
     width: '100%',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: '3rem',
+    backgroundColor: '#fff',
     [theme.breakpoints.down('sm')]: {
       height: 'auto',
     },
@@ -67,7 +68,7 @@ const useStyles = makeStyles((theme) => ({
 const ConnectVendorsWithBuyers = () => {
   const classes = useStyles();
   return (
-    <Box className={classes.connect}>
+    <Container className={classes.connect}>
       <Box>
         <img src={ConnectLogo} alt="" style={{ width: '100px' }} />
       </Box>
@@ -78,22 +79,26 @@ const ConnectVendorsWithBuyers = () => {
           gutterBottom
           className={classes.mainTitle}
         >
-          We connect buyers and vendors <br /> with the most trusted content.
+          We connect Consumers and Businesses <br /> with the most trusted
+          content.
         </Typography>
         <Typography
           variant="body1"
           component="div"
           className={classes.mainText}
         >
-          We believe truth should drive every business decision. Our reviews
+          {/* We believe truth should drive every business decision. Our reviews
           empower buyers to make informed decisions, but they are also a
           goldmine for vendors who want to authentically engage prospects on
           TrustRadius and beyond. That is why we built our business on quality
           and trust, not selling leads or trading on brands. Whether you're a
-          buyer or a vendor, you know we have your back.
+          buyer or a vendor, you know we have your back.  */}
+          SAL-MDJAREB will help build a community of trust and credibility
+          between the algerian consumers and the local businesses with the aim
+          to regain trust in the local offering.
         </Typography>
       </Box>
-    </Box>
+    </Container>
   );
 };
 
