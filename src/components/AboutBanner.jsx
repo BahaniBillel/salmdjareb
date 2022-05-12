@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from "react";
 import {
   Container,
   makeStyles,
@@ -10,52 +10,86 @@ import {
   Button,
   ButtonGroup,
   Box,
-} from '@material-ui/core';
+} from "@material-ui/core";
 
-import { Link } from 'react-router-dom';
-import Understanding from '../images/understanding.jpg';
+import { Link } from "react-router-dom";
+import Understanding from "../images/understanding.jpg";
 const useStyles = makeStyles((theme) => ({
   aboutbanner: {
-    height: '100vh',
-    background: `url(${Understanding}) center/cover`,
-    [theme.breakpoints.down('sm')]: {
-      padding: '.5rem',
-      height: '80vh',
-    },
-  },
-  content: {
-    width: '55%',
-    transform: 'translate(0%,50%)',
-    backgroundColor: 'rgba(249,86,79,.85)',
-    padding: '1rem',
-    borderRadius: '4px',
-    [theme.breakpoints.down('sm')]: {
-      width: 'auto',
-      transform: 'translate(0%,70%)',
-    },
-  },
-  mainheadline: {
-    fontWeight: '700',
-    fontSize: '3.2rem',
-    lineHeight: '4.5rem',
+    height: "80vh",
+    display: "flex",
+    flexDirection: "row",
 
-    [theme.breakpoints.down('sm')]: {
-      fontSize: '2rem',
-      lineHeight: '3rem',
+    marginBottom: "10rem",
+    marginTop: "15rem",
+    position: "relative",
+    backgroundColor: "rgba(249,86,79,.25)",
+    borderRadius: "4px",
+    [theme.breakpoints.down("sm")]: {
+      padding: ".5rem",
+      height: "80vh",
     },
   },
+  textBox: {
+    padding: "2rem",
+    width: "55%",
+    display:'flex',
+    flexDirection:"column",
+    justifyContent:"center",
+
+  },
+  imageBox: {
+    position: "absolute",
+    top: "-10%",
+    right: "5%",
+    width: "400px",
+    height: "400px",
+    background: `url(${Understanding}) center/cover`,
+    borderRadius: "4px",
+  },
+  caption:{
+    display:"flex",
+    flexDirection:"row",
+    justifyContent:"flex-start",
+    alignItems:"center",
+    marginBottom:"2rem",
+  },
+  category:{
+    padding:".5rem 1rem",
+    backgroundColor:"gold",
+    marginRight:"1rem",
+    borderRadius:"4px",
+  },
+  mainheadline:{
+    fontSize:"2.5rem",
+    fontWeight:"600",
+  },
+  textheadline:{
+    fontWeight:"300",
+    lineHeight:"2rem",
+  }
 }));
 
 const Aboutbanner = () => {
   const classes = useStyles();
   return (
     <Container className={classes.aboutbanner}>
-      <Box className={classes.content}>
-        <Typography variant="h3" className={classes.mainheadline}>
+      <Box className={classes.imageBox}></Box>
+      <Box className={classes.textBox}>
+        <Box className={classes.caption}>
+          <Typography className={classes.category}>Managment</Typography>
+          <Typography className={classes.date}>Mai 12, 2021</Typography>
+        </Box>
+        <Typography variant="h5" className={classes.mainheadline}>
           We build a common ground of understanding <br />
           between businesses and consumers <br />
           for the greater good.
-          <br />
+        </Typography>
+        <Typography variant="body1" className={classes.textheadline}>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti
+          soluta odit voluptates repellat iusto voluptatibus cum itaque, commodi
+          ad et architecto. Sit excepturi facilis maiores aliquam deleniti,
+          voluptates doloribus beatae?.
         </Typography>
       </Box>
     </Container>
@@ -63,3 +97,12 @@ const Aboutbanner = () => {
 };
 
 export default Aboutbanner;
+
+{
+  /* <Typography variant="h3" className={classes.mainheadline}>
+We build a common ground of understanding <br />
+between businesses and consumers <br />
+for the greater good.
+<br />
+</Typography> */
+}

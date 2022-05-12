@@ -21,7 +21,7 @@ import ConnectVendorsWithBuyers from '../components/ConnectVendorsWithBuyers';
 
 const useStyles = makeStyles((theme) => ({
   about: {
-    height: '300vh',
+    height: 'auto',
   },
 }));
 
