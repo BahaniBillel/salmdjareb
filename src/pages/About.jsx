@@ -14,8 +14,11 @@ import {
 
 import { Link } from 'react-router-dom';
 import Aboutbanner from '../components/AboutBanner';
-import Article from '../components/Article';
+import Salmdjareb from '../components/Salmdjareb';
 import ConnectVendorsWithBuyers from '../components/ConnectVendorsWithBuyers';
+import Mission from '../components/Mission';
+import Benefits from '../components/Benefits';
+import Objectives from '../components/Objectives';
 
 
 
@@ -30,8 +33,11 @@ const About = () => {
   return (
     <Box className={classes.about}>
       <Aboutbanner />
-      <Article />
+      <Salmdjareb />
+      <Mission/>
       <ConnectVendorsWithBuyers /> 
+      <Benefits/>
+      <Objectives/>
     </Box>
   );
 };

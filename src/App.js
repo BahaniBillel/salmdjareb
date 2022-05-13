@@ -60,7 +60,7 @@ function App() {
           <Route exact path="/logInAndSignUp" element={<LogInAndSignUp />} />
           <Route exact path="/Login" element={<LogIn />} />
           <Route exact path="/Register" element={<Register />} />
-          <Route exact path="/write-review" element={<WriteReviewPage />} />
+          <Route exact path="/Review" element={<WriteReviewPage />} />
           <Route exact path="/dashboard/:id" element={<Dashboard />} />
           <Route exact path="/api" element={<ApiProviderIntegration />} />
           <Route exact path="/found" element={<Found />} />

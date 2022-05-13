@@ -91,7 +91,7 @@ const Mobilemenu = ({
       <Link to={link5} sx={{ minWidth: 100 }} onClick={CloseMobileMenu}>
         {link5}
       </Link>
-      <Link to="/login" sx={{ minWidth: 100 }} onClick={CloseMobileMenu}>
+      <Link to={`/${link6}`} sx={{ minWidth: 100 }} onClick={CloseMobileMenu}>
         {link6}
       </Link>
       <Link to="/dashboard/1" sx={{ minWidth: 100 }} onClick={CloseMobileMenu}>

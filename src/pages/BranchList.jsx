@@ -53,6 +53,7 @@ const useStyles = makeStyles({
     width: "40%",
     height: "400px",
     backgroundColor: "#fff",
+    display: "none",
   },
   categoryHeaderTitle: {
     width: "100vw",
@@ -75,31 +76,27 @@ const BranchList = () => {
   const classes = useStyles();
   const { id } = useParams();
 
-
   const {
     Data: [...rest],
   } = ActivitieZData();
-
-
 
   return (
     <Box className={classes.upperWrapper}>
       <Box className={classes.categoryHeaderTitle}>
         <Container className={classes.categoryHeaderContent}>
-          <BreadCrumb/>
+          <BreadCrumb />
           <Typography
             component="h4"
             variant="h4"
             className={classes.titleMargin}
           >
-            {rest.map(main=>(
-              main.subCat.map(sub=>{
+            {rest.map((main) =>
+              main.subCat.map((sub) => {
                 if (id === sub.subactivity) {
-                  return `Best in ${sub.subactivity}`
+                  return `Best in ${sub.subactivity}`;
                 }
-              }
-              )
-            ))}
+              })
+            )}
           </Typography>
 
           <Typography component="p" variant="body2">
@@ -112,7 +109,7 @@ const BranchList = () => {
           {/* Side bar */}
           <h3>side bar</h3>
         </Container>
-        <Container >
+        <Container>
           {/* this is where card business  will be mapped */}
 
           {rest.map((item) => {
@@ -126,6 +123,11 @@ const BranchList = () => {
                           key={business.id}
                           companyName={business.businessname}
                           logo={business.logo}
+                          reviewsNumber={business.reviewsNumber}
+                          averageScore={business.overalRating}
+                          mainActivity={business.mainActivity}
+                          adresse={business.adresse}
+                          RatingValue={business.overalRating}
                         />
                       </Link>
                     </div>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Typography, Box, makeStyles, TextField } from "@material-ui/core";
+import { Typography, Box, makeStyles, TextField,Button} from "@material-ui/core";
 import Rating from "@mui/material/Rating";
 import { db, colRef } from "../firebase-config";
 
@@ -152,18 +152,24 @@ const ReviewForm = ({ businessname, companyId,refresh}) => {
               }}
             />
           </Box>
-          <button
+          <Button
             variant="outlined"
             style={{
-              backgroundColor: "green",
+              backgroundColor: "rgb(70,128,131)",
               color: "#fff",
               margin: "2rem 0",
+              padding:".5rem 1rem",
+              borderRadius:"4px",
+              fontSize:".9rem",
+              cursor:"pointer",
+              fontWeight:"400"
+
             }}
             type="submit"
             onClick={refresh}
           >
             Submit your Review
-          </button>
+          </Button>
         </Box>
       </form>
     </Box>

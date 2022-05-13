@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: '3rem',
+    // marginBottom: '3rem',
     backgroundColor: '#fff',
     [theme.breakpoints.down('sm')]: {
       height: 'auto',
@@ -51,9 +51,9 @@ const useStyles = makeStyles((theme) => ({
   mainText: {
     textAlign: 'center',
     padding: '0 5rem',
-    fontSize: '1.2rem',
-    lineHeight: '1.95rem',
-    fontWeight: '300',
+    fontSize: "1.5rem",
+    lineHeight: "2.5rem",
+    fontWeight: "300",
     [theme.breakpoints.down('sm')]: {
       width: 'auto',
       padding: '2rem',

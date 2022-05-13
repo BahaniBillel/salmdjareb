@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "row",
 
-    marginBottom: "10rem",
+    // marginBottom: "10rem",
     marginTop: "15rem",
     position: "relative",
     backgroundColor: "rgba(249,86,79,.25)",
@@ -33,10 +33,9 @@ const useStyles = makeStyles((theme) => ({
   textBox: {
     padding: "2rem",
     width: "55%",
-    display:'flex',
-    flexDirection:"column",
-    justifyContent:"center",
-
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
   },
   imageBox: {
     position: "absolute",
@@ -47,27 +46,28 @@ const useStyles = makeStyles((theme) => ({
     background: `url(${Understanding}) center/cover`,
     borderRadius: "4px",
   },
-  caption:{
-    display:"flex",
-    flexDirection:"row",
-    justifyContent:"flex-start",
-    alignItems:"center",
-    marginBottom:"2rem",
+  caption: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "flex-start",
+    alignItems: "center",
+    marginBottom: "2rem",
   },
-  category:{
-    padding:".5rem 1rem",
-    backgroundColor:"gold",
-    marginRight:"1rem",
-    borderRadius:"4px",
+  category: {
+    padding: ".5rem 1rem",
+    backgroundColor: "gold",
+    marginRight: "1rem",
+    borderRadius: "4px",
   },
-  mainheadline:{
-    fontSize:"2.5rem",
-    fontWeight:"600",
+  mainheadline: {
+    fontSize: "2.5rem",
+    fontWeight: "600",
   },
-  textheadline:{
-    fontWeight:"300",
-    lineHeight:"2rem",
-  }
+  textheadline: {
+    fontSize: "1.5rem",
+    lineHeight: "2.5rem",
+    fontWeight: "300",
+  },
 }));
 
 const Aboutbanner = () => {
@@ -81,15 +81,13 @@ const Aboutbanner = () => {
           <Typography className={classes.date}>Mai 12, 2021</Typography>
         </Box>
         <Typography variant="h5" className={classes.mainheadline}>
-          We build a common ground of understanding <br />
-          between businesses and consumers <br />
-          for the greater good.
+          We build a common ground of understanding between businesses and
+          consumers for the greater good.
         </Typography>
         <Typography variant="body1" className={classes.textheadline}>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti
-          soluta odit voluptates repellat iusto voluptatibus cum itaque, commodi
-          ad et architecto. Sit excepturi facilis maiores aliquam deleniti,
-          voluptates doloribus beatae?.
+          SAL MDJAREB will empower consumers and businesses to connect through
+          genuine feedback , based on consumers’ experience about any local
+          offering.
         </Typography>
       </Box>
     </Container>

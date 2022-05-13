@@ -150,11 +150,12 @@ const Navigation = () => {
         </Link>
         <Box className={classes.buttons}>
           <NavLinks
-            link1="About"
-            link2={'Write review'}
+            link1="About us"
+            link2={'Review'}
             link3="Categories"
-            link4={'Businesses'}
-            link5={'Login'}
+            link4='Community'
+            link5={'Businesses'}
+            link6={'Login'}
           />
 
           <Box className={classes.burgerMenu}>
@@ -167,11 +168,12 @@ const Navigation = () => {
         </Box>
 
         <MobileMenu
-          link1="About"
-          link2={'Write review'}
-          link3="Categories"
-          link4={'Businesses'}
-          link5={'Login'}
+           link1="About us"
+           link2={'Review'}
+           link3="Categories"
+           link4='Community'
+           link5={'Businesses'}
+           link6={'Login'}
           slideX={slideMenu}
           CloseMobileMenu={SelectedLink}
         />

@@ -44,6 +44,8 @@ const useStyles = makeStyles((theme) => ({
   mainheadline: {
     fontSize: '2rem',
     fontWeight: '500',
+    borderLeft:"5px solid #f9564f",
+    paddingLeft:"1rem",
   },
   textBox: {
     marginTop: '2rem',
@@ -112,7 +114,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Article = () => {
+const Salmdjareb = () => {
   const classes = useStyles();
   return (
     <Container className={classes.article}>
@@ -177,4 +179,4 @@ const Article = () => {
   );
 };
 
-export default Article;
+export default Salmdjareb;
