@@ -10,6 +10,7 @@ import PetsIcon from '@mui/icons-material/Pets';
 import BoltIcon from '@mui/icons-material/Bolt';
 import BusinessIcon from '@mui/icons-material/Business';
 import DirectionsBikeIcon from '@mui/icons-material/DirectionsBike';
+import FlightIcon from '@mui/icons-material/Flight';
 import HealingOutlinedIcon from '@mui/icons-material/HealingOutlined';
 import MasksOutlinedIcon from '@mui/icons-material/MasksOutlined';
 import Condor from '../images/condor.jpg';
@@ -23,14 +24,15 @@ import Brandt from '../images/brandt.png';
 function ActivitieZData() {
   return {
     Data: [
+      // 1
       {
         id: '1',
-        activity: 'Home Appliance',
-        icon: <HealingOutlinedIcon />,
+        activity: 'Electronics & Technology',
+        icon: <DevicesIcon />,
         subCat: [
           {
             id: '11',
-            subactivity: 'TV',
+            subactivity: 'Appliances & Electronics',
             icon: <MasksOutlinedIcon />,
             businesses: [
               {
@@ -187,7 +189,7 @@ function ActivitieZData() {
           },
           {
             id: '12',
-            subactivity: 'Dental Services',
+            subactivity: 'Audio & visual',
             icon: <MasksOutlinedIcon />,
             businesses: [
               {
@@ -254,7 +256,7 @@ function ActivitieZData() {
           },
           {
             id: '13',
-            subactivity: 'Diagnostics & Testing',
+            subactivity: 'Computers & Phones',
             icon: <MasksOutlinedIcon />,
             businesses: [
               {
@@ -321,7 +323,7 @@ function ActivitieZData() {
           },
           {
             id: '14',
-            subactivity: 'Doctors & Surgeons',
+            subactivity: 'Internet & Software',
             icon: <MasksOutlinedIcon />,
             businesses: [
               {
@@ -388,7 +390,7 @@ function ActivitieZData() {
           },
           {
             id: '15',
-            subactivity: 'Health Equipment',
+            subactivity: 'Repair & Services',
             icon: <MasksOutlinedIcon />,
             businesses: [
               {
@@ -453,83 +455,18 @@ function ActivitieZData() {
               },
             ],
           },
-          // {
-          //   id: "16",
-          //   subactivity: "Hospital & Emergency",
-          //   icon: <MasksOutlinedIcon />,
-          //   businesses: [
-          //     {
-          //       id: "161",
-          //       businessname: "comp1",
-          //       logo: "",
-          //       adresse: "",
-          //       profile: [],
-          //       products: [],
-          //       services: [],
-          //       url: "/",
-          //     },
-          //     {
-          //       id: "162",
-          //       businessname: "comp2",
-          //       logo: "",
-          //       adresse: "",
-          //       profile: [],
-          //       products: [],
-          //       services: [],
-          //       url: "/",
-          //     },
-          //     {
-          //       id: "163",
-          //       businessname: "comp3",
-          //       logo: "",
-          //       adresse: "",
-          //       profile: [],
-          //       products: [],
-          //       services: [],
-          //       url: "/",
-          //     },
-          //     {
-          //       id: "164",
-          //       businessname: "comp4",
-          //       logo: "",
-          //       adresse: "",
-          //       profile: [],
-          //       products: [],
-          //       services: [],
-          //       url: "/",
-          //     },
-          //     {
-          //       id: "165",
-          //       businessname: "comp5",
-          //       logo: "",
-          //       adresse: "",
-          //       profile: [],
-          //       products: [],
-          //       services: [],
-          //       url: "/",
-          //     },
-          //     {
-          //       id: "166",
-          //       businessname: "comp6",
-          //       logo: "",
-          //       adresse: "",
-          //       profile: [],
-          //       products: [],
-          //       services: [],
-          //       url: "/",
-          //     },
-          //   ],
-          // },
         ],
       },
+
+      // 2
       {
         id: '2',
         activity: 'Cars',
-        icon: <HealingOutlinedIcon />,
+        icon: <DirectionsCarIcon  />,
         subCat: [
           {
             id: '21',
-            subactivity: 'Clinics',
+            subactivity: 'Car Dealers',
             icon: <MasksOutlinedIcon />,
             businesses: [
               {
@@ -615,7 +552,7 @@ function ActivitieZData() {
           },
           {
             id: '22',
-            subactivity: 'Dental Services',
+            subactivity: 'Car Accessoires',
             icon: <MasksOutlinedIcon />,
             businesses: [
               {
@@ -682,7 +619,7 @@ function ActivitieZData() {
           },
           {
             id: '23',
-            subactivity: 'Diagnostics & Testing',
+            subactivity: 'Auto Repair Shop',
             icon: <MasksOutlinedIcon />,
             businesses: [
               {
@@ -749,7 +686,7 @@ function ActivitieZData() {
           },
           {
             id: '24',
-            subactivity: 'Doctors & Surgeons',
+            subactivity: 'Car Rental Agency',
             icon: <MasksOutlinedIcon />,
             businesses: [
               {
@@ -816,7 +753,7 @@ function ActivitieZData() {
           },
           {
             id: '25',
-            subactivity: 'Health Equipment',
+            subactivity: 'Transportation Service',
             icon: <MasksOutlinedIcon />,
             businesses: [
               {
@@ -883,7 +820,7 @@ function ActivitieZData() {
           },
           {
             id: '26',
-            subactivity: 'Hospital & Emergency',
+            subactivity: 'Auto Parts & Wheels',
             icon: <MasksOutlinedIcon />,
             businesses: [
               {
@@ -950,14 +887,15 @@ function ActivitieZData() {
           },
         ],
       },
+      // 3
       {
         id: '3',
-        activity: 'Hotel & Ressort',
-        icon: <HealingOutlinedIcon />,
+        activity: 'Travel & Vacation',
+        icon: <FlightIcon />,
         subCat: [
           {
             id: '31',
-            subactivity: 'Clinics',
+            subactivity: 'Accomodation & Lodging',
             icon: <MasksOutlinedIcon />,
             businesses: [
               {
@@ -1043,7 +981,7 @@ function ActivitieZData() {
           },
           {
             id: '32',
-            subactivity: 'Dental Services',
+            subactivity: 'Activities & Tours',
             icon: <MasksOutlinedIcon />,
             businesses: [
               {
@@ -1110,7 +1048,7 @@ function ActivitieZData() {
           },
           {
             id: '33',
-            subactivity: 'Diagnostics & Testing',
+            subactivity: 'Airlines & Travel',
             icon: <MasksOutlinedIcon />,
             businesses: [
               {
@@ -1177,7 +1115,74 @@ function ActivitieZData() {
           },
           {
             id: '34',
-            subactivity: 'Doctors & Surgeons',
+            subactivity: 'Hotels',
+            icon: <MasksOutlinedIcon />,
+            businesses: [
+              {
+                id: '341',
+                businessname: 'comp1xxx',
+                logo: '',
+                adresse: '',
+                profile: [],
+                products: [],
+                services: [],
+                url: '/',
+              },
+              {
+                id: '342',
+                businessname: 'comp2',
+                logo: '',
+                adresse: '',
+                profile: [],
+                products: [],
+                services: [],
+                url: '/',
+              },
+              {
+                id: '343',
+                businessname: 'comp3',
+                logo: '',
+                adresse: '',
+                profile: [],
+                products: [],
+                services: [],
+                url: '/',
+              },
+              {
+                id: '344',
+                businessname: 'comp4',
+                logo: '',
+                adresse: '',
+                profile: [],
+                products: [],
+                services: [],
+                url: '/',
+              },
+              {
+                id: '345',
+                businessname: 'comp5',
+                logo: '',
+                adresse: '',
+                profile: [],
+                products: [],
+                services: [],
+                url: '/',
+              },
+              {
+                id: '346',
+                businessname: 'comp6',
+                logo: '',
+                adresse: '',
+                profile: [],
+                products: [],
+                services: [],
+                url: '/',
+              },
+            ],
+          },
+          {
+            id: '34',
+            subactivity: 'Travel Agencies',
             icon: <MasksOutlinedIcon />,
             businesses: [
               {

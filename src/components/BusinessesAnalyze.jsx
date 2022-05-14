@@ -90,7 +90,7 @@ const BusinessesAnalyze = () => {
       <Box className={classes.imageBox}></Box>
       <Box className={classes.textBox}>
         <Typography variant="h1" component="div" className={classes.headline}>
-          Track and learn from key Merchant Metrics.
+          Track your Business Metrics.
         </Typography>
         <Typography
           variant="body2"
@@ -99,7 +99,7 @@ const BusinessesAnalyze = () => {
           gutterBottom
         >
           Review collection won’t just help you promote your business. It’ll
-          help you improve it too. Merchant Metrics uses our advanced linguistic
+          help you improve it too. Our Platform will use  advanced linguistic
           AI to capture sentiment from review content, and give objective data
           on key performance areas.
         </Typography>

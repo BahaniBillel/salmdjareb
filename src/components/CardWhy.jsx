@@ -9,7 +9,7 @@ import {Link} from 'react-router-dom';
 
 function CardWhy({ image, title }) {
   return (
-    <Card sx={{ maxWidth: 320, height: "85vh" }} elevation={1}>
+    <Card sx={{ maxWidth: 320, height: "auto",marginTop:"1rem" }} elevation={1}>
       <CardActionArea>
         <CardMedia
           component="img"

@@ -100,7 +100,14 @@ const BranchList = () => {
           </Typography>
 
           <Typography component="p" variant="body2">
-            Compare companies in building materials
+          {rest.map((main) =>
+              main.subCat.map((sub) => {
+                if (id === sub.subactivity) {
+                  return `Compare companies in ${sub.subactivity}`;
+                }
+              })
+            )}
+            
           </Typography>
         </Container>
       </Box>

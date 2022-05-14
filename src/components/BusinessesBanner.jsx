@@ -82,7 +82,7 @@ const BusinessesBanner = () => {
       <Box className={classes.custombanner}>
         <Box className={classes.textContent}>
           <Typography variant="h1" component="div" className={classes.mainText}>
-            Take Advantage of the most value for your customers.
+            Take Advantage of the most value of your customers.
           </Typography>
           <Button className={classes.demoButton}>Request demo</Button>
         </Box>

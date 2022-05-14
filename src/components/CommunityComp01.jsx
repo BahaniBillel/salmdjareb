@@ -44,6 +44,7 @@ const CommunityComp01 = ({photo,category,headline,paragraph,writer,date,link,wid
   const classes = useStyles();
 
   return (
+    <Link to={`/${link}`} style={{color:"#000"}}>
     <Box className={classes.comp01} style={{width:`${width}`}}>
       
       <Box className={classes.imgBox}>
@@ -82,21 +83,21 @@ const CommunityComp01 = ({photo,category,headline,paragraph,writer,date,link,wid
           variant="body1"
           style={{
             textAlign: "center",
-            fontSize: "1rem",
+            fontSize: ".7rem",
             fontWeight: "500",
            
           }}
         >
-          <Link to={`/${link}`} style={{color:"#000"}}>
+         
           KEEP READING... 
-          </Link>
+        
         </Typography>
         <Box className={classes.writer}>
         <Typography
           variant="body1"
           style={{
             textAlign: "center",
-            fontSize: "1rem",
+            fontSize: ".7rem",
             fontWeight: "400",
            marginRight:".5rem",
           }}
@@ -108,7 +109,7 @@ const CommunityComp01 = ({photo,category,headline,paragraph,writer,date,link,wid
           variant="body1"
           style={{
             textAlign: "center",
-            fontSize: "1rem",
+            fontSize: ".7rem",
             fontWeight: "400",
             marginLeft:".5rem",
           }}
@@ -119,6 +120,7 @@ const CommunityComp01 = ({photo,category,headline,paragraph,writer,date,link,wid
         </Box>
       </Box>
     </Box>
+    </Link>
   );
 };
 

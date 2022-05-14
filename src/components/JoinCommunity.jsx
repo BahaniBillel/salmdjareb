@@ -89,8 +89,8 @@ const JoinCommunity = () => {
             defend their rights and better be understood by the major active
             businesses.
           </Typography>
-          <Button color="secondary" variant="contained">
-            Join now
+          <Button color="secondary" variant="contained" >
+            Join our now
           </Button>
         </Box>
         <Box className={classes.thirdBox}>

@@ -153,7 +153,7 @@ const Navigation = () => {
             link1="About"
             link2={'Review'}
             link3="Categories"
-            link4='Community'
+            link4='Blog'
             link5={'Businesses'}
             link6={'Login'}
           />
@@ -171,7 +171,7 @@ const Navigation = () => {
            link1="About"
            link2={'Review'}
            link3="Categories"
-           link4='Community'
+           link4='Blog'
            link5={'Businesses'}
            link6={'Login'}
           slideX={slideMenu}

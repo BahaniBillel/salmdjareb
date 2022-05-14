@@ -45,7 +45,7 @@ const WhyReviews = () => {
         />
         <CardWhy
           image={Photo02}
-          title="Why would your bother yourself to make a review?!!"
+          title="What will you gain from customer feedback?!!"
         />
         <CardWhy image={Photo04} title="Making it easier for you to decide." />
       </Container>

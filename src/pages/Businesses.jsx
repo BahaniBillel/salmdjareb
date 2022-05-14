@@ -18,6 +18,7 @@ import BusinessesAnalyze from '../components/BusinessesAnalyze';
 import WhyReviews from '../components/WhyReviews';
 import HomeProduct from '../components/HomeProduct';
 import Trust from '../images/trust.jpg';
+import ConsumerAdvocate from '../images/consumerAdvocate.jpg';
 import Pattern from '../images/showcase.svg';
 
 const useStyles = makeStyles((theme) => ({
@@ -92,7 +93,7 @@ const Businesses = () => {
         backColor={
           'linear-gradient(90deg, rgba(224,251,32,1) 0%, rgba(223,227,51,1) 30%, rgba(212,223,68,1) 42%, rgba(252,255,105,1) 58%, rgba(238,255,65,1) 68%, rgba(218,225,58,1) 85%, rgba(255,239,0,1) 100%)'
         }
-        bigImg={Trust}
+        bigImg={ConsumerAdvocate}
         SMimg={Pattern}
       />
     </Box>

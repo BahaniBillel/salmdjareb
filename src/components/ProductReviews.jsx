@@ -114,7 +114,7 @@ const ProductReviews = () => {
 
   return (
     <div className={classes.widget}>
-      <SelectButtonBar />
+      {/* <SelectButtonBar /> */}
       <Box className={classes.displayarea}>
         <EmbededProduct />
         <EmbededProduct />

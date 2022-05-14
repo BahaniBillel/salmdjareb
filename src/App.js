@@ -56,7 +56,7 @@ function App() {
           <Route exact path="/categories" element={<Catergories />} />
           <Route exact path="/categories/:id" element={<BranchList />} />
           <Route exact path="/profile/:id" element={<Profile />} />
-          <Route exact path="/community" element={<Community />} />
+          <Route exact path="/blog" element={<Community />} />
           <Route exact path="/logInAndSignUp" element={<LogInAndSignUp />} />
           <Route exact path="/Login" element={<LogIn />} />
           <Route exact path="/Register" element={<Register />} />
