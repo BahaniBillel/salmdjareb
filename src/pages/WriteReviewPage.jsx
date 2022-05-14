@@ -1,45 +1,63 @@
 import React from "react";
-import ReviewForm from "../components/ReviewForm";
-import CocaCola from "../images/cocaLogo.png";
-import { Box, makeStyles, Container,Typography,TextField ,Button} from "@material-ui/core";
-import PageviewIcon from '@mui/icons-material/Pageview';
+import {
+  Box,
+  makeStyles,
+  Container,
+  Typography,
+} from "@material-ui/core";
+import SelectSearchBar from "../components/SelectSearchBar";
+import CustomerReview from '../images/customerReview.jpg';
+import CompaniezData from '../Donnes.json';
+import SearchBar from "../components/SearchBar";
+
+
 const useStyles = makeStyles((theme) => ({
   writereview: {
     height: "100vh",
-    marginTop:"20rem",
-    [theme.breakpoints.down("sm")]: {
-    
-    },
+
+    display:"flex",
+    flexDirection:"row",
+    alignItems:"center",
+    [theme.breakpoints.down("sm")]: {},
   },
+
+  contentBox:{
+    width:"70%",
+    
+  },
+  imageBox:{
+    width:"30%",
+    height:"60%",
+    background:`url(${CustomerReview}) top/cover`,
+    backgroundRepeat:"no-repeat",
+    
+  }
+ 
 }));
 
-const WriteReviewPage = ({ name, review, pageId }) => {
+
+
+
+
+const WriteReviewPage = () => {
   const classes = useStyles();
+
+
   return (
-    <Box className={classes.writereview}>
-      <Container>
+    <Box style={{    backgroundColor:"#fff",}}>
+      <Container className={classes.writereview}>
+        <Box className={classes.contentBox}>
+
         <Typography variant="h2" gutterBottom>
           Find a business to review
         </Typography>
         <Typography gutterBottom>
           Review anything from your favorite patio spot to your local flwershop.
         </Typography>
-        <Box>
-          <TextField 
-          variant="outlined"
-           label="Find business"
-           placeholder="restaurant,plumber,Hotel..."
-           style={{width:"40%"}}
-          />
-          <TextField 
-          variant="filled"
-           label="Location"
-           placeholder="Blida,Galma,Alger...."
-           style={{width:"20%"}}
-          />
-          <Button endIcon={<PageviewIcon/>} />
-          
-          
+      <SearchBar/>
+        </Box>
+        <Box className={classes.imageBox}>
+
         </Box>
       </Container>
     </Box>
