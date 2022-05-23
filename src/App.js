@@ -4,7 +4,7 @@ import Catergories from './pages/Catergories';
 import Community from './pages/Community';
 import Home from './pages/Home';
 import Profile from './pages/Profile';
-import WriteReviewPage from './pages/WriteReviewPage';
+import Services from './pages/Services';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
 import LogInAndSignUp from './pages/LogInAndSignUp';
@@ -60,7 +60,7 @@ function App() {
           <Route exact path="/logInAndSignUp" element={<LogInAndSignUp />} />
           <Route exact path="/Login" element={<LogIn />} />
           <Route exact path="/Register" element={<Register />} />
-          <Route exact path="/Review" element={<WriteReviewPage />} />
+          <Route exact path="/Services" element={<Services />} />
           <Route exact path="/dashboard/:id" element={<Dashboard />} />
           <Route exact path="/api" element={<ApiProviderIntegration />} />
           <Route exact path="/found" element={<Found />} />

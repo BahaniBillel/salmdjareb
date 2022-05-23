@@ -12,7 +12,7 @@ import SearchBar from "../components/SearchBar";
 
 
 const useStyles = makeStyles((theme) => ({
-  writereview: {
+  services: {
     height: "100vh",
 
     display:"flex",
@@ -39,29 +39,17 @@ const useStyles = makeStyles((theme) => ({
 
 
 
-const WriteReviewPage = () => {
+const Services = () => {
   const classes = useStyles();
 
 
   return (
     <Box style={{    backgroundColor:"#fff",}}>
-      <Container className={classes.writereview}>
-        <Box className={classes.contentBox}>
-
-        <Typography variant="h2" gutterBottom>
-          Find a business to review
-        </Typography>
-        <Typography gutterBottom>
-          Review anything from your favorite patio spot to your local flwershop.
-        </Typography>
-      <SearchBar/>
-        </Box>
-        <Box className={classes.imageBox}>
-
-        </Box>
+      <Container className={classes.services}>
+       
       </Container>
     </Box>
   );
 };
 
-export default WriteReviewPage;
+export default Services;
