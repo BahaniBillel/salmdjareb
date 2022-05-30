@@ -1,52 +1,28 @@
 import React from "react";
-import {
-  Box,
-  makeStyles,
-  Container,
-  Typography,
-} from "@material-ui/core";
+import { Box, makeStyles, Container, Typography } from "@material-ui/core";
 import SelectSearchBar from "../components/SelectSearchBar";
-import CustomerReview from '../images/customerReview.jpg';
-import CompaniezData from '../Donnes.json';
+import CustomerReview from "../images/customerReview.jpg";
+import CompaniezData from "../Donnes.json";
 import SearchBar from "../components/SearchBar";
-
+import PricingPlan from "../components/PricingPlan";
+import ServiceItem from "../components/ServiceItem";
 
 const useStyles = makeStyles((theme) => ({
   services: {
-    height: "100vh",
-
-    display:"flex",
-    flexDirection:"row",
-    alignItems:"center",
+  padding:"10rem 0",
     [theme.breakpoints.down("sm")]: {},
   },
-
-  contentBox:{
-    width:"70%",
-    
-  },
-  imageBox:{
-    width:"30%",
-    height:"60%",
-    background:`url(${CustomerReview}) top/cover`,
-    backgroundRepeat:"no-repeat",
-    
-  }
- 
 }));
-
-
-
-
 
 const Services = () => {
   const classes = useStyles();
 
-
   return (
-    <Box style={{    backgroundColor:"#fff",}}>
+    <Box style={{ backgroundColor: "#fff" }}>
       <Container className={classes.services}>
-       
+        <PricingPlan />
+
+        <ServiceItem/>
       </Container>
     </Box>
   );

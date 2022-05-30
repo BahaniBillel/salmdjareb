@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    padding: '3rem',
+  
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column',
       justifyContent: 'space-between',
@@ -73,7 +73,7 @@ const PricingPlan = () => {
         CTA="Claim your free account!"
         planType="Basic"
         textOne="Free Account"
-        textTwo="Up to 50 reviews "
+        textTwo="50 reviews invitations "
         textThree="Limited Analysis"
         textFour="No Insights"
         textFive=" No Brand Integration"
@@ -93,11 +93,11 @@ const PricingPlan = () => {
         CTA="Upgrade to premium now!"
         planType="Premium"
         textOne="Free Account"
-        textTwo="Up to 1000 reviews "
+        textTwo="Up to 1000 reviews invitations"
         textThree="Full Report Analysis"
         textFour="Deep Insights"
         textFive=" Limited Brand Integration"
-        textSix=" No experts Advice"
+        textSix=" No experts Answers"
         price="8 999"
       />
       <Card
@@ -109,14 +109,16 @@ const PricingPlan = () => {
         featureFour={checkIcon}
         featureFive={checkIcon}
         featureSix={checkIcon}
+        featureSeven={checkIcon}
         CTA="Get Extra premium"
         planType="Premium+"
         textOne="Free Account"
-        textTwo="Up to 1000 reviews "
-        textThree="Full Report Analysis"
-        textFour="Deep Insights"
-        textFive=" Limited Brand Integration"
-        textSix="  experts Advice"
+        textTwo="Unlimited reviews invitations "
+        textThree="Full Report Analysis and Insights"
+        textFour="Gain access to marketing tools and assets"
+        textFive=" Full Integration Service"
+        textSix="  experts Answers"
+        textSeven="  Google Seller Ratings"
         price="14 999"
       />
     </Box>
@@ -136,6 +138,7 @@ const Card = ({
   featureFour,
   featureFive,
   featureSix,
+  featureSeven,
   CTA,
   planType,
   textOne,
@@ -144,6 +147,7 @@ const Card = ({
   textFour,
   textFive,
   textSix,
+  textSeven,
   price,
 }) => {
   const classes = useStyles();
@@ -233,6 +237,10 @@ const Card = ({
         <ListItem style={{ padding: '1.3rem 0' }}>
           {featureSix}
           {textSix}
+        </ListItem>
+        <ListItem style={{ padding: '1.3rem 0' }}>
+          {featureSeven}
+          {textSeven}
         </ListItem>
       </List>
     </Box>
