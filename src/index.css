@@ -8,13 +8,13 @@ body {
   padding: 0;
   box-sizing: border-box;
   /* width:100vw; */
-  /* background: rgb(235, 235, 235);
+  background: rgb(235, 235, 235);
   background: linear-gradient(
     286deg,
     rgba(235, 235, 235, 1) 0%,
     rgba(251, 251, 251, 1) 70%,
     rgba(230, 230, 230, 1) 100%
-  ); */
+  );
 
   background: rgb(250, 250, 250);
   background: radial-gradient(
