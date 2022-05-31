@@ -35,8 +35,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const ServiceItem = ({
-  title = 'Invite',
-  subTitle = 'this service is meant to deploy a marketing assets for',
+  title ,
+  subTitle ,
   text,
 }) => {
   const classes = useStyles();
@@ -62,9 +62,7 @@ const ServiceItem = ({
           style={{ marginBottom: '2rem' }}
         >
           {text}
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
-          similique praesentium, non soluta quam incidunt sequi blanditiis
-          reprehenderit at sed
+         
         </Typography>
 
         <Button variant="outlined">Learn more</Button>
