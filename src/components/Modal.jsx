@@ -45,7 +45,7 @@ export default function BasicModal({ title, subTitle, text, feature }) {
             component="div"
             style={{ fontWeight: '600', color: siteConfiguration.primaryGreen }}
           >
-            Connect {title}
+           {title}
           </Typography>
           <Typography
             variant="h5"

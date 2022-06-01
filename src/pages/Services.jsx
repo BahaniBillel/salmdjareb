@@ -2,6 +2,7 @@ import React from 'react';
 import { Box, makeStyles, Container, Typography } from '@material-ui/core';
 import PricingPlan from '../components/PricingPlan';
 import ServiceItem from '../components/ServiceItem';
+import Modal from '../components/Modal';
 
 const useStyles = makeStyles((theme) => ({
   services: {
@@ -58,9 +59,7 @@ const cardContent = [
 const Services = () => {
   const classes = useStyles();
 
-  const HandleClick = () => {
-    return;
-  };
+  
 
   return (
     <Box>
@@ -90,7 +89,7 @@ const Services = () => {
                   title={item.title}
                   subTitle={item.subTitle}
                   text={item.describe}
-                  onClick={HandleClick}
+                  modal={<Modal title={item.title}/>}
                 />
               );
             })}
