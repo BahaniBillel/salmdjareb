@@ -13,6 +13,7 @@ import {
 } from '@material-ui/core';
 
 import { Link } from 'react-router-dom';
+import Modal from '../components/Modal';
 
 const useStyles = makeStyles((theme) => ({
   serviceItem: {
@@ -34,12 +35,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const ServiceItem = ({
-  title ,
-  subTitle ,
-  text,
-}) => {
+const ServiceItem = ({ title, subTitle, text }) => {
   const classes = useStyles();
+
+  const ClickHandler = () => {
+    return <Modal />;
+  };
   return (
     <Box className={classes.serviceItem}>
       <Box className={classes.serviceItemHeader} gutterBottom>
@@ -62,10 +63,11 @@ const ServiceItem = ({
           style={{ marginBottom: '2rem' }}
         >
           {text}
-         
         </Typography>
 
-        <Button variant="outlined">Learn more</Button>
+        <Button variant="outlined" onClick={ClickHandler}>
+          <Modal />
+        </Button>
       </Box>
     </Box>
   );
