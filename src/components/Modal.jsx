@@ -45,7 +45,7 @@ export default function BasicModal({ title, subTitle, text, feature }) {
             component="div"
             style={{ fontWeight: '600', color: siteConfiguration.primaryGreen }}
           >
-           {title}
+            {title}
           </Typography>
           <Typography
             variant="h5"
@@ -57,7 +57,7 @@ export default function BasicModal({ title, subTitle, text, feature }) {
               fontWeight: '300',
             }}
           >
-            APIs help you shine in your own way {subTitle}
+            {subTitle}
           </Typography>
           <Typography
             id="modal-modal-description"

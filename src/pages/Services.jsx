@@ -55,11 +55,23 @@ const cardContent = [
     describe:
       'Curate your Trustpilot Company Profile Page through adding your brand logo and adding authentic content that will enhance your online reputation.',
   },
+  {
+    id: 5,
+    title: 'Report',
+    subTitle: 'Strengthen your online presence',
+    describe:
+      'Curate your Trustpilot Company Profile Page through adding your brand logo and adding authentic content that will enhance your online reputation.',
+  },
+  {
+    id: 6,
+    title: 'Ecommerce Setup',
+    subTitle: 'Take advantage of abilities',
+    describe:
+      'Curate your Trustpilot Company Profile Page through adding your brand logo and adding authentic content that will enhance your online reputation.',
+  },
 ];
 const Services = () => {
   const classes = useStyles();
-
-  
 
   return (
     <Box>
@@ -89,7 +101,7 @@ const Services = () => {
                   title={item.title}
                   subTitle={item.subTitle}
                   text={item.describe}
-                  modal={<Modal title={item.title}/>}
+                  modal={<Modal title={item.title} subTitle={item.subTitle} />}
                 />
               );
             })}
