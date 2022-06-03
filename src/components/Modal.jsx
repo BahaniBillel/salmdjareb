@@ -96,42 +96,42 @@ export default function BasicModal({
               fontWeight: "400",
             }}
           >
-            {feature1 && " Features include:"}
+            {(feature1 || featureText1) && " Features include:"}
             <ul style={{ lineHeight: "3rem" }}>
               {(feature1 || featureText1) && (
                 <li>
                   <strong>{feature1}</strong>
-                  {featureText1}
+                  {featureText1.toLowerCase()}
                 </li>
               )}
               {(feature2 || featureText2) && (
                 <li>
                   <strong>{feature2}</strong>
-                  {featureText2}
+                  {featureText2.toLowerCase()}
                 </li>
               )}
               {(feature3 || featureText3) && (
                 <li>
                   <strong>{feature3}</strong>
-                  {featureText3}
+                  {featureText3.toLowerCase()}
                 </li>
               )}
               {(feature4 || featureText4) && (
                 <li>
                   <strong>{feature4}</strong>
-                  {featureText4}
+                  {featureText4.toLowerCase()}
                 </li>
               )}
               {(feature5 || featureText5) && (
                 <li>
                   <strong>{feature5}</strong>
-                  {featureText5}
+                  {featureText5.toLowerCase()}
                 </li>
               )}
               {(feature6 || featureText6) && (
                 <li>
                   <strong>{feature6}</strong>
-                  {featureText6}
+                  {featureText6.toLowerCase()}
                 </li>
               )}
             </ul>

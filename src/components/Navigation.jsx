@@ -151,7 +151,7 @@ const Navigation = () => {
         <Box className={classes.buttons}>
           <NavLinks
             link1="About"
-            link2={'Services'}
+            link2={'Products'}
             link3="Categories"
             link4='Blog'
             link5={'Businesses'}
@@ -169,7 +169,7 @@ const Navigation = () => {
 
         <MobileMenu
            link1="About"
-           link2={'Services'}
+           link2={'Products'}
            link3="Categories"
            link4='Blog'
            link5={'Businesses'}
