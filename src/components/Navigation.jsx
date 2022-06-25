@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     justifyContent: 'space-around',
     padding: '1rem 0',
-    backgroundColor: '#fff',
+    background: 'rgba(70,128,131,.8)',
     position: 'fixed',
     maxHeight: '5vh',
     top: '0',
@@ -55,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
     transition: ' all 500ms ease-out',
 
     '& a': {
-      color: '#f9564f',
+      color: '#fafafa',
     },
   },
 
@@ -80,7 +80,7 @@ const useStyles = makeStyles((theme) => ({
     flexShrink: '1',
     alignItems: 'center',
     justifyContent: 'flex-start',
-    color: '#f9564f',
+    // color: '#f9564f',
     [theme.breakpoints.down('sm')]: {
       display: 'flex',
       // flexDirection: 'column',
