@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import Logo from '../images/logoH.png';
+import Logo from '../images/SAL MDJAREB_WHITE.png';
 import { Box, makeStyles, Container } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
 import MobileMenu from './MobileMenu';
 import CloseIcon from '@mui/icons-material/Close';
-import set from 'date-fns/set/index';
+
 import NavLinks from './NavLinks';
 
 const useStyles = makeStyles((theme) => ({
@@ -17,9 +17,9 @@ const useStyles = makeStyles((theme) => ({
     maxHeight: '5vh',
     transition: '1s',
     zIndex: '100',
-    background: 'rgb(70,128,131)',
-    background:
-      'linear-gradient(206deg, rgba(70,128,131,1) 0%, rgba(60,110,113,1) 70%, rgba(42,78,80,1) 100%)',
+    // background: 'rgb(7,30,34)',
+    // background:
+    //   'linear-gradient(206deg, rgba(7,30,34,1) 0%, rgba(60,110,113,1) 70%, rgba(42,78,80,1) 100%)',
     display: 'flex',
     flexDirection: 'row',
     flexWrap: 'nowrap',
@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     justifyContent: 'space-around',
     padding: '1rem 0',
-    background: 'rgba(70,128,131,.8)',
+    background: 'rgba(7,30,34,.8)',
     position: 'fixed',
     maxHeight: '5vh',
     top: '0',
@@ -55,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
     transition: ' all 500ms ease-out',
 
     '& a': {
-      color: '#fafafa',
+      color: '#ffffff',
     },
   },
 
